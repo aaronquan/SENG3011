@@ -11,7 +11,7 @@ require('./models/models.js');
 //routes
 var api = require('./routes/api');
 var index = require('./routes/index');
-var releases = require('./routes/require');
+var releases = require('./routes/releases');
 
 var app = express();
 
