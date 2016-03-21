@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var fs = require('fs');
 
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
@@ -26,6 +27,15 @@ router.route('/query')
 
 	});
 
+router.route('/source')
+	.get(function(req, res){
+		fs.readFile('news_files/News_data_extract.txt', function(err, data){
+			if (err) {
+       			return res.send(err);
+   			}
+			res.send(data.toString());
+		});
+	});
 
 router.route('/news')
 	//views all news
