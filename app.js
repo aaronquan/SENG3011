@@ -53,5 +53,5 @@ app.use(function(err, req, res, next) {
 //end error handling
 
 
-app.listen(15508);
+app.listen(process.env.PORT);
 console.log('API is running on port 3000');
