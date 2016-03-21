@@ -7,6 +7,12 @@ var News = mongoose.model('News');
 router.route('')
 	.get(function(req, res){
 		res.send('The api path for news')
+
+	})
+	.post(function(req, res){
+		var d = new Date(req.body.start_date);
+		d = d.toJSON();
+		res.send(d);
 	});
 
 router.route('/news')
