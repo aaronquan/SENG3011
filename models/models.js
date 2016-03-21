@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
+
+//the query schema (may use date object insead of string for dates)
 var requestSchema = mongoose.Schema({
 	start_date: String,
 	end_date: String,
@@ -7,6 +9,7 @@ var requestSchema = mongoose.Schema({
 	tpc_list: String
 });
 
+//news format in the database, subject to change
 var newsSchema = mongoose.Schema({
 	title: String,
 	author: String,
@@ -14,6 +17,7 @@ var newsSchema = mongoose.Schema({
 	contents: String
 });
 
+//topics database format
 var topicsSchema =  mongoose.Schema({
 	code: String,
 	name: String,

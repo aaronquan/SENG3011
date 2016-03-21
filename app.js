@@ -13,6 +13,8 @@ var api = require('./routes/api');
 var index = require('./routes/index');
 
 var app = express();
+
+//makes json look decent
 app.set('json spaces', 30)
 
 //app.set('views', path.join(__dirname,'views'));
@@ -23,7 +25,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//refer to routes/index.js
 app.use('/', index);
+//refer to routes/api.js
 app.use('/api', api);
 
 //error handling (may not be neccesary)
