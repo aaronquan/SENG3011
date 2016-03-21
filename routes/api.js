@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 
+var Query = mongoose.model('Query')
 var News = mongoose.model('News');
 
 router.route('')
@@ -9,10 +10,15 @@ router.route('')
 		res.send('The api path for news')
 
 	})
+
+router.route('/query')
 	.post(function(req, res){
-		var d = new Date(req.body.start_date);
-		d = d.toJSON();
-		res.send(d);
+		var query = new Query();
+		query.start_date = req.body.start_date;
+		query.end_date = req.body.end_date;
+		query.instr_list = req.body.instr_list;
+		query.tpc_list = req.body.tpc_list;
+		res.json(query);
 	});
 
 router.route('/news')
