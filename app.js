@@ -11,6 +11,7 @@ require('./models/models.js');
 //routes
 var api = require('./routes/api');
 var index = require('./routes/index');
+var releases = require('./routes/require');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 //refer to routes/api.js
 app.use('/api', api);
+app.use('/releases', releases);
 
 //error handling (may not be neccesary)
 app.use(function(req, res, next) {

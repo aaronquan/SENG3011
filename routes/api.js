@@ -5,11 +5,13 @@ var mongoose = require('mongoose');
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
 
+
+
 router.route('')
 	.get(function(req, res){
 		res.send('The api path for news')
 
-	})
+	});
 
 //api/query is the route that applications are going to use.
 router.route('/query')
