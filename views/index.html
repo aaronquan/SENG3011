@@ -2,30 +2,21 @@
 <html>
 	<head>
 		<title>Pacific Pygmy Owl</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+        <script type="text/javascript" src="javascript/appNg.js"></script>
         <link href="css/bootstrap.css" rel="stylesheet">
 	</head>
-	<body>
+	<body ng-app="app">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="releases.html">API Releases</a>
+                    <a class="navbar-brand" href="#">Home</a>
+                    <a class="navbar-brand" href="#/releases">API Releases</a>
                 </div>
             </div>
         </nav>
-        
-        <!--unordered list center but left aligned--> 
-        <style>
-            ul { display:table; margin:0 auto;}
-        </style>
-
-		<h1 style="text-align: center">Pacific Pygmy Owl</h1>
-        <br>
-        <h4 style="text-align: center">Our Team:</h4>
-        <ul>
-            <li>Aaron Quan</li>
-            <li>Waseem Sajeev</li>
-            <li>Paul Dong</li>
-            <li>Tony Kang</li>
-        </ul>
+        <div ng-view></div>
     </body>
 </html>
