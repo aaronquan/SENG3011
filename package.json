@@ -9,6 +9,7 @@
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "fs": "0.0.2",
+    "htmlparser2": "^3.9.0",
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.7",
     "node-restful": "^0.2.5",

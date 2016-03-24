@@ -29,11 +29,11 @@ router.route('/query')
 
 router.route('/source')
 	.get(function(req, res){
-		fs.readFile('news_files/News_data_extract.txt', function(err, data){
+		fs.readFile('news_files/mini_data_extract.txt', function(err, data){
 			if (err) {
        			return res.send(err);
    			}
-			res.send(data.toString());
+			return res.send(data.toString());
 		});
 	});
 
