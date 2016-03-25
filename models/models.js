@@ -5,16 +5,18 @@ var mongoose = require('mongoose');
 var requestSchema = mongoose.Schema({
 	start_date: String,
 	end_date: String,
-	instr_list: String,
-	tpc_list: String
+	instr_list: [String],
+	tpc_list: [String]
 });
 
 //news format in the database, subject to change
 var newsSchema = mongoose.Schema({
-	title: String,
-	author: String,
-	//date: Date,
-	contents: String
+	date: Date,
+	instr_list: [String],
+	tpc_list: [String],
+	headline: String,
+	body: String
+
 });
 
 //topics database format

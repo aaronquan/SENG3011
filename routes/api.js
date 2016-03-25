@@ -3,14 +3,14 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var fs = require('fs');
 
+var parser = require('./api_helper/newsParser');
+
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
 
-
-
 router.route('')
 	.get(function(req, res){
-		res.send('The api path for news')
+		res.send('The api path for news');
 
 	});
 
@@ -33,6 +33,7 @@ router.route('/source')
 			if (err) {
        			return res.send(err);
    			}
+   			parser.write(data.toString());
 			return res.send(data.toString());
 		});
 	});
@@ -47,6 +48,7 @@ router.route('/news')
 	})
 	//adds a new news article into the database
 	.post(function(req, res){
+		/*
 		var news = new News();
 		news.title = req.body.title;
 		news.author = req.body.author;
@@ -55,7 +57,8 @@ router.route('/news')
 		news.save(function(err, post){
 			if (err) return res.send(500, err);	
 			return res.json(news);
-		});
+		
+		});*/
 	});
 
 router.route('/news/:id')
@@ -68,6 +71,7 @@ router.route('/news/:id')
 	})
 	//modifies and news with id
 	.put(function(req, res){
+		/*
 		News.findById(req.params.id, function(err, post){
 			news.title = req.body.title;
 			news.created_by = req.body.created_by;
@@ -78,6 +82,7 @@ router.route('/news/:id')
 				return res.json(news);
 			});
 		});
+		*/
 	})
 	//removes a news article
 	.delete(function(req, res){
