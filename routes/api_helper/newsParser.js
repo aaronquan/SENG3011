@@ -8,17 +8,20 @@ var allNewsAttributes = News.schema.paths;
 var newsAttributes = new Array(); //news attributes: headline, date, etc.
 var codeAttributes = new Array(); //code attributes: instr_list, tpc_list
 
+// creates the attribute data streams
 for (attr in allNewsAttributes){
 	if (allNewsAttributes[attr]['caster']){
 		codeAttributes[allNewsAttributes[attr]['path']] = [];
 	}
 	else if (allNewsAttributes[attr]['path'] == 'date'){
-		newsAttributes['TimeStamp'] = {'isOpen':false, 'value':''};
+		newsAttributes['TimeStamp'] = {'isOpen':false, 'value':undefined};
 	}
 	else if (['_id', '__v'].indexOf(allNewsAttributes[attr]['path']) == -1){
 		newsAttributes[allNewsAttributes[attr]['path']] = {'isOpen':false, 'value':''};
 	}
 }
+
+// looks through tags, adds them to a news object 
 var parser = new htmlparser.Parser({
 	onopentag: function(name, attr){
 		//append instr codes and tpc codes to their corresponding list
@@ -38,6 +41,7 @@ var parser = new htmlparser.Parser({
 		for(key in newsAttributes){
 			if(newsAttributes[key]['isOpen']){
 				if (key == 'TimeStamp'){
+					var date = new Date();
 					//make time object from string
 					console.log(key+': '+text);
 				}else{
@@ -56,6 +60,17 @@ var parser = new htmlparser.Parser({
 		if(name === 'ContentEnvelope'){
 			console.log('End news');
 			//add to database here
+			/*
+			var news = new News();
+			news.date = newsAttributes['TimeStamp']['value'];
+			news.headline = newsAttributes['headline']['value'];
+			news.body = newsAttributes['body']['value'];
+			news.instr_list = codeAttributes['instr_list'];
+			news.tpc_list = codeAttributes['tpc_list'];
+			news.save(function(err, post){
+				
+			});
+			*/
 		}
 	}
 }, {decodeEntities: true, lowerCaseTags: false});

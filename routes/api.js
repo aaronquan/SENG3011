@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 
 var parser = require('./api_helper/newsParser');
+var searchDb = require('./api_helper/searchAlgos');
 
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
@@ -33,6 +34,9 @@ router.route('/source')
 			if (err) {
        			return res.send(err);
    			}
+   			//searchDb('put database here', function(back){
+   				//console.log(back);
+   			//});
    			parser.write(data.toString());
 			return res.send(data.toString());
 		});
