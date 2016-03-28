@@ -27,6 +27,17 @@ function newNews(){
 var parser = new htmlparser.Parser({
 	onopentag: function(name, attr){
 		//append instr codes and tpc codes to their corresponding list
+		if (name === 'subject'){
+			var code = attr['qcode'];
+			if (/^N2:/.test(code)){
+				code = code.replace(/^N2:/, '');
+				codeAttributes['tpc_list'].push(code);
+			}
+			if (/^R:/.test(code)){
+				code = code.replace(/^R:/, '');
+				codeAttributes['instr_list'].push(code);
+			}
+		}
 	},
 	onopentagname: function(name){
 		if(name === 'ContentEnvelope'){
