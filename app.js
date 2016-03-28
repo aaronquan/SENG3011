@@ -6,6 +6,7 @@ var path = require('path');
 
 //connect database
 mongoose.connect("mongodb://aaronq:newsapi@ds015508.mlab.com:15508/seng3011-news");
+//mongoose.connect("mongodb://localhost/news");
 require('./models/models.js');
 
 //routes

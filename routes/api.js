@@ -9,7 +9,7 @@ var searchDb = require('./api_helper/searchAlgos');
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
 
-var sourceFile = 'news_files/mini_data_extract.txt';
+var sourceFile = 'news_files/News_data_extract.txt';
 
 router.route('')
 	.get(function(req, res){
