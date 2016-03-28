@@ -9,6 +9,8 @@ var searchDb = require('./api_helper/searchAlgos');
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
 
+var sourceFile = 'news_files/mini_data_extract.txt';
+
 router.route('')
 	.get(function(req, res){
 		res.send('The api path for news');
@@ -30,15 +32,24 @@ router.route('/query')
 
 router.route('/source')
 	.get(function(req, res){
-		fs.readFile('news_files/mini_data_extract.txt', function(err, data){
-			if (err) {
-       			return res.send(err);
-   			}
+		fs.readFile(sourceFile, function(err, data){
+			if (err) return res.send(err);
    			//searchDb('put database here', function(back){
    				//console.log(back);
    			//});
-   			parser.write(data.toString());
 			return res.send(data.toString());
+		});
+	});
+
+router.route('/reset')
+	.get(function(req, res){
+		fs.readFile(sourceFile, function(err, data){
+			if (err) return res.send(err);
+			News.remove({}, function(err){
+				if(err) return console.log(err);
+			});
+			parser.write(data.toString());
+			return res.send("Successfully reset database");
 		});
 	});
 
