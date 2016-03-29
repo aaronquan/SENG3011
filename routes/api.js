@@ -56,7 +56,7 @@ router.route('/reset')
 router.route('/news')
 	//views all news
 	.get(function(req, res){
-		News.find(function(err, data){
+		News.find({}).sort('-date').exec(function(err, data){
 			if (err) return res.send(500, err);
 			return res.json(data);
 		})

@@ -11,7 +11,7 @@ var requestSchema = mongoose.Schema({
 
 //news format in the database, subject to change
 var newsSchema = mongoose.Schema({
-	date: Date,
+	date: {type: Date, index: true },
 	instr_list: [String],
 	tpc_list: [String],
 	headline: String,
