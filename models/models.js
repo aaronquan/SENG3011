@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 
 //the query schema (may use date object insead of string for dates)
 var requestSchema = mongoose.Schema({
-	start_date: String,
-	end_date: String,
+	start_date: Date,
+	end_date: Date,
 	instr_list: [String],
 	tpc_list: [String]
 });
