@@ -1,1 +1,11 @@
-<p>blah blah</p>
+<div class="navbar sidebar sidebar-default">
+	<div class="container-fluid">
+		<ul class="nav nav-sidebar">
+			<li><a href="#/releases">1.0</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class='sidebar-content' ng-controller='releasesController as crt'>
+	{{crt.release.version}}
+</div>

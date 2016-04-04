@@ -6,6 +6,16 @@ app.config(function($routeProvider){
 			templateUrl: 'main.html' 
 		})
 		.when('/releases', {
-			templateUrl: 'releases.html'
+			templateUrl: 'releases.html',
+			controller: 'releasesController' 
 		})
 });
+
+app.controller('releasesController', function(){
+	this.release = info;
+});
+
+var info = {version: '1.0',
+	date: 'when',
+	decription: 'hi'
+	}
