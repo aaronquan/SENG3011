@@ -60,20 +60,6 @@ router.route('/news')
 			if (err) return res.send(500, err);
 			return res.json(data);
 		})
-	})
-	//adds a new news article into the database
-	.post(function(req, res){
-		/*
-		var news = new News();
-		news.title = req.body.title;
-		news.author = req.body.author;
-		//news.date = req.body.date;
-		news.contents = req.body.contents;
-		news.save(function(err, post){
-			if (err) return res.send(500, err);	
-			return res.json(news);
-		
-		});*/
 	});
 
 router.route('/news/:id')
@@ -83,21 +69,6 @@ router.route('/news/:id')
 			if(err) return res.send(err)
 			return res.json(post);
 		});
-	})
-	//modifies and news with id
-	.put(function(req, res){
-		/*
-		News.findById(req.params.id, function(err, post){
-			news.title = req.body.title;
-			news.created_by = req.body.created_by;
-			//news.date = req.body.date;
-			news.contents = req.body.contents;
-			news.save(function(err, post){
-				if (err) return res.send(500, err);
-				return res.json(news);
-			});
-		});
-		*/
 	})
 	//removes a news article
 	.delete(function(req, res){

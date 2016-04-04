@@ -14,6 +14,7 @@
     "mongoose": "^4.4.7",
     "node-restful": "^0.2.5",
     "path": "^0.12.7",
+    "request": "^2.69.0",
     "xml": "^1.0.1"
   },
   "devDependencies": {},

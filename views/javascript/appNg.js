@@ -16,6 +16,19 @@ app.controller('releasesController', function(){
 });
 
 var info = {version: '1.0',
-	date: 'when',
-	decription: 'hi'
+	date: '5/04/2016',
+	new_features: 
+	    {new_commands: 
+	    	[{name:'/query',
+	    	 description: 'receives a post request with conditions and returns the specified news tuples.',
+	    	 output_type: 'application/json',
+	    	 schema: []},
+			 {name: '/news',
+			 description: 'returns the full database of news',
+			 output_type: 'application/json',
+	    	 schema: []}
+	    	]
+	    },
+	comments: ['Adds and parses news file source into our MongoDB database into appropriate fields']
 	}
+
