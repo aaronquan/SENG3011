@@ -13,7 +13,8 @@
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.7",
     "node-restful": "^0.2.5",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "xml": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {

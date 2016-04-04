@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var fs = require('fs');
+var xml = require('xml');
 
 var parser = require('./api_helper/newsParser');
 var outputFunction = require('./api_helper/output');
@@ -36,7 +37,7 @@ router.route('/source')
 	.get(function(req, res){
 		fs.readFile(sourceFile, function(err, data){
 			if (err) return res.send(err);
-			return res.send(data.toString());
+			return res.send(xml(data.toString()));
 		});
 	});
 
