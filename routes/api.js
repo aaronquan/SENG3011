@@ -20,14 +20,22 @@ router.route('')
 //api/query is the route that applications are going to use.
 router.route('/query')
 	.post(function(req, res){
-		var query = new Query();
-		query.start_date = req.body.start_date;
-		query.end_date = req.body.end_date;
-		query.instr_list = req.body.instr_list;
-		query.tpc_list = req.body.tpc_list;
+//		var query = new Query();
+//		query.start_date = req.body.start_date;
+//		query.end_date = req.body.end_date;
+//		query.instr_list = req.body.instr_list;
+//		query.tpc_list = req.body.tpc_list;
 		//sends json date in the format of a news query in the spec
+        News.find({
+            'start_date': req.body.start_date,
+            'end_date': req.body.end_date,
+            'instr_list': req.body.instr_list,
+            'tpc_list' : req.body.tpc_list },
+            function (err, p) {
+                if (err) return handleError(err);
+                console.log(JSON.stringify(p));
+            });
 		res.json(query);
-
 	});
 
 router.route('/source')
