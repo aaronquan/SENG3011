@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 
 var parser = require('./api_helper/newsParser');
+var outputFunction = require('./api_helper/output');
 var searchDb = require('./api_helper/searchAlgos');
 
 var Query = mongoose.model('Query')
@@ -26,25 +27,15 @@ router.route('/query')
 //		query.instr_list = req.body.instr_list;
 //		query.tpc_list = req.body.tpc_list;
 		//sends json date in the format of a news query in the spec
-        News.find({
-            'start_date': req.body.start_date,
-            'end_date': req.body.end_date,
-            'instr_list': req.body.instr_list,
-            'tpc_list' : req.body.tpc_list },
-            function (err, p) {
-                if (err) return handleError(err);
-                console.log(JSON.stringify(p));
-            });
-		res.json(query);
+		outputFunction(query, function(info){
+			res.json(info);
+		});
 	});
 
 router.route('/source')
 	.get(function(req, res){
 		fs.readFile(sourceFile, function(err, data){
 			if (err) return res.send(err);
-   			//searchDb('put database here', function(back){
-   				//console.log(back);
-   			//});
 			return res.send(data.toString());
 		});
 	});
