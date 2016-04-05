@@ -1,12 +1,34 @@
-<div class="navbar sidebar sidebar-default">
-	<div class="container-fluid">
-		<ul class="nav nav-sidebar">
-			<li><a href="#/releases">1.0</a></li>
-		</ul>
+<div ng-controller='releasesController as ctr'>
+	<div class="navbar sidebar sidebar-default">
+		<div class="container-fluid">
+			<ul class="nav nav-sidebar">
+				<div ng-repeat='release in ctr.releases'>
+				<li><a href="#/releases">{{release.version}}</a></li>
+			</ul>
+		</div>
 	</div>
-</div>
 
-<div class='sidebar-content' ng-controller='releasesController as crt'>
-	{{crt.release.new_features}}
-	<div class='col-sm-3 col-md-2'></div>
+	<div class='sidebar-content'>
+		<div ng-repeat='release in ctr.releases'>
+			<div>
+				{{release.date}}
+			</div>
+			<div>
+				{{release.version}}
+			</div>
+			<div ng-repeat='route in release.new_routes'>
+				<li>{{route.name}} - {{route.description}}</li>
+				<div> Output-type - {{route.output_type}}</div>
+				<div ng-show="route.schema.length">
+					Schema
+					<div style='padding-left:2em' ng-repeat='attr in route.schema'>
+						<li type='circle'>{{attr}}</li>
+					</div>
+				</div>
+			</div>
+			<div ng-repeat='comment in release.implemented'>
+				{{comment}}
+			</div>
+		</div>
+	</div>
 </div>
