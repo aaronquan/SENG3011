@@ -9,11 +9,21 @@ app.config(function($routeProvider){
 			templateUrl: 'releases.html',
 			controller: 'releasesController' 
 		})
+		.when('/docs',{
+			templateUrl: 'docs.html'
+		})
 });
 
 app.controller('releasesController', function(){
 	this.releases = info;
+	
 	this.cVersion = '1.0';
+	this.selectRelease = function(version){
+		this.cVersion = version;
+	};
+	this.isSelected = function(version){
+		return this.cVersion === version;
+	};
 });
 
 var info = [
@@ -49,12 +59,14 @@ var info = [
 					  'Query using topic and instrument codes',
 					 ],
 		differences: []
-		/*
+	
 	},
 	{
 		version: '1.1',
 		date: '',
-		implemented: ['unreleased']
-		*/
+		new_routes: [],
+		implemented: ['unreleased'],
+		differences: []
+		
 	}]
 
