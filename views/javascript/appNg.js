@@ -73,11 +73,18 @@ var info = [
 
 //for the api client
 
-app.controller('clientController', function () {
+app.controller('clientController', function ($scope, $http) {
 	this.cTab = 'default';
     this.showContent = function($fileContent){
-        this.content = $fileContent;
+        this.contents = $fileContent;
     };
+    this.postContent = function(data){
+		$http.post('http://localhost:3000/api/query', data, {headers: {'Content-Type': 'application/json'} })
+			.then(function (response) {
+				$scope.contents = response.data;
+				console.log(this.contents);
+			});
+    }
     this.changeTab = function(tab){
     	this.cTab = tab;
     };
