@@ -11,11 +11,15 @@ function dateSearch(query, callback) {
         callback({"Error": "Date fields are either incorrectly formatted or empty."});
     } else {
         if (query.instr_list != "" && query.tpc_list != "") {
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": query.instr_list, "tpc_list": query.tpc_list}, call);
+            var instr_split = query.instr_list[0].split(",");
+            var tpc_split = query.tpc_list[0].split(",");
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$all": instr_split}, "tpc_list": {"$all": tpc_split}}, call);
         } else if (query.instr_list != "") {
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": query.instr_list}, call);
+            var instr_split = query.instr_list[0].split(",");
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$all": instr_split}}, call);
         } else if (query.tpc_list != "") {
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "tpc_list": query.tpc_list}, call);
+            var tpc_split = query.tpc_list[0].split(",");
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "tpc_list": {"$all": tpc_split}}, call);
         } else { 
             News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}}, call);
         }
