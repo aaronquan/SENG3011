@@ -2,9 +2,9 @@
 	<div class="navbar sidebar">
 		<div class="container-fluid">
 			<ul class="nav nav-pills nav-stacked">
-                <h3>Version</h3>
+                <h3 style="font-size: 22px">Versions</h3>
 				<li ng-repeat='release in ctr.releases' ng-class='{active:release.version === ctr.cVersion}'>
-					<a href ng-click='ctr.selectRelease(release.version)'>{{release.version}}</a>
+					<a href ng-click='ctr.selectRelease(release.version)' style='text-align: center'>{{release.version}}</a>
 				</li>
 			</ul>
 		</div>
