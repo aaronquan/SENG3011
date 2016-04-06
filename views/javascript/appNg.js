@@ -79,7 +79,8 @@ app.controller('clientController', function ($scope, $http) {
         this.contents = $fileContent;
     };
     this.postContent = function(data){
-		$http.post('http://localhost:3000/api/query', data, {headers: {'Content-Type': 'application/json'} })
+    	var url = 'http://pacificpygmyowl.herokuapp.com/api/query'
+		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
 				$scope.contents = response.data;
 				console.log(this.contents);
