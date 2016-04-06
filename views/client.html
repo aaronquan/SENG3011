@@ -1,9 +1,18 @@
 
-<div ng-controller="MainCtrl" class="container">
-<h1>Select text file</h1>
-	<input type="file" on-read-file="showContent($fileContent)" />
-	<div ng-show="content">
-		<h2>File content is:</h2>
-		<pre style="white-space: pre-wrap;">{{ content }}</pre>
+<div ng-controller="clientController as ctr" class="container">
+	<ul class="nav nav-tabs">
+		<li ng-class="{active:ctr.isTab('upload')}"><a href ng-click="ctr.changeTab('upload')">Upload File</a></li>
+		<li ng-class="{active:ctr.isTab('input')}"><a href ng-click="ctr.changeTab('input')">Input Data</a></li>
+  	</ul>
+  	<div ng-show="ctr.isTab('upload')">
+		<h1>Select text file</h1>
+		<input type="file" on-read-file="ctr.showContent($fileContent)" />
+		<div ng-show="ctr.content">
+			<h2>File content is:</h2>
+			<pre style="white-space: pre-wrap;">{{ ctr.content }}</pre>
+		</div>
+	</div>
+	<div ng-show="ctr.isTab('input')">
+		<h1>Input Data</h1>
 	</div>
 </div>

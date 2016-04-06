@@ -73,9 +73,16 @@ var info = [
 
 //for the api client
 
-app.controller('MainCtrl', function ($scope) {
-    $scope.showContent = function($fileContent){
-        $scope.content = $fileContent;
+app.controller('clientController', function () {
+	this.cTab = 'default';
+    this.showContent = function($fileContent){
+        this.content = $fileContent;
+    };
+    this.changeTab = function(tab){
+    	this.cTab = tab;
+    };
+    this.isTab = function(tab){
+    	return this.cTab === tab;
     };
   });
 
