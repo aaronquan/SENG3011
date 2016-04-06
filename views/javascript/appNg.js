@@ -6,11 +6,10 @@ app.config(function($routeProvider){
 			templateUrl: 'main.html' 
 		})
 		.when('/releases', {
-			templateUrl: 'releases.html',
-			controller: 'releasesController' 
+			templateUrl: 'releases.html' 
 		})
-		.when('/docs',{
-			templateUrl: 'docs.html'
+		.when('/client',{
+			templateUrl: 'client.html'
 		})
 });
 
@@ -42,16 +41,6 @@ var info = [
 			 		'tpc_list: topic codes associated with the news - [String]',
 			 		'instr_list: instrument codes associated with the news - [String]'
 				]
-			 },
-			 {name: '/news',
-			 description: 'returns the full database of news',
-			 output_type: 'application/json',
-			 schema: []
-			 },
-			 {name: '/source',
-			  description: 'displays the text file from where the database was created from',
-			  output_type: 'text/html',
-			  schema: []
 			 }
 			],
 		implemented: ['Database construction from news text file', 
@@ -67,6 +56,47 @@ var info = [
 		new_routes: [],
 		implemented: ['unreleased'],
 		differences: []
-		
 	}]
 
+	/*
+			{name: '/news',
+			 description: 'returns the full database of news',
+			 output_type: 'application/json',
+			 schema: []
+			 },
+			 {name: '/source',
+			  description: 'displays the text file from where the database was created from',
+			  output_type: 'text/html',
+			  schema: []
+			 }
+	*/
+
+//for the api client
+
+app.controller('MainCtrl', function ($scope) {
+    $scope.showContent = function($fileContent){
+        $scope.content = $fileContent;
+    };
+  });
+
+app.directive('onReadFile', function ($parse) {
+    return {
+        restrict: 'A',
+        scope: false,
+        link: function(scope, element, attrs) {
+            var fn = $parse(attrs.onReadFile);
+            
+            element.on('change', function(onChangeEvent) {
+                var reader = new FileReader();
+                
+                reader.onload = function(onLoadEvent) {
+                    scope.$apply(function() {
+                        fn(scope, {$fileContent:onLoadEvent.target.result});
+                    });
+                };
+
+                reader.readAsText((onChangeEvent.srcElement || onChangeEvent.target).files[0]);
+            });
+        }
+    };
+});

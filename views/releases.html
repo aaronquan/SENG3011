@@ -1,9 +1,12 @@
 <div ng-controller='releasesController as ctr'>
-	<div class="navbar sidebar sidebar-default">
+	<div class="navbar sidebar">
 		<div class="container-fluid">
 			<ul class="nav nav-pills">
 				<div ng-repeat='release in ctr.releases'>
-				<li><a ng-click='ctr.selectRelease(release.version)'>{{release.version}}</a></li>
+					<li ng-class='{active:release.version === ctr.cVersion}'>
+						<a href ng-click='ctr.selectRelease(release.version)'>{{release.version}}</a>
+					</li>
+				</div>
 			</ul>
 		</div>
 	</div>

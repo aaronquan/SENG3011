@@ -1,0 +1,9 @@
+
+<div ng-controller="MainCtrl" class="container">
+<h1>Select text file</h1>
+	<input type="file" on-read-file="showContent($fileContent)" />
+	<div ng-show="content">
+		<h2>File content is:</h2>
+		<pre style="white-space: pre-wrap;">{{ content }}</pre>
+	</div>
+</div>
