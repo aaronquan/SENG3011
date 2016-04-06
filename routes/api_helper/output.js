@@ -13,15 +13,15 @@ function dateSearch(query, callback) {
         if (query.instr_list != "" && query.tpc_list != "") {
             var instr_split = query.instr_list[0].split(",");
             var tpc_split = query.tpc_list[0].split(",");
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$all": instr_split}, "tpc_list": {"$all": tpc_split}}, call);
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$all": instr_split}, "tpc_list": {"$all": tpc_split}}, '-_id -__v', call);
         } else if (query.instr_list != "") {
             var instr_split = query.instr_list[0].split(",");
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$all": instr_split}}, call);
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$all": instr_split}}, '-__v -_id', call);
         } else if (query.tpc_list != "") {
             var tpc_split = query.tpc_list[0].split(",");
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "tpc_list": {"$all": tpc_split}}, call);
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "tpc_list": {"$all": tpc_split}}, '-_id -__v', call);
         } else { 
-            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}}, call);
+            News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}}, '-_id -__v', call);
         }
     }
 }
