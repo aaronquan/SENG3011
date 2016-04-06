@@ -11,6 +11,9 @@ app.config(function($routeProvider){
 		.when('/client',{
 			templateUrl: 'client.html'
 		})
+		.when('/guide',{
+			templateUrl: 'guide.html'
+		})
 });
 
 app.controller('releasesController', function(){
