@@ -2,6 +2,7 @@
 	<div class="navbar sidebar">
 		<div class="container-fluid">
 			<ul class="nav nav-pills nav-stacked">
+                <h3>Version</h3>
 				<li ng-repeat='release in ctr.releases' ng-class='{active:release.version === ctr.cVersion}'>
 					<a href ng-click='ctr.selectRelease(release.version)'>{{release.version}}</a>
 				</li>
@@ -12,10 +13,11 @@
 		<div ng-repeat='release in ctr.releases'>
 			<div ng-show='ctr.isSelected(release.version)'>
 				<div>
-					{{release.date}}
+                    <h4>Release Date: {{release.date}}</h4>
+                    <br>
 				</div>
 				<div>
-					{{release.version}}
+                    <!--{{release.version}}-->
 				</div>
 				<div ng-repeat='route in release.new_routes'>
 					<li>{{route.name}} - {{route.description}}</li>
