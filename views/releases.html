@@ -12,25 +12,45 @@
 	<div class='sidebar-content'>
 		<div ng-repeat='release in ctr.releases'>
 			<div ng-show='ctr.isSelected(release.version)'>
-				<div>
-                    <h4>Release Date: {{release.date}}</h4>
-                    <br>
-				</div>
-				<div>
-                    <!--{{release.version}}-->
+				<div class="page-header">
+						<h1>Version {{release.version}}  <small>{{release.date}}</small></h1>
 				</div>
 				<div ng-repeat='route in release.new_routes'>
-					<li>{{route.name}} - {{route.description}}</li>
-					<div> Output-type - {{route.output_type}}</div>
-					<div ng-show='route.schema.length'>
-						Schema
-						<div style='padding-left:2em' ng-repeat='attr in route.schema'>
-							<li type='circle'>{{attr}}</li>
-						</div>
+
+					<div class="panel panel-warning">
+					  <div class="panel-heading">
+					    <h2 class="panel-title">
+					    	<span class="label label-danger http-type" style="font-size=18px">POST</span>
+					    	<code>
+					    	/api{{route.name}}
+					    	</code>
+					    </h2>
+					  </div>
+
+					  <div class="panel-body">
+					    <p><em>{{route.description}}</em></p>
+							<p><b>Output Type:</b> {{route.output_type}}</p>
+							<p>
+								<div ng-show='route.schema.length'>
+									<b>Schema:</b>
+									<ul>
+										<div ng-repeat='attr in route.schema'>
+											<li type='circle'>{{attr}}</li>
+										</div>
+									</ul>
+								</div>
+							</p>
+					  </div>
+
 					</div>
 				</div>
-				<div ng-repeat='comment in release.implemented'>
-					{{comment}}
+				<div class="well">
+					<b>Release Notes:</b>
+					<ul>
+						<div ng-repeat='comment in release.implemented'>
+							<li>{{comment}}</li>
+						</div>
+					</ul>
 				</div>
 			</div>
 		</div>
