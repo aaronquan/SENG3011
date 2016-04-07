@@ -2,20 +2,30 @@
 <div ng-controller="clientController as ctr" class="container">
 	<ul class="nav nav-tabs">
 		<li ng-class="{active:ctr.isTab('upload')}"><a href ng-click="ctr.changeTab('upload')">Upload File</a></li>
-		<li ng-class="{active:ctr.isTab('input')}"><a href ng-click="ctr.changeTab('input')">Input Data</a></li>
-		<li ng-class="{active:ctr.isTab('example')}"><a href ng-click="ctr.changeTab('example')">Example</a></li>
+		<li ng-class="{active:ctr.isTab('input')}"><a href ng-click="ctr.changeTab('input')">Input Text</a></li>
   	</ul>
   	<div ng-show="ctr.isTab('upload')">
 		<h1>Select text file</h1>
 		<input type="file" on-read-file="ctr.postContent($fileContent)" />
+		<div ng-show="error != null">
+			<h2>Text file format</h2>
+			<pre>{{inputFormat}}</pre>
+		</div>
 			<h2>API output:</h2>
-			<pre style="white-space: pre-wrap;">{{contents}}</pre>
+			<pre style="white-space: pre-wrap;">{{contents}}{{error}}</pre>
 	</div>
 	<div ng-show="ctr.isTab('input')">
-		<h1>Input Data</h1>
-	</div>
-	<div ng-show="ctr.isTab('example')">
-		<h1>Example</h1>
-		<pre style="white-space: pre-wrap;">{{inputExample}}</pre>
+		<h1>Input Text</h1>
+		{{ctr.inputNew}}
+		<form ng-submit="ctr.postContent2(inputExample)">
+			<textarea rows='10' style="width:100%" ng-model='inputExample'>{{inputExample}}</textarea>
+			<button type='submit'>Submit</button>
+		</form><button ng-click='ctr.clearText()'>Clear</button>
+		<div ng-show="error2 != null">
+			<h2>Text file format</h2>
+			<pre>{{inputFormat}}</pre>
+		</div>
+		<h2>API output:</h2>
+			<pre style="white-space: pre-wrap;">{{contents2}}</pre>
 	</div>
 </div>

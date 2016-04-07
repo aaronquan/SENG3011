@@ -109,7 +109,7 @@ var info = [
 //for the api client
 
 app.controller('clientController', function ($scope, $http) {
-	this.cTab = 'default';
+	this.cTab = 'upload';
     this.showContent = function($fileContent){
         this.contents = $fileContent;
     };
@@ -119,8 +119,31 @@ app.controller('clientController', function ($scope, $http) {
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
 				$scope.contents = JSON.stringify(response.data, null, "  ");
-			});
+				$scope.error = null;
+			},
+			function(err) {
+				$scope.contents = null;
+    			$scope.error = ('ERR', err.data);
+    		})	
     };
+    this.postContent2 = function(data){
+    	var url = 'api/query';
+    	$scope.contents2 = null;
+    	//var url = 'http://localhost:3000/api/query'; //for local usage revert back to the above url when commiting
+		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
+			.then(function (response) {
+				$scope.contents2 = JSON.stringify(response.data, null, "  ");
+				$scope.error2 = null;
+			},
+			function(err) {
+				$scope.contents2 = null;
+    			$scope.error2 = ('ERR', err.data);
+    		})
+    };
+    this.clearText = function(){
+    	$scope.inputExample = '';
+    	console.log($scope.inputExample);
+    }
     this.changeTab = function(tab){
     	this.cTab = tab;
     };
@@ -131,7 +154,11 @@ app.controller('clientController', function ($scope, $http) {
 		.then(function(response){
 			$scope.inputExample = JSON.stringify(response.data, null, "  ");
 		});
-  });
+	$http.get('api/input')
+		.then(function(response){
+			$scope.inputFormat = JSON.stringify(response.data, null, "  ");
+		});
+	});
 
 app.directive('onReadFile', function ($parse) {
     return {

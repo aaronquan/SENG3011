@@ -9,6 +9,9 @@
 $http.post('http://pacificpygmyowl.herokuapp.com/api/query', input, {headers: {'Content-Type': 'application/json'} })
 	.then()(function (response) {
 		//do something
+	},
+	function(err) {
+		//handle error
 	});	
 	</pre>
 </div>
