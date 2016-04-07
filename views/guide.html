@@ -1,1 +1,14 @@
-Content goes here
+<div class="container-fluid" ng-controller='guideController as ctr'>
+	<h1>News API Guide</h1>
+	<h3>Input</h3>
+	<pre>{{inputFormat}}</pre>
+	<h3>Usage</h3>
+	<p>Send a post request to http://pacificpygmyowl.herokuapp.com/api/query</p>
+	<h4>AngularJS example <small>(make sure to include $http in the controller)<small></h4>
+	<pre>
+$http.post('http://pacificpygmyowl.herokuapp.com/api/query', input, {headers: {'Content-Type': 'application/json'} })
+	.then()(function (response) {
+		//do something
+	});	
+	</pre>
+</div>

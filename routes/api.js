@@ -90,6 +90,16 @@ router.route('/input')
 			}	
 		return res.json(input);
 	});
-
+router.route('/inputExample')
+	.get(function(req, res){
+		var inputEg = 
+			{
+				"start_date": "2015-10-01T00:00:00.092Z",
+				"end_date": "2015-10-01T00:15:00.000Z",
+				"instr_list": ["KRW=,KREXGR=ECI"],
+				"tpc_list": []
+			}	
+		return res.json(inputEg);
+	});
 
 module.exports = router;

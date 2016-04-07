@@ -28,6 +28,14 @@ app.controller('releasesController', function(){
 	};
 });
 
+app.controller('guideController', function($scope, $http){
+	this.cPage = 'intro';
+	$http.get('api/input')
+		.then(function(response){
+			$scope.inputFormat = JSON.stringify(response.data, null, "  ");
+		});
+});
+
 app.directive('schemaTable', function(){
 	return {
 		restrict: 'E',
@@ -48,7 +56,7 @@ var info = [
 		new_routes: 
 			[
 				{name:'/query',
-				 request: 'post',
+				 request: 'POST',
 				 description: 'receives a post request with input conditions and returns the specified news tuples',
 				 input: 
 				 	[
@@ -106,19 +114,23 @@ app.controller('clientController', function ($scope, $http) {
         this.contents = $fileContent;
     };
     this.postContent = function(data){
-    	var url = 'http://pacificpygmyowl.herokuapp.com/api/query';
+    	var url = 'api/query';
     	//var url = 'http://localhost:3000/api/query'; //for local usage revert back to the above url when commiting
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
-				$scope.contents = response.data;
+				$scope.contents = JSON.stringify(response.data, null, "  ");
 			});
-    }
+    };
     this.changeTab = function(tab){
     	this.cTab = tab;
     };
     this.isTab = function(tab){
     	return this.cTab === tab;
     };
+    $http.get('api/inputExample')
+		.then(function(response){
+			$scope.inputExample = JSON.stringify(response.data, null, "  ");
+		});
   });
 
 app.directive('onReadFile', function ($parse) {
