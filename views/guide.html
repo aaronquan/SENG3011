@@ -14,4 +14,23 @@ $http.post('http://pacificpygmyowl.herokuapp.com/api/query', input, {headers: {'
 		//handle error
 	});	
 	</pre>
+	<h4>NodeJS example <small>(Requires request module)</small></h4>
+	<pre>var request = require('request');
+
+var options = {
+	url: 'http://pacificpygmyowl.herokuapp.com/api/query',
+	method: 'POST',
+	json: {
+		"start_date": "yyyy-MM-ddTHH:mm:ss.SSSZ",
+		"end_date": "yyyy-MM-ddTHH:mm:ss.SSSZ",
+		"tpc_list": "[]",
+		"instr_list": "[]"
+	}
+};
+
+request(options, function (error, response, body) {
+	if (!error &amp;&amp; response.statusCode == 200) {
+		console.log(body.id)
+	}
+});</pre>
 </div>

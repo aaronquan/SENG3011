@@ -7,10 +7,8 @@
   	<div ng-show="ctr.isTab('upload')">
 		<h1>Select text file</h1>
 		<input type="file" on-read-file="ctr.postContent($fileContent)" />
-		<div ng-show="error != null">
 			<h2>Text file format</h2>
 			<pre>{{inputFormat}}</pre>
-		</div>
 			<h2>API output:</h2>
 			<pre style="white-space: pre-wrap;">{{contents}}{{error}}</pre>
 	</div>
@@ -21,10 +19,8 @@
 			<textarea rows='10' style="width:100%" ng-model='inputExample'>{{inputExample}}</textarea>
 			<button type='submit'>Submit</button>
 		</form><button ng-click='ctr.clearText()'>Clear</button>
-		<div ng-show="error2 != null">
 			<h2>Text file format</h2>
 			<pre>{{inputFormat}}</pre>
-		</div>
 		<h2>API output:</h2>
 			<pre style="white-space: pre-wrap;">{{contents2}}</pre>
 	</div>
