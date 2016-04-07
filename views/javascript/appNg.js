@@ -34,28 +34,45 @@ app.directive('schemaTable', function(){
 		templateUrl: 'schemaTable.html'
 	};
 });
+app.directive('inputTable', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'inputTable.html'
+	};
+});
 
 var info = [
 	{
 		version: '1.0',
 		date: '6/04/2016',
 		new_routes: 
-			[{name:'/query',
-			 description: 'receives a post request with conditions and returns the specified news tuples',
-			 output_type: 'application/json',
-			 schema:
-			 	[
-			 		{name: 'date', description: 'timestamp when the news was posted', type:'Date'},
-			 		{name: 'headline', description: 'the news headline', type:'String'},
-			 		{name: 'body', description: 'contents of the news', type:'String'},
-			 		{name: 'tpc_list', description: 'topic codes associated with the news', type:'[String]'},
-			 		{name: 'instr_list', description: 'instrument codes associated with the news', type:'[String]'}
-				]
-			 }
+			[
+				{name:'/query',
+				 request: 'post',
+				 description: 'receives a post request with input conditions and returns the specified news tuples',
+				 input: 
+				 	[
+				 		{name: 'start_date', description: 'Starting date to recieve news from', type:'Date'},
+				 		{name: 'end_date', description: 'Ending date to recieve news from', type:'Date'},
+				 		{name: 'tpc_list', description: 'List of topics to search', type:'[String]'},
+				 		{name: 'instr_list', description: 'List of instruments to search', type:'[String]'}
+				 	],
+				 output_type: 'application/json',
+				 schema:
+				 	[
+				 		{name: 'date', description: 'Timestamp when the news was posted', type:'Date'},
+				 		{name: 'headline', description: 'The news headline', type:'String'},
+				 		{name: 'body', description: 'Contents of the news', type:'String'},
+				 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
+				 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
+					]
+				}
 			],
 		implemented: ['Database construction from news text file', 
 					  'Query by date range',
 					  'Query using topic and instrument codes',
+					  'New API client to demonstrate uploading files',
+					  'API guide to show usage of the API in an application'
 					 ],
 		differences: []
 	

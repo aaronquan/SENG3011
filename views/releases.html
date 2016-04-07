@@ -29,13 +29,15 @@
 
 					  <div class="panel-body">
 					    <p><em>{{route.description}}</em></p>
-							<p><b>Output Type:</b> {{route.output_type}}</p>
+					    <div ng-show='route.input.length'>
+					    	<b>Input Schema:</b>
+					    	<ul><input-table></input-table></ul>
+						</div>
+						<p><b>Output Type:</b> {{route.output_type}}</p>
 							<p>
 								<div ng-show='route.schema.length'>
-									<b>Schema:</b>
-									<ul>
-										<schema-table></schema-table>
-									</ul>
+									<b>Output Schema:</b>
+									<ul><schema-table></schema-table></ul>
 								</div>
 							</p>
 					  </div>
