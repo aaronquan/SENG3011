@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 app.config(function($routeProvider){
 	$routeProvider
@@ -28,6 +28,13 @@ app.controller('releasesController', function(){
 	};
 });
 
+app.directive('schemaTable', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'schemaTable.html'
+	};
+});
+
 var info = [
 	{
 		version: '1.0',
@@ -38,11 +45,11 @@ var info = [
 			 output_type: 'application/json',
 			 schema:
 			 	[
-			 		'date: timestamp when the news was posted - Date',
-			 		'headline: the news headline - String',
-			 		'body: contents of the news - String',
-			 		'tpc_list: topic codes associated with the news - [String]',
-			 		'instr_list: instrument codes associated with the news - [String]'
+			 		{name: 'date', description: 'timestamp when the news was posted', type:'Date'},
+			 		{name: 'headline', description: 'the news headline', type:'String'},
+			 		{name: 'body', description: 'contents of the news', type:'String'},
+			 		{name: 'tpc_list', description: 'topic codes associated with the news', type:'[String]'},
+			 		{name: 'instr_list', description: 'instrument codes associated with the news', type:'[String]'}
 				]
 			 }
 			],

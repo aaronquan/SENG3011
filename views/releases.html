@@ -34,9 +34,7 @@
 								<div ng-show='route.schema.length'>
 									<b>Schema:</b>
 									<ul>
-										<div ng-repeat='attr in route.schema'>
-											<li type='circle'>{{attr}}</li>
-										</div>
+										<schema-table></schema-table>
 									</ul>
 								</div>
 							</p>

@@ -79,6 +79,17 @@ router.route('/news/:id')
 			return res.json("Deleted");
 		});
 	});
+router.route('/input')
+	.get(function(req, res){
+		var input = 
+			{
+				"start_date": "yyyy-MM-ddTHH:mm:ss.SSSZ",
+				"end_date": "yyyy-MM-ddTHH:mm:ss.SSSZ",
+				"tpc_list": "[]",
+				"instr_list": "[]"
+			}	
+		return res.json(input);
+	});
 
 
 module.exports = router;
