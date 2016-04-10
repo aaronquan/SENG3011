@@ -7,6 +7,7 @@ var xml = require('xml');
 var parser = require('./api_helper/newsParser');
 var outputFunction = require('./api_helper/output');
 var searchDb = require('./api_helper/searchAlgos');
+var autoTester = require('./../tests/autotests.js');
 
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
@@ -48,8 +49,15 @@ router.route('/reset')
 			News.remove({}, function(err){
 				if(err) return console.log(err);
 			});
-			parser.write(data.toString());
+			parser['parser'].write(data.toString());
 			return res.send("Successfully reset database");
+		});
+	});
+
+router.route('/autotest')
+	.get(function(req, res){
+		autoTester(function(cb){
+			res.send(cb);
 		});
 	});
 

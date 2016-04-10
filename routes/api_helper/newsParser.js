@@ -57,7 +57,6 @@ var parser = new htmlparser.Parser({
 				if (key == 'TimeStamp'){
 					var date = new Date(text);
 					newsAttributes[key]['value'] = date;
-					//console.log(key+': '+text);
 				}else{
 					newsAttributes[key]['value'] += text;
 					//console.log(key+': '+text);
@@ -89,4 +88,4 @@ var parser = new htmlparser.Parser({
 	}
 }, {decodeEntities: true, lowerCaseTags: false});
 
-module.exports = parser;
+module.exports = {parser: parser};
