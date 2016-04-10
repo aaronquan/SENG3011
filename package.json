@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "angular": "^1.5.2",
+    "async": "^2.0.0-rc.3",
     "body-parser": "^1.15.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",

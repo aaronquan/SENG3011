@@ -56,8 +56,8 @@ router.route('/reset')
 
 router.route('/autotest')
 	.get(function(req, res){
-		autoTester(function(cb){
-			res.send(cb);
+		autoTester(function(log){
+			res.send(log);
 		});
 	});
 
