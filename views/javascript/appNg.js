@@ -158,6 +158,9 @@ app.controller('clientController', function ($scope, $http) {
 		.then(function(response){
 			$scope.inputFormat = JSON.stringify(response.data, null, "  ");
 		});
+	this.date_options = ['1', '2', '3', '4', '5'];
+	this.codes = ['ABC', 'CNG', 'QWE'];
+	this.curr_display_time = new Date().toISOString().slice(0,-1);
 	});
 
 app.directive('onReadFile', function ($parse) {
