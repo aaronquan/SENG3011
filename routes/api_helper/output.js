@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 
 var News = mongoose.model('News');
 
-var output = dataSearch;
 var callbackG;
 
 function dateSearch(query, callback) {
@@ -29,4 +28,4 @@ function call(err, post) {
     callbackG(post);
 }
 
-module.exports = output;
+module.exports = dateSearch;
