@@ -10,23 +10,24 @@ var outputFunction = require('./../routes/api_helper/output');
 
 var apiOptions = {
 	uri: 'http://pacificpygmyowl.herokuapp.com/api/query',
+//    uri: 'localhost:3000/api/query',
 	method: 'POST'
 }
 
 //testQueries temp testing
 var testQueries = [
-{
-	'start_date': '2015-10-01T00:09:00.092Z',
-	'end_date': '2015-10-01T00:09:31.242Z',
-	'instr_list': [],
-	'tpc_list': []
-},
-{
-"start_date": "2015-10-01T00:00:00.092Z",
-"end_date": "2015-10-01T00:15:00.000Z",
-"instr_list": ["KRW=,KREXGR=ECI"],
-"tpc_list": []
-}
+    {
+	    'start_date': '2015-10-01T00:09:00.092Z',
+    	'end_date': '2015-10-01T00:09:31.242Z',
+	    'instr_list': [],
+    	'tpc_list': []
+    },
+    {
+        "start_date": "2015-10-01T00:00:00.092Z",
+        "end_date": "2015-10-01T00:15:00.000Z",
+        "instr_list": ["KRW=,KREXGR=ECI"],
+        "tpc_list": []
+    }
 ];
 
 var tester = function(callback){
@@ -64,11 +65,12 @@ function testDate(query, callback){
 			},
 			function(err){
 				callback(validDates);
-			});
+			}
+         );
 	});
 }
 
-function getDateRange(cb){
+/**function getDateRange(cb){
 	News.find({}).sort('-date').exec(function(err, data){
 		var dateR = {};
 		dateR['min_date'] = data[0]['date'];
@@ -81,6 +83,6 @@ function randomQuery(n){
 	getDateRange(function(range){
 
 	});
-}
+}**/
 
 module.exports = tester;
