@@ -7,7 +7,7 @@ var callbackG;
 function dateSearch(query, callback) {
     callbackG = callback;
     if (query.start_date == undefined || query.end_date == undefined) {
-        callback({"Error": "start_date or end_date undefined."});
+        callback({"Error": "start_date or end_date undefined"});
     } else {
         if (query.instr_list != "" && query.tpc_list != "") {
             var instr_split = query.instr_list[0].split(",");
