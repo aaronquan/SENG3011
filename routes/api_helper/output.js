@@ -28,4 +28,4 @@ function call(err, post) {
     callbackG(post);
 }
 
-module.exports = dataSearch;
+module.exports = dataSearc;
