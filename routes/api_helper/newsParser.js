@@ -1,5 +1,6 @@
-var htmlparser = require("htmlparser2")
+var htmlparser = require("htmlparser2");
 var mongoose = require('mongoose');
+var fs = require('fs');
 
 var News = mongoose.model('News');
 
@@ -22,7 +23,10 @@ function newNews(){
 		}
 	}
 }
-
+var instr_codes_added = [];
+var tpc_codes_added = [];
+var stream = fs.createWriteStream("routes/code_data/instr_codes.txt", {flags: 'r+'});
+var streamTpc = fs.createWriteStream("routes/code_data/tpc_codes.txt", {flags: 'r+'});
 // looks through tags, adds them to a news object 
 var parser = new htmlparser.Parser({
 	onopentag: function(name, attr){
@@ -32,10 +36,18 @@ var parser = new htmlparser.Parser({
 			if (/^N2:/.test(code)){
 				code = code.replace(/^N2:/, '');
 				codeAttributes['tpc_list'].push(code);
+				if (tpc_codes_added.indexOf(code) == -1){
+					tpc_codes_added.push(code);
+					streamTpc.write(code+"\n");
+				}
 			}
 			if (/^R:/.test(code)){
 				code = code.replace(/^R:/, '');
 				codeAttributes['instr_list'].push(code);
+				if (instr_codes_added.indexOf(code) == -1){
+					instr_codes_added.push(code);
+					stream.write(code+"\n");
+				}
 			}
 		}
 	},
@@ -82,7 +94,7 @@ var parser = new htmlparser.Parser({
 			news.tpc_list = codeAttributes['tpc_list'];
 			news.save(function(err, post){
 				if (err) return console.log(err);
-				return console.log("News entry added: success")
+				//return console.log("News entry added: success")
 			});
 		}
 	}

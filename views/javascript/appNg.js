@@ -137,7 +137,7 @@ var info = [
 //for the api client
 
 app.controller('clientController', function ($scope, $http) {
-	this.cTab = 'upload';
+	this.cTab = 'gui';
     this.showContent = function($fileContent){
         this.contents = $fileContent;
     };
@@ -186,10 +186,44 @@ app.controller('clientController', function ($scope, $http) {
 		.then(function(response){
 			$scope.inputFormat = JSON.stringify(response.data, null, "  ");
 		});
-	this.date_options = ['1', '2', '3', '4', '5'];
-	this.codes = ['ABC', 'CNG', 'QWE'];
 	this.curr_display_time = new Date().toISOString().slice(0,-1);
 	});
+
+app.controller('codeController', function($scope, $http){
+	$http.get('api/tpc_list')
+		.then(function(response){
+			console.log(response.data);
+			$scope.allCodes = response.data;
+			$scope.searchCodes = response.data;
+			$scope.currentCodes = [];
+		});
+	this.searchFor = '';
+	this.search = function(string){
+		string = string.toUpperCase();
+		$scope.searchCodes = [];
+		for(var i in $scope.allCodes){
+			if($scope.allCodes[i].indexOf(string) != -1){
+				$scope.searchCodes.push($scope.allCodes[i]);
+			}
+		}
+	}
+	this.addCode = function(code){
+		$scope.currentCodes.push(code);
+		for(var i = $scope.searchCodes.length - 1; i >= 0; i--) {
+			if($scope.searchCodes[i] === code) {
+				$scope.searchCodes.splice(i, 1);
+			}
+		}
+	}
+	this.removeCode = function(code){
+		$scope.searchCodes.push(code);
+		for(var i = $scope.currentCodes.length - 1; i >= 0; i--) {
+			if($scope.currentCodes[i] === code) {
+				$scope.currentCodes.splice(i, 1);
+			}
+		}
+	}
+});
 
 app.directive('onReadFile', function ($parse) {
     return {
