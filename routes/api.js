@@ -53,14 +53,14 @@ router.route('/reset')
 			return res.send("Successfully reset database");
 		});
 	});
-
+/*
 router.route('/autotest')
 	.get(function(req, res){
 		autoTester(function(log){
 			res.send(log);
 		});
 	});
-
+*/
 router.route('/news')
 	//views all news
 	.get(function(req, res){
