@@ -3,6 +3,7 @@
 	<ul class="nav nav-tabs">
 		<li ng-class="{active:ctr.isTab('upload')}"><a href ng-click="ctr.changeTab('upload')">Upload File</a></li>
 		<li ng-class="{active:ctr.isTab('input')}"><a href ng-click="ctr.changeTab('input')">Input Text</a></li>
+		<li ng-class="{active:ctr.isTab('gui')}"><a href ng-click="ctr.changeTab('gui')">GUI Test</a></li>
   	</ul>
   	<div ng-show="ctr.isTab('upload')">
 		<h1>Select text file</h1>
@@ -23,5 +24,15 @@
 			<pre>{{inputFormat}}</pre>
 		<h2>API output:</h2>
 			<pre style="white-space: pre-wrap;">{{contents2}}</pre>
+	</div>
+	<div ng-show="ctr.isTab('gui')">
+		<h1>This is a GUI!!!</h1>
+		<form>
+			Start date:
+			<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="startdate">
+			End date:
+			<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="enddate">
+		</form>
+
 	</div>
 </div>
