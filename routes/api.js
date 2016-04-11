@@ -69,7 +69,7 @@ router.route('/news')
 			return res.json(data);
 		})
 	});
-
+/**
 router.route('/news/:id')
 	//gets a specific news article with id
 	.get(function(req, res){
@@ -87,6 +87,7 @@ router.route('/news/:id')
 			return res.json("Deleted");
 		});
 	});
+    **/
 router.route('/input')
 	.get(function(req, res){
 		var input = 
