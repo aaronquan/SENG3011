@@ -87,7 +87,7 @@ var info = [
 	},
 	{
 		version: '1.1',
-		date: '',
+		date: '11/04/2016',
 		new_routes: [],
 		implemented: ['unreleased'],
 		differences: []
