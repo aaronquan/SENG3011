@@ -25,6 +25,7 @@ function dateSearch(query, callback) {
     }
 }
 function call(err, post) {
+    console.log(post);
     callbackG(post);
 }
 
