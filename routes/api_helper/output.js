@@ -8,7 +8,6 @@ var callbackG;
 function dateSearch(query, callback) {
     callbackG = callback;
     if (query.start_date == undefined || query.end_date == undefined) {
-        call({"Error": "Date fields are either incorrectly formatted or empty."});
     } else {
         if (query.instr_list != "" && query.tpc_list != "") {
             var instr_split = query.instr_list[0].split(",");
