@@ -19,7 +19,7 @@ app.config(function($routeProvider){
 app.controller('releasesController', function(){
 	this.releases = info;
 	
-	this.cVersion = '1.0';
+	this.cVersion = '1.1';
 	this.selectRelease = function(version){
 		this.cVersion = version;
 	};
@@ -50,6 +50,40 @@ app.directive('inputTable', function(){
 });
 
 var info = [
+	/*{
+		version: '1.2',
+		date: '',
+		new_routes: [
+            ],
+		implemented: ['unreleased'],
+		differences: []
+	},*/
+	{
+		version: '1.1',
+		date: '11/04/2016',
+		new_routes: [
+				{ name:'/newest',
+				  request: 'POST',
+				  description: 'receives a post request with input conditions and returns the specified news tuples sorted by reverse chronological order.',
+				  input: 
+				 	[
+				 		{name: 'tpc_list', description: '(Optional) List of topics to search', type:'[String]'},
+				 		{name: 'instr_list', description: '(Optional) List of instruments to search', type:'[String]'}
+				 	],
+				  output_type: 'application/json',
+				  schema:
+				 	[
+				 		{name: 'date', description: 'Timestamp when the news was posted', type:'Date'},
+				 		{name: 'headline', description: 'The news headline', type:'String'},
+				 		{name: 'body', description: 'Contents of the news', type:'String'},
+				 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
+				 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
+					]
+				}
+            ],
+		implemented: ['Query for newest news'],
+		differences: []
+	},
 	{
 		version: '1.0',
 		date: '6/04/2016',
@@ -62,8 +96,8 @@ var info = [
 				 	[
 				 		{name: 'start_date', description: 'Starting date to recieve news from', type:'Date'},
 				 		{name: 'end_date', description: 'Ending date to recieve news from', type:'Date'},
-				 		{name: 'tpc_list', description: 'List of topics to search', type:'[String]'},
-				 		{name: 'instr_list', description: 'List of instruments to search', type:'[String]'}
+				 		{name: 'tpc_list', description: '(Optional) List of topics to search', type:'[String]'},
+				 		{name: 'instr_list', description: '(Optional) List of instruments to search', type:'[String]'}
 				 	],
 				 output_type: 'application/json',
 				 schema:
@@ -84,14 +118,8 @@ var info = [
 					 ],
 		differences: []
 	
-	},
-	{
-		version: '1.1',
-		date: '11/04/2016',
-		new_routes: [],
-		implemented: ['unreleased'],
-		differences: []
-	}]
+	}
+]
 
 	/*
 			{name: '/news',
