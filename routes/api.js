@@ -6,6 +6,7 @@ var xml = require('xml');
 
 var parser = require('./api_helper/newsParser');
 var outputFunction = require('./api_helper/output');
+var getNewest = require('./api_helper/getNewest');
 var searchDb = require('./api_helper/searchAlgos');
 var autoTester = require('./../tests/autotests.js');
 
@@ -30,6 +31,15 @@ router.route('/query')
 		query.tpc_list = req.body.tpc_list;
 		//sends json date in the format of a news query in the spec
 		outputFunction(query, function(info){
+			res.json(info);
+		});
+	});
+router.route('/newest')
+	.post(function(req, res){
+		var query = new Query();
+		query.instr_list = req.body.instr_list;
+		query.tpc_list = req.body.tpc_list;
+		getNewest(query, function(info){
 			res.json(info);
 		});
 	});
