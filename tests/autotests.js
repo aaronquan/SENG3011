@@ -16,18 +16,18 @@ var apiOptions = {
 
 //testQueries temp testing
 var testQueries = [
-    /**{
+    {
 	    'start_date': '2015-10-01T00:09:00.092Z',
     	'end_date': '2015-10-01T00:09:31.242Z',
 	    'instr_list': [],
     	'tpc_list': []
-    },**/
-    {
+    }
+    /**{
         "start_date": "2015-10-01T00:00:00.092Z",
         "end_date": "2015-10-01T00:15:00.000Z",
         "instr_list": ["KRW=,KREXGR=ECI"],
         "tpc_list": []
-    }
+    }**/
 ];
 
 var tester = function(callback){
