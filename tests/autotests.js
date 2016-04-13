@@ -22,52 +22,52 @@ var testQueries = [
 	    'instr_list': [],
     	'tpc_list': []
     },
-    /**{
+    {
         "start_date": "2015-10-01T00:00:00.092Z",
         "end_date": "2015-10-01T00:15:00.000Z",
         "instr_list": ["KRW=,KREXGR=ECI"],
         "tpc_list": []
-    }**/
+    }
 ];
 
 var tester = function(callback){
 	var log = [];
 	var i = 0;
-	async.each(testQueries, 
+	async.eachSeries(testQueries, 
 		function(query, cb){
 			apiOptions['json'] = query;
-			testDate(query, function(isDatePassed){
-				if (isDatePassed){
-					log.push('passed test ' + i);
-				}else{
-					log.push('failed test ' + i);
-				}
-				i += 1;
-				cb();
+			request(apiOptions, function(err, res, body){
+				testDate(query, body, function(isDatePassed){
+					if (isDatePassed){
+						log.push('passed test ' + i);
+					}else{
+						log.push('failed test ' + i);
+					}
+					i += 1;
+					cb();
+				});
 			});
 		},
 		function (err){
 			callback(log);
 		});
 };
-function testDate(query, callback){
+function testDate(query, body, callback){
 	var s_date = new Date(query['start_date']);
 	var e_date = new Date(query['end_date']);
-	request(apiOptions, function(err, res, body){
-		var validDates = true;
-		async.each(body, 
-			function(news, cb){
-				var date = new Date(news['date']);
-				if(s_date > date && e_date < date){
-					validDates = false;
-				}
-				cb();
-			},
-			function(err){
-				callback(validDates);
+	var validDates = true;
+	async.each(body, 
+		function(news, cb){
+			var date = new Date(news['date']);
+			if(s_date > date && e_date < date){
+				validDates = false;
 			}
-         );
-	});
+			cb();
+		},
+		function(err){
+			callback(validDates);
+		}
+    );
 }
 
 /**function getDateRange(cb){
