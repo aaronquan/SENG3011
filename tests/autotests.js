@@ -14,8 +14,8 @@ var apiOptions = {
 	method: 'POST'
 }
 var allNews = {
-	//uri: 'http://pacificpygmyowl.herokuapp.com/api/news',
-	uri: 'http://localhost:3000/api/news',
+	uri: 'http://pacificpygmyowl.herokuapp.com/api/news',
+	//uri: 'http://localhost:3000/api/news',
 	method: 'GET',
 	headers: {
         'Content-Type': 'application/json'
