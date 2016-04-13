@@ -13,6 +13,14 @@ var apiOptions = {
 //    uri: 'localhost:3000/api/query',
 	method: 'POST'
 }
+var allNews = {
+	//uri: 'http://pacificpygmyowl.herokuapp.com/api/news',
+	uri: 'http://localhost:3000/api/news',
+	method: 'GET',
+	headers: {
+        'Content-Type': 'application/json'
+    }
+}
 
 //testQueries temp testing
 var testQueries = [
@@ -33,41 +41,55 @@ var testQueries = [
 var tester = function(callback){
 	var log = [];
 	var i = 0;
-	async.eachSeries(testQueries, 
-		function(query, cb){
-			apiOptions['json'] = query;
-			request(apiOptions, function(err, res, body){
-				testDate(query, body, function(isDatePassed){
-					if (isDatePassed){
-						log.push('passed test ' + i);
-					}else{
-						log.push('failed test ' + i);
-					}
-					i += 1;
-					cb();
+	request(allNews, function(err, res, fullNews){
+		fullNews = JSON.parse(fullNews);
+		async.eachSeries(testQueries, 
+			function(query, cb){
+				apiOptions['json'] = query;
+				request(apiOptions, function(err, res, body){
+					testDate(query, body, fullNews, function(isDatePassed){
+						if (isDatePassed){
+							log.push('passed test ' + i);
+						}else{
+							log.push('failed test ' + i);
+						}
+						i += 1;
+						cb();
+					});
 				});
-			});
-		},
-		function (err){
-			callback(log);
-		});
+			},
+			function (err){
+				callback(log);
+			}
+		);
+	});
 };
-function testDate(query, body, callback){
+function testDate(query, body, allNews, callback){
 	var s_date = new Date(query['start_date']);
 	var e_date = new Date(query['end_date']);
-	var validDates = true;
-	async.each(body, 
+	var newsTester = new Array();
+	async.each(allNews, 
 		function(news, cb){
 			var date = new Date(news['date']);
-			if(s_date > date && e_date < date){
-				validDates = false;
+			if(s_date <= date && e_date >= date){
+				newsTester.push(news);
 			}
 			cb();
 		},
 		function(err){
-			callback(validDates);
+			if(body.length == newsTester.length){
+				callback(true);
+			}else{
+				callback(false);
+			}
 		}
     );
+}
+function testInstrCodes(){
+
+}
+function testTpcCodes(){
+
 }
 
 /**function getDateRange(cb){

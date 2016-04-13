@@ -74,9 +74,9 @@ router.route('/autotest')
 router.route('/news')
 	//views all news
 	.get(function(req, res){
-		News.find({}).sort('-date').exec(function(err, data){
+		News.find({}, '-_id -__v').sort('-date').exec(function(err, data){
 			if (err) return res.send(500, err);
-			return res.json(data);
+			res.json(data);
 		})
 	});
 /**
