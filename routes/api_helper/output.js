@@ -10,8 +10,8 @@ function dateSearch(query, callback) {
         callback({"Error": "start_date or end_date undefined"});
     } else {
         if (query.instr_list != "" && query.tpc_list != "") {
-            var instr_split = query.instr_list[0].split(/[,\ *]/);
-            var tpc_split = query.tpc_list[0].split(/[,\ *]/);
+            var instr_split = query.instr_list.toString().split(/[,\ *]/);
+            var tpc_split = query.tpc_list.toString().split(/[,\ *]/);
             console.log("Instr");
             console.log(instr_split)
             console.log("TPC");
