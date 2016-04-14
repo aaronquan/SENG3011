@@ -33,6 +33,7 @@ function dateSearch(query, callback) {
     }
 }
 function call(err, post) {
+    console.log(post);
     console.log("                                     Finished");
     callbackG(post);
 }
