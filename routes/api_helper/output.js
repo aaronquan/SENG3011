@@ -10,8 +10,10 @@ function dateSearch(query, callback) {
         callback({"Error": "start_date or end_date undefined"});
     } else {
         if (query.instr_list != "" && query.tpc_list != "") {
-            var instr_split = query.instr_list[0].split(",");
-            var tpc_split = query.tpc_list[0].split(",");
+            var instr_split = query.instr_list[0].split(/[,\ *]/);
+            var tpc_split = query.tpc_list[0].split(/[,\ *]/);
+            console.log(instr_split)
+            console.log(tpc_split)
             News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$in": instr_split}, "tpc_list": {"$in": tpc_split}}, '-_id -__v', call);
         } else if (query.instr_list != "") {
             var instr_split = query.instr_list[0].split(",");
@@ -25,7 +27,6 @@ function dateSearch(query, callback) {
     }
 }
 function call(err, post) {
-    console.log(post);
     console.log("                                     Finished");
     callbackG(post);
 }
