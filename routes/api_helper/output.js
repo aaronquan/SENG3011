@@ -30,7 +30,6 @@ function dateSearch(query, callback) {
 }
 function call(err, post) {
     console.log("                                     Finished");
-    post = {"Hi": "hello"}
     callbackG(post);
 }
 
