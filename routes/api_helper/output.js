@@ -18,12 +18,12 @@ function dateSearch(query, callback) {
             console.log(tpc_split)
             News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$in": instr_split}, "tpc_list": {"$in": tpc_split}}, '-_id -__v', call);
         } else if (query.instr_list != "") {
-            var instr_split = query.instr_list[0].split(",");
+            var instr_split = query.instr_list.toString().split(",");
             console.log("Instr");
             console.log(instr_split)
             News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "instr_list": {"$in": instr_split}}, '-__v -_id', call);
         } else if (query.tpc_list != "") {
-            var tpc_split = query.tpc_list[0].split(",");
+            var tpc_split = query.tpc_list.toString().split(",");
             console.log("TPC");
             console.log(tpc_split)
             News.find({"date": {"$gte": query.start_date, "$lte": query.end_date}, "tpc_list": {"$in": tpc_split}}, '-_id -__v', call);
