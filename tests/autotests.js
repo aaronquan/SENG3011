@@ -58,13 +58,13 @@ var tester = function(callback){
 			function(query, index, cb){
 				apiOptions['json'] = query;
 				request(apiOptions, function(err, res, body){
-					testDate(query, body, fullNews, function(isDatePassed, test){
-						log.push(test);
-						log.push(body.length);
+					testQuery(query, body, fullNews, function(isDatePassed, test){
 						if (isDatePassed){
 							log.push('passed test ' + index);
 						}else{
 							log.push('failed test ' + index);
+							log.push(test + ' entries found in test');
+							log.push(body.length + ' entries found in api');
 						}
 						cb();
 					});
@@ -76,13 +76,11 @@ var tester = function(callback){
 		);
 	});
 };
-function testDate(query, body, allNews, callback){
+function testQuery(query, body, allNews, callback){
 	var s_date = new Date(query['start_date']);
 	var e_date = new Date(query['end_date']);
 	var instr_list = query['instr_list'];
-	console.log(instr_list.length);
 	var tpc_list = query['tpc_list'];
-	console.log(tpc_list.length);
 	var newsTester = new Array();
 	async.each(allNews, 
 		function(news, cb){
@@ -115,7 +113,6 @@ function testDate(query, body, allNews, callback){
 				else if(hasList){
 					for(i=0; i < tpc_list.length; i++){
 						if(news['tpc_list'].indexOf(tpc_list[i]) != -1){
-
 							newsTester.push(news);
 							continue;
 						}
