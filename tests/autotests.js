@@ -81,7 +81,6 @@ function testQuery(query, body, allNews, callback){
 	var e_date = new Date(query['end_date']);
 	var instr_list = query['instr_list'];
 	var tpc_list = query['tpc_list'];
-    console.log(tpc_list);
 	var newsTester = new Array();
 	async.each(allNews, 
 		function(news, cb){
