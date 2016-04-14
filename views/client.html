@@ -33,9 +33,28 @@
 			End date:
 			<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="enddate">
 			<div ng-controller='codeController as codes'>
-				<input type="text" ng-model='codes.searchFor' ng-change='codes.search(codes.searchFor)'>{{codes.searchFor}}
-				<button class='btn-success' ng-repeat='code in searchCodes' ng-click='codes.addCode(code)'>{{code}}</button><br>
-				<button class='btn-primary' ng-repeat='code in currentCodes' ng-click='codes.removeCode(code)'>{{code}}</button>
+				<div click-anywhere-but-here='codes.setSelectedTpc(false)'>
+					<div class='code-area'>
+						<span class='code-tag' ng-repeat='code in currentCodesTpc' ng-click='codes.removeCodeTpc(code)'>{{code}}</span>
+					</div>
+					<input type="text" class='form-control code-width' ng-model='codes.searchForTpc' ng-change="codes.searchTpc(codes.searchForTpc)" ng-focus='codes.setSelectedTpc(true)'>
+					<div ng-show='codes.textSelectedTpc'>
+						<div class='code-option code-width'> 
+							<li ng-repeat='code in searchCodesTpc' ng-click='codes.addCodeTpc(code)'>{{code}}</li>
+						</div>
+					</div>
+				</div>
+				<div click-anywhere-but-here='codes.setSelectedInstr(false)'>
+					<div class='code-area'>
+						<span class='code-tag' ng-repeat='code in currentCodesInstr' ng-click='codes.removeCodeInstr(code)'>{{code}}</span>
+					</div>
+					<input type="text" class='form-control code-width' ng-model='codes.searchForInstr' ng-change="codes.searchInstr(codes.searchForInstr)" ng-focus='codes.setSelectedInstr(true)'>
+					<div ng-show='codes.textSelectedInstr'>
+						<div class='code-option code-width'> 
+							<li ng-repeat='code in searchCodesInstr' ng-click='codes.addCodeInstr(code)'>{{code}}</li>
+						</div>
+					</div>
+				</div>
 			</div>
 		</form>
 

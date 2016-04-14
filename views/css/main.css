@@ -2,3 +2,41 @@
   font-size: 100%;
   font-weight: bold;
 }
+
+/** option styles **/
+
+.code-option { 
+	background-color: white;
+	position:absolute;
+    padding: 10px; 
+    border: 2px solid #6666cc; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 400px;
+    overflow: scroll;
+}
+.code-option > li {border-bottom: 1px solid #e1e1e1}
+.code-option:hover > li:hover { background-color: #f4f4f4; color: #66CC99;}
+
+.code-width {
+	width: 300px;
+}
+
+.code-area {
+	background-color: white;
+    padding: 10px; 
+    border: 2px solid #f4f4f4; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+.code-tag{
+	background-color: #e3e3e3;
+	border: 1px solid #3333ff;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}

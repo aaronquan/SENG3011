@@ -192,36 +192,105 @@ app.controller('clientController', function ($scope, $http) {
 app.controller('codeController', function($scope, $http){
 	$http.get('api/tpc_list')
 		.then(function(response){
-			console.log(response.data);
-			$scope.allCodes = response.data;
-			$scope.searchCodes = response.data;
-			$scope.currentCodes = [];
+			$scope.allCodesTpc = response.data;
+			$scope.searchCodesTpc = response.data;
+			$scope.currentCodesTpc = [];
 		});
-	this.searchFor = '';
-	this.search = function(string){
+	$http.get('api/instr_list')
+		.then(function(response){
+			$scope.allCodesInstr = response.data;
+			$scope.searchCodesInstr = response.data;
+			$scope.currentCodesInstr = [];
+		});
+	this.textSelectedTpc = false;	
+	this.textSelectedInstr = false;
+	this.searchForTpc = '';
+	this.searchForInstr = '';
+	this.searchTpc = function(string){
+		console.log($scope.allCodesTpc);
 		string = string.toUpperCase();
-		$scope.searchCodes = [];
-		for(var i in $scope.allCodes){
-			if($scope.allCodes[i].indexOf(string) != -1){
-				$scope.searchCodes.push($scope.allCodes[i]);
+		$scope.searchCodesTpc = [];
+		if (string == ''){
+			$scope.searchCodesTpc = $scope.allCodesTpc;
+			return;
+		}
+		for(var i in $scope.allCodesTpc){
+			if($scope.allCodesTpc[i].indexOf(string) != -1){
+				$scope.searchCodesTpc.push($scope.allCodesTpc[i]);
 			}
 		}
 	}
-	this.addCode = function(code){
-		$scope.currentCodes.push(code);
-		for(var i = $scope.searchCodes.length - 1; i >= 0; i--) {
-			if($scope.searchCodes[i] === code) {
-				$scope.searchCodes.splice(i, 1);
+	this.searchInstr = function(string){
+		console.log($scope.allCodesInstr);
+		string = string.toUpperCase();
+		$scope.searchCodesInstr = [];
+		if (string == ''){
+			$scope.searchCodesInstr = $scope.allCodesInstr;
+			return;
+		}
+		for(var i in $scope.allCodesInstr){
+			if($scope.allCodesInstr[i].indexOf(string) != -1){
+				$scope.searchCodesInstr.push($scope.allCodesInstr[i]);
 			}
 		}
 	}
-	this.removeCode = function(code){
-		$scope.searchCodes.push(code);
-		for(var i = $scope.currentCodes.length - 1; i >= 0; i--) {
-			if($scope.currentCodes[i] === code) {
-				$scope.currentCodes.splice(i, 1);
+	this.addCodeTpc = function(code){
+		$scope.currentCodesTpc.push(code);
+		for(var i = $scope.searchCodesTpc.length - 1; i >= 0; i--) {
+			if($scope.searchCodesTpc[i] === code) {
+				$scope.searchCodesTpc.splice(i, 1);
+				break;
 			}
 		}
+		/*for(var i = $scope.allCodes['tpc_list'].length - 1; i >= 0; i--) {
+			if($scope.allCodes['tpc_list'][i] === code) {
+				$scope.allCodes['tpc_list'].splice(i, 1);
+				break;
+			}
+		}*/
+	}
+	this.addCodeInstr = function(code){
+		$scope.currentCodesInstr.push(code);
+		for(var i = $scope.searchCodesInstr.length - 1; i >= 0; i--) {
+			if($scope.searchCodesInstr[i] === code) {
+				$scope.searchCodesInstr.splice(i, 1);
+				break;
+			}
+		}
+		/*for(var i = $scope.allCodes['tpc_list'].length - 1; i >= 0; i--) {
+			if($scope.allCodes['tpc_list'][i] === code) {
+				$scope.allCodes['tpc_list'].splice(i, 1);
+				break;
+			}
+		}*/
+	}
+	this.removeCodeTpc = function(code){
+		$scope.searchCodesTpc.push(code);
+		//$scope.allCodes['tpc_list'].push(code);
+		for(var i = $scope.currentCodesTpc.length - 1; i >= 0; i--) {
+			if($scope.currentCodesTpc[i] === code) {
+				$scope.currentCodesTpc.splice(i, 1);
+				break;
+			}
+		}
+	}
+	this.removeCodeInstr = function(code){
+		$scope.searchCodesInstr.push(code);
+		//$scope.allCodes['tpc_list'].push(code);
+		for(var i = $scope.currentCodesInstr.length - 1; i >= 0; i--) {
+			if($scope.currentCodesInstr[i] === code) {
+				$scope.currentCodesInstr.splice(i, 1);
+				break;
+			}
+		}
+	}
+	this.setSelectedTpc = function(bool){
+		this.textSelectedTpc = bool;
+		this.textSelectedInstr = false;
+	}
+	this.setSelectedInstr = function(bool){
+		this.textSelectedInstr = bool;
+		this.textSelectedTpc = false;
 	}
 });
 
@@ -245,4 +314,49 @@ app.directive('onReadFile', function ($parse) {
             });
         }
     };
+});
+
+app.factory('clickAnywhereButHereService', function($document){
+  var tracker = [];
+
+  return function($scope, expr) {
+    var i, t, len;
+    for(i = 0, len = tracker.length; i < len; i++) {
+      t = tracker[i];
+      if(t.expr === expr && t.scope === $scope) {
+        return t;    
+      }
+    }
+    var handler = function() {
+      $scope.$apply(expr);
+    };
+
+    $document.on('click', handler);
+
+    // IMPORTANT! Tear down this event handler when the scope is destroyed.
+    $scope.$on('$destroy', function(){
+      $document.off('click', handler);
+    });
+
+    t = { scope: $scope, expr: expr };
+    tracker.push(t);
+    return t;
+  };
+});
+app.directive('clickAnywhereButHere', function($document, clickAnywhereButHereService){
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attr, ctrl) {
+      var handler = function(e) {
+        e.stopPropagation();
+      };
+      elem.on('click', handler);
+
+      scope.$on('$destroy', function(){
+        elem.off('click', handler);
+      });
+
+      clickAnywhereButHereService(scope, attr.clickAnywhereButHere);
+    }
+  };
 });

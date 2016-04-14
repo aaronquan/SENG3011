@@ -90,7 +90,6 @@ function testQuery(query, body, allNews, callback){
 			if(s_date <= date && e_date >= date){
 				if(instr_list.length == 0 && tpc_list.length == 0){
 					newsTester.push(news);
-					console.log('help');
 					pushed = true;
 				}
 				if(instr_list.length == 0){
@@ -98,7 +97,6 @@ function testQuery(query, body, allNews, callback){
 				}
 				else{
 					for(i=0; i < instr_list.length; i++){
-						//console.log(instr_list[i]);
 						if(news['instr_list'].indexOf(instr_list[i]) != -1){							
 							hasList = true;
 							continue;
