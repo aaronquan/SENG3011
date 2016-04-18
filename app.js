@@ -14,6 +14,16 @@ var api = require('./routes/api');
 var index = require('./routes/index');
 
 var app = express();
+var cors = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    if ('OPTIONS' == req.method) {
+        res.send(200);
+    } else {
+        next();
+    }
+};
 
 //makes json look decent
 app.set('json spaces', 30)
