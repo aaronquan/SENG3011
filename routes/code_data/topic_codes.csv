@@ -13,8 +13,8 @@ REAM,Real Estate Markets,"All stories that cover property companies or any typ
 REG,Disclosure to Regulators (UK),UK regulatory news stories from PIPs (Primary Information Providers) only.
 REGS,Regulatory Issues,"Regulatory stories. Financial markets, securities, tax and utilities regulation and enforcement by regional, central and local government bodies.  "
 RSUM,Reuters summits,News from Reuters industry summits
-TOP,Top News,All top news items. TO BE USED BY REUTERS ONLY
-WIN,Reuters Exclusive News  REUTERS & FACTIVA INTERNAL USE ONLY,All news where Reuters has exclusive material.  TO BE USED BY REUTERS & FACTIVA ONLY
+TOP,Top News,All top news items.
+WIN,Reuters Exclusive News,All news where Reuters has exclusive material.
 ,,
 Equities Codes,,
 ,,
@@ -23,7 +23,7 @@ CONV,Convertible Bonds,
 CORA,Corporate Analysis,Analysis about a company or group of companies.
 DIV,Dividends,"Dividend forecasts, declarations and payments."
 EXCA,Exchange activities,
-HOT,Hot Stocks,News about stocks on the move. REGULATE USE FROM THIRD PARTIES.
+HOT,Hot Stocks,News about stocks on the move.
 IPO,Initial Public Offerings,First public listing of a company’s stock.
 MNGISS,Management issues/policy,"News content about management issues including stories about executive pay, bonuses and corporate governance. Would also include stories on accounting irregularities and auditor issues."
 MRG,Mergers and Acquisitions (including changes of ownership),All corporate stories about change of ownership; share stakes; mergers; acquisitions; buy-outs; share buybacks; joint ventures; asset transfers; privatisation.
@@ -34,53 +34,53 @@ RES,Corporate Results,"All corporate financial results; tabular and textual repo
 RESF,Corporate Results Forecasts,All forecasting of corporate financial results; tabular and textual reports.
 STX,Stock Markets,"All news about equity markets operations, regulations and structure; additions and deletions from stock indices;  all new listings; delistings; suspensions; stock markets. (This code should not be used for news about individual companies, hot stocks or broker research)."
 ,,
-Industrial Sector Codes (NB: MSCI Numerical Code in ( ) next to MSCI Alpha Code),,
-,,MSCI = Morgan Stanley Sector Code
+Industrial Sector Codes,,
+,,
 ADV,Advertising,All stories about corporate advertising and promotional activities; such activities by other organisations; activities of advertising agencies. 
-AER (31),Aerospace,"Engines and parts for aerospace equipment; diversified military products; spacecraft; space systems; control, radio and electronic equipment for aerospace and defence; aircraft manufacture; regulation or regulatory bodies associated with the aerospace and defence industries. MSCI"
-AIR (56),Air Transport,Commercial airlines and their staff; airports and ground services; air freight forwarding; passenger traffic figures; regulation or regulatory bodies associated with the aviation industry; aircraft leasing.  MSCI
-APL (41),Electrical Appliances,"Durable household goods and appliances, including light electric appliances; consumer electronics including personal computers; furniture; sewing machines; ceiling fans.  MSCI"
-AUT (42),Automobiles and Automotive Equipment,"Automobile and van design, manufacture, assembly and sales; regulation or regulatory bodies associated with the automobile manufacturing industry and motor shows.  MSCI"
-BEV (43),Beverages and Tobacco,Soft drinks; mineral waters; alcoholic beverages; breweries; wines and tobacco products.  MSCI
+AER,Aerospace,"Engines and parts for aerospace equipment; diversified military products; spacecraft; space systems; control, radio and electronic equipment for aerospace and defence; aircraft manufacture; regulation or regulatory bodies associated with the aerospace and defence industries. "
+AIR,Air Transport,Commercial airlines and their staff; airports and ground services; air freight forwarding; passenger traffic figures; regulation or regulatory bodies associated with the aviation industry; aircraft leasing.  
+APL,Electrical Appliances,"Durable household goods and appliances, including light electric appliances; consumer electronics including personal computers; furniture; sewing machines; ceiling fans.  "
+AUT,Automobiles and Automotive Equipment,"Automobile and van design, manufacture, assembly and sales; regulation or regulatory bodies associated with the automobile manufacturing industry and motor shows.  "
+BEV,Beverages and Tobacco,Soft drinks; mineral waters; alcoholic beverages; breweries; wines and tobacco products.  
 BIOT,Biotechnology,
-BLD (21),Building Materials,Cement; concrete; gypsum; chalk; sand; bricks; tiles; pipes; clays; glass; fibre products; plywood; doors; windows; glass; plumbing fixtures; central heating equipment; wallpaper and decorating materials.  MSCI
-BNK (61),Banking,"Private banking; medium-term financing; all depository and credit institutions -- e.g. commercial banks, clearing banks, savings and loans, chartered banks, universal banks; futures and options exchanges and regulation or regulatory bodies associated with the banking industry.MSCI "
-BUS (52),"Business, Public Services","Services to business and consumers including office supplies; advertising/marketing; data vendors, software development and data processing; security; transporters, custom agents, package & mail delivery; port-harbour transport & warehousing; airport, port, tunnel, highway management; agencies; water distribution; waste management, cleaning, water filtration. MSCI"
-CHE (22),Chemicals,"Plastics; synthetic rubber and fibres; industrial gases; paints, coatings and resins; fertilizers, pesticides; flavourings; food additives; explosives; printing ink.  MSCI"
-CON (32),Construction and Property,"Building construction including housing starts; prefabricated housing; civil engineering including roads, bridges, tunnels; general infrastructure.  MSCI"
-DPR (33),Data Processing and Reproduction,"Business computers, photocopiers, copiers, fax machines and other office Machinery.  MSCI"
-DRU (45),"Pharmaceuticals, Health, Personal Care","Drugs; pharmaceuticals; diagnostic and surgical products and instruments; optical wear including contact lenses; cosmetics, toiletries; sanitary products; hospitals and clinics as businesses; diseases; AIDS and Cancer research and surveys.  MSCI"
-ELC (34),"Electronic,  Electrical and Telecommunications Equipment",Turbines and heavy electrical machinery; robotics; communication systems; control systems; telecommunications equipment.  MSCI
-ELG (12),Utilities,"Production and distribution of electricity and gas, including gas pipelines, wind power, nuclear power and hydro-electricity.  MSCI"
-ELI,Semiconductors and Active Components,"Semiconductors, chips.  MSCI"
-ENQ (36),Energy Equipment,Providers of equipment and/or services to energy companies; drilling equipment; platform construction and oilfield services.  MSCI
-ENR (11),Energy and Resources,"Oil, petroleum, coal and natural gas exploration, extraction, refining and distribution, including oil/gas pipelines.  MSCI"
-FIN (62),Financial and Business Services,"Agents or brokers of financing and financial services; investment trusts; offshore funds; investment banks; brokers; merchant banks; travel-related money services; personal, consumer and educational credit; lease financing and regulation or regulatory bodies associated with the financial services industry. MSCI"
-FOD (44),Food,"All food products, excluding raw commodities; processed foods; detergents & soaps.   MSCI"
-GDM (81),Gold and Precious Materials,"Precious metals - gold, silver, platinum, palladium, rhodium, bullion, Krugerrands, ingot; diamonds.  MSCI"
+BLD,Building Materials,Cement; concrete; gypsum; chalk; sand; bricks; tiles; pipes; clays; glass; fibre products; plywood; doors; windows; glass; plumbing fixtures; central heating equipment; wallpaper and decorating materials.  
+BNK,Banking,"Private banking; medium-term financing; all depository and credit institutions -- e.g. commercial banks, clearing banks, savings and loans, chartered banks, universal banks; futures and options exchanges and regulation or regulatory bodies associated with the banking industry. "
+BUS,"Business, Public Services","Services to business and consumers including office supplies; advertising/marketing; data vendors, software development and data processing; security; transporters, custom agents, package & mail delivery; port-harbour transport & warehousing; airport, port, tunnel, highway management; agencies; water distribution; waste management, cleaning, water filtration. "
+CHE,Chemicals,"Plastics; synthetic rubber and fibres; industrial gases; paints, coatings and resins; fertilizers, pesticides; flavourings; food additives; explosives; printing ink.  "
+CON,Construction and Property,"Building construction including housing starts; prefabricated housing; civil engineering including roads, bridges, tunnels; general infrastructure.  "
+DPR,Data Processing and Reproduction,"Business computers, photocopiers, copiers, fax machines and other office Machinery.  "
+DRU,"Pharmaceuticals, Health, Personal Care","Drugs; pharmaceuticals; diagnostic and surgical products and instruments; optical wear including contact lenses; cosmetics, toiletries; sanitary products; hospitals and clinics as businesses; diseases; AIDS and Cancer research and surveys.  "
+ELC,"Electronic,  Electrical and Telecommunications Equipment",Turbines and heavy electrical machinery; robotics; communication systems; control systems; telecommunications equipment.  
+ELG,Utilities,"Production and distribution of electricity and gas, including gas pipelines, wind power, nuclear power and hydro-electricity.  "
+ELI,Semiconductors and Active Components,"Semiconductors, chips.  "
+ENQ,Energy Equipment,Providers of equipment and/or services to energy companies; drilling equipment; platform construction and oilfield services.  
+ENR,Energy and Resources,"Oil, petroleum, coal and natural gas exploration, extraction, refining and distribution, including oil/gas pipelines.  "
+FIN,Financial and Business Services,"Agents or brokers of financing and financial services; investment trusts; offshore funds; investment banks; brokers; merchant banks; travel-related money services; personal, consumer and educational credit; lease financing and regulation or regulatory bodies associated with the financial services industry. "
+FOD,Food,"All food products, excluding raw commodities; processed foods; detergents & soaps.   "
+GDM,Gold and Precious Materials,"Precious metals - gold, silver, platinum, palladium, rhodium, bullion, Krugerrands, ingot; diamonds.  "
 GSFT,Games software,
 HDWR,Computer hardware,
-IND (37),Industrial Components,Vehicle parts; cables and wires; ball bearings.  MSCI
-INS (63),Insurance,Life and health insurance; property and casualty insurance; reinsurance; regulation or regulatory bodies associated with the insurance industry; medicare and medicaid and insurance brokers.  MSCI
+IND,Industrial Components,Vehicle parts; cables and wires; ball bearings.  
+INS,Insurance,Life and health insurance; property and casualty insurance; reinsurance; regulation or regulatory bodies associated with the insurance industry; medicare and medicaid and insurance brokers.  
 ISLF,Islamic Finance,News relating to Islamic finance and banking. Stories about banks run entirely according to koranic precepts. Stories about the development of islamic bond markets as well as the individual issuance of islamic bonds. Development of islamic banking regulations and other guidelines similarly.
-LEI (53),Tourism and Leisure,"Hotels; restaurants; cafes; cinemas; film production and distribution; travel agents; resorts; casinos; amusement parks; stadia; golf courses, holidays; features about tourist places and destinations; tourist issues; tourism statistics.  MSCI"
-MAC (38),Metal Goods and Engineering,"Manufacturing of any vehicle other than automobiles, including motorcycles, tractors, trucks, locomotives and railcars; shipbuilding; agricultural machinery; earth moving and construction machinery; elevators and escalators; air conditioning; energy-saving equiptment. MSCI"
-MET (24),Non-Ferrous Metals,"Exploration, extraction, refining, trading and pricing of all non-ferrous metals.  Copper, lead, zinc, tin, aluminium, aluminum, nickel, London Metal Exchange (LME), smelters, iron, antimonym arsenic, bismuth,cadmium, chrome, cobalt, gallium, germanium, indium, magnesium, manganese, mercury, molybdinum, ruthenium, selenium, silcon, tantalite, titanium, tungsten, vanadium, wolfram, batteries. MSCI"
-MIS (26),Miscellanous Materials,"Commodities and products not included in other materials categories,  including mineral sand, sugar cane, coconuts, seeds, glass excluding windows and tableware), cellulose, containers, clay, quarries, insulating products, carbon products and diversified producers of materials products. MSCI"
-MUL (71),Multi-Industry,"Diversified companies which are not classifiable in a specific industry, including holding companies unless they are concentrated in a specific industry.  MSCI"
-PUB (51),"Broadcasting, Publishing, Media","Radio and television stations including cable and satellite; publishers of  books, magazines and newspapers; news agencies.  MSCI"
-REA (64),Real Estate,"Estate agents, property developers, selling/leasing of residential and commercial property.  MSCI"
-REC (46),Recreational and Sports Goods,"Cameras, musical instruments, records, tapes, compact discs, sports equipment, toys including video games, recreational vehicles, watches, other consumer goods.  MSCI"
-RET (54),Retail,All retailing including retail sales and consumer prices indices.  MSCI
-RRL (57),Road and Rail,Transportation of goods and passengers via road or rail; government policy regarding infrastructure; infrastructure construction; regulatory bodies and unions asssociated with road and rail transport; road or rail accidents and rolling stock.  MSCI
+LEI,Tourism and Leisure,"Hotels; restaurants; cafes; cinemas; film production and distribution; travel agents; resorts; casinos; amusement parks; stadia; golf courses, holidays; features about tourist places and destinations; tourist issues; tourism statistics.  "
+MAC,Metal Goods and Engineering,"Manufacturing of any vehicle other than automobiles, including motorcycles, tractors, trucks, locomotives and railcars; shipbuilding; agricultural machinery; earth moving and construction machinery; elevators and escalators; air conditioning; energy-saving equiptment. "
+MET,Non-Ferrous Metals,"Exploration, extraction, refining, trading and pricing of all non-ferrous metals.  Copper, lead, zinc, tin, aluminium, aluminum, nickel, London Metal Exchange (LME), smelters, iron, antimonym arsenic, bismuth,cadmium, chrome, cobalt, gallium, germanium, indium, magnesium, manganese, mercury, molybdinum, ruthenium, selenium, silcon, tantalite, titanium, tungsten, vanadium, wolfram, batteries. "
+MIS,Miscellanous Materials,"Commodities and products not included in other materials categories,  including mineral sand, sugar cane, coconuts, seeds, glass excluding windows and tableware), cellulose, containers, clay, quarries, insulating products, carbon products and diversified producers of materials products. "
+MUL,Multi-Industry,"Diversified companies which are not classifiable in a specific industry, including holding companies unless they are concentrated in a specific industry.  "
+PUB,"Broadcasting, Publishing, Media","Radio and television stations including cable and satellite; publishers of  books, magazines and newspapers; news agencies.  "
+REA,Real Estate,"Estate agents, property developers, selling/leasing of residential and commercial property.  "
+REC,Recreational and Sports Goods,"Cameras, musical instruments, records, tapes, compact discs, sports equipment, toys including video games, recreational vehicles, watches, other consumer goods.  "
+RET,Retail,All retailing including retail sales and consumer prices indices.  
+RRL,Road and Rail,Transportation of goods and passengers via road or rail; government policy regarding infrastructure; infrastructure construction; regulatory bodies and unions asssociated with road and rail transport; road or rail accidents and rolling stock.  
 SFWR,Computer software,"Stories about companies whose main business is production of software. This is an industry sector code, so most of the time it will be applied where there is a relevant company in the story.  For the tiny fraction of stories about software industy where there is no company mentioned, the code will also be used."
-SHP (58),Shipping,Maritime transporters of goods and passengers.  MSCI
-STL (25),Iron & Steel,Iron and Steel Manufacturing.  MSCI
+SHP,Shipping,Maritime transporters of goods and passengers.  
+STL,Iron & Steel,Iron and Steel Manufacturing.  
 TBCS,Television broadcasting,
-TEL (55),Telecommunications Services,Telephones; mobile phones; telecommunications networks and services.  MSCI
-TEX (47),Textiles & Clothing,"Textiles, including `raw materials'; design, manufacture and distribution of fabric and apparel, including, knitwear, hosiery and shoes; fashion houses and clothiers. MSCI"
-TIM (23),Forestry & Timber,Forestry; lumber (including lumber futures); timber; logging; all types of wood; sawmills; pulp; paper making; paper mills; newsprint and tissues.  MSCI
-WHO (59),Wholesale,"Wholesaling and distribution, including wholesale price indices.  MSCI"
+TEL,Telecommunications Services,Telephones; mobile phones; telecommunications networks and services.  
+TEX,Textiles & Clothing,"Textiles, including `raw materials'; design, manufacture and distribution of fabric and apparel, including, knitwear, hosiery and shoes; fashion houses and clothiers. "
+TIM,Forestry & Timber,Forestry; lumber (including lumber futures); timber; logging; all types of wood; sawmills; pulp; paper making; paper mills; newsprint and tissues.  
+WHO,Wholesale,"Wholesaling and distribution, including wholesale price indices.  "
 WWW,Internet/World Wide Web,All news stories relating to the internet or the World Wide Web.
 ,,
 "Economy, Central Banking & Institution Codes",,
@@ -209,8 +209,8 @@ AFF,Africa,All French news stories covering events relating to this region
 BAK,Balkan states,All news stories covering events relating to these countries
 EMRG,Emerging Countries,"All stories about countries where economies are deemed to be emerging or about topics that would be of interest to clients working in the emerging market sector. There is no set list of countries which would automatically carry the EMRG code but our Senior Emerging Markets correspondent advises that these would be likely to carry the code where appropriate:  Afghanistan, Albania, Algeria, Angola, Antigua & Barbuda, Argentina, Armenia, Azerbaijan, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia, Bosnia and Herzegovina, Botswana, Brazil, Bulgaria, Burkina Faso, Burundi, Cambodia, Cameroon, Cape Verde, Central African Republic, Chad, Colombia, Comoros, Democratic Republic of Congo, Republic of Congo, Costa Rica, Cote d'Ivoire, Chile, China, Croatia, Czech republic, Djibouti, Dominica, Dominican Republic, Eastern Caribbean states, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Ethiopia, Fiji, Gabon, The Gambia, Georgia, Ghana, Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Hungary, India, Indonesia, Iraq, Iran, Israel, Jamaica, Jordan, Kazakhstan, Kenya, Kiribati, Korea, Kosovo, Kyrgyz Republic, Lao PDR, Latvia, Lebanon, Lesotho, Liberia, Lithuania, FYR Macedonia, Madagascar, Malawi, Malaysia, Maldives, Mali, Marshall Islands, Mauritania, Mauritius, Mexico, FS Micronesia, Moldova, Mongolia, Morocco, Mozambique, Myanmar, Namibia, Nepal, Nicaragua, Niger, Nigeria, Oman, Pakistan, Palau, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland, Romania, Russia, Rwanda, Samoa, Sao Tome & Principe, Senegal, South Africa, Sri Lanka, St Kitts and Nevis, Serbia and Montenegro, Seychelles, Sierra Leone, Slovak republic, Slovenia, Solomon Islands, Somalia, St Lucia, St Vincent & Grenadines, Sudan, Suriname, Swaziland, Syria, Tajikistan, Tanzania, Thailand, East Timor, Togo, Tonga, Trinidad & Tobago, Tunisia, Turkey, Turkmenistan, Uganda, Ukraine, UAE, Uruguay, Uzbekistan, Vanuatu, Venezuela, Vietnam, West Bank and Gaza, Yemen, Zambia, Zimbabwe."
 EUROPE,Europe,All news stories covering events relating to this region.
-EEU,Eastern Europe - NB: Bold Countries are listed on Reuters Editorial Systems in ASIA as well as EEU,"All news stories covering events relating to the following countries: Albania, Armenia, Belarus, Azerbaijan, Croatia, Estonia, Hungary, Kyrghstan, Lithuania, Latvia, Turkmenistan, Tajikistan, Slovenia, Slovakia, Russian Federation, Romania, Poland, Montenegro, Moldova, Yugoslavia, Uzbekistan, Ukraine, Macedonia, Kazakhstan, Czech Republic, Bulgaria, Bosnia & Herzegovia"
-ASIA,Asia - NB: Bold Countries are listed on Reuters Editorial Systems in EEU as well as ASIA,"All news stories covering events relating to the following countries:  Afghanistan, American Samoa, Armenia, Australia, Azerbaijan, Bangladesh, Bhutan, Brunei, Cambodia, China, East Timor, Fiji, French Polynesia, Georgia, Guam, Hong Kong, India, Indonesia, Iran, Japan, Kazakhstan, Kiribati, North Korea, South Korea, Kyrgyzstan, Laos, Macao, Malaysia, Maldives, Marianna Islands, Marshall Islands, Miconesia, Mongolia, Myanmar, Nauru, Nepal, New Caledonia, New Zealand, Norfolk Islands, Pakistan, Papua New Guinea, Philippinnes, Pitcairn Islands, Russia, Singapore,  Solomon Islands, Sri Lanka, Taiwan, Tajikistan, Thailand, Tonga, Turkey, Turkmenistan, Tuvalu, Uzbekistan, Vanuatu, Vietnam, Wallis and Fortuna Islands, Western Samoa."
+EEU,Eastern Europe,"All news stories covering events relating to the following countries: Albania, Armenia, Belarus, Azerbaijan, Croatia, Estonia, Hungary, Kyrghstan, Lithuania, Latvia, Turkmenistan, Tajikistan, Slovenia, Slovakia, Russian Federation, Romania, Poland, Montenegro, Moldova, Yugoslavia, Uzbekistan, Ukraine, Macedonia, Kazakhstan, Czech Republic, Bulgaria, Bosnia & Herzegovia"
+ASIA,Asia,"All news stories covering events relating to the following countries:  Afghanistan, American Samoa, Armenia, Australia, Azerbaijan, Bangladesh, Bhutan, Brunei, Cambodia, China, East Timor, Fiji, French Polynesia, Georgia, Guam, Hong Kong, India, Indonesia, Iran, Japan, Kazakhstan, Kiribati, North Korea, South Korea, Kyrgyzstan, Laos, Macao, Malaysia, Maldives, Marianna Islands, Marshall Islands, Miconesia, Mongolia, Myanmar, Nauru, Nepal, New Caledonia, New Zealand, Norfolk Islands, Pakistan, Papua New Guinea, Philippinnes, Pitcairn Islands, Russia, Singapore,  Solomon Islands, Sri Lanka, Taiwan, Tajikistan, Thailand, Tonga, Turkey, Turkmenistan, Tuvalu, Uzbekistan, Vanuatu, Vietnam, Wallis and Fortuna Islands, Western Samoa."
 LATAM,South and Central America,
 MEAST,Middle East,"Stories from or about Middle East countries and is also added to stories from other centres which are about pan-Middle East issues or countries in that region. Goes on stories from Syria, Iraq, Iran, Turkey, Lebanon, Israel, Palestinian Territories, Saudi Arabia, Kuwait, UAE, Egypt, Algeria, Tunisia, Libya, Morocco, Jordan, Oman, Yemen, Libya."
 WEU,Western Europe ,"All news stories covering events relating to the following countries:  Andorra, Austria, Belgium, Denmark, Finaland, France, Germany, Greece, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Spain ,Sweden, Switzerland, UK."
@@ -541,7 +541,7 @@ XCTY,Cross-Country Skiing,All news stories covering events relating to this spor
 YACH,Yachting,All news stories covering events relating to this sport.
 ,,
 Language Codes,,
-NB: On input the 'L' is not included.  The 'L' is added automatically by the Reuters News Processing System,,
+,,
 LBG,Bulgarian Language Code,All news stories written in Bulgarian
 LCA,Catalan Language Code (Global Press Watch Use Only),All news stories written in Catalan (Global Press Watch Use Only)
 LCS,Czech Language Code,All news stories written in Czech
@@ -636,8 +636,8 @@ SL1,Bond Sales (US Muni service only),"News about all bond sales, including pres
 TA1,Taxables – Municipal Bond Market News (US Muni service only),"News about taxable bonds, which are issued for purposes the federal government deems does not provide a significant benefit to the public."
 ,,
 Personal Finance Codes,,
-These codes should be applied only by specialist personal finance journalists,,
-(For Reuters Internal Use Only),,
+,,
+,,
 INV,Investing,"All news about the process of investing on the part of individuals.  News about investment tools, techniques and regulations for the individual investor and market trends that are related to individual investors; news about how investors interact with markets, detailing patterns of behaviour of the investors and their aggregate impact on the macro-economy. This could include stories interviewing fund managers about their own process of investigating or about individual investment flows into and out of the markets. It includes information with advice from the experts about how to invest and helping in the process of making selections between various financial instruments."
 RTM,Retirement,"All news about retirement and related issues, including financial regulation and financial industry trends that affect retirement."
 ,,
@@ -679,7 +679,7 @@ TIN,Platt's - Tin,
 TPO,Investor 3rd Party Asian News Feeds,
 ,,
 Japanese (Kanji) Sector Codes,,
-(For Reuters Internal Use Only),,
+,,
 T01,Fishery and forestry (Kanji),
 T02,Mining (Kanji),
 T03,Construction (Kanji),
@@ -715,7 +715,7 @@ T32,Utilities (Kanji),
 T33,Services (Kanji),
 ,,
 National Service Codes - English and foreign language,,
-(For Reuters Use Only),,
+,,
 ,,
 CDEPTH,Chinese in-depth analyses/features,
 CFACT,Chinese factboxes,
@@ -744,7 +744,7 @@ RJRJ,Japanese joint translation news,
 SWT1,Swedish code to route news to a wallsign,
 ,,
 Other Codes,,
-(For Reuters Internal Use Only),,
+,,
 ERR,Error (Internal Use Only),
 IDN,Integrated Data Network (Internal Use Only),
 HELP,For access to a story containing CRMC contact info,
@@ -762,4 +762,3 @@ XPCM,Used by Editorial to exclude story from PCM,
 XPEN,Used by Editorial to exclude story from PEN,
 XPMF,Used by Editorial to exclude story from PMF,
 XPSC,Used by Editorial to exclude story from PSC,
-Final,,

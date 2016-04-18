@@ -10,7 +10,6 @@ var outputFunction = require('./api_helper/output');
 var getNewest = require('./api_helper/getNewest');
 var searchDb = require('./api_helper/searchAlgos');
 var autoTester = require('./../tests/autotests.js');
-var topicParser = require('./api_helper/topicParser');
 
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
@@ -124,7 +123,7 @@ router.route('/tpc_list_full')
 		// when it hits a new section it saves the existing list of codes with their section
 		// and adds that object to the sections array
 		readable.on('data', function(data) {
- 			if (/[A-Z0-9]+$/.test(data[0])) {
+ 			if (/[A-Z0-9+ ]+$/.test(data[0])) {
 				data[2] = data[2].replace(/ *\r/, '');
 				codes.push({code:data[0],name:data[1],description:data[2]});
 			} else if (/[A-Z]/.test(data[0])) {
