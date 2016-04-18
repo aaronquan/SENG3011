@@ -190,107 +190,75 @@ app.controller('clientController', function ($scope, $http) {
 	});
 
 app.controller('codeController', function($scope, $http){
+	$scope.codeData = {
+		tpc:
+		{
+			title:'Select Topic Codes:',
+			allCodes: [],
+			searchCodes: [],
+			currentCodes: [],
+			textSelected: false,
+			searchFor: ''
+		},
+		instr:
+		{
+			title:'Select Instrument Codes:',
+			allCodes: [],
+			searchCodes: [],
+			currentCodes: [], 
+			textSelected: false,
+			searchFor: ''
+		}
+	}
 	$http.get('api/tpc_list')
 		.then(function(response){
-			$scope.allCodesTpc = response.data;
-			$scope.searchCodesTpc = response.data;
-			$scope.currentCodesTpc = [];
+			$scope.codeData['tpc']['allCodes'] = response.data;
+			$scope.codeData['tpc']['searchCodes'] = response.data;
+			$scope.codeData['tpc']['currentCodes'] = [];
 		});
 	$http.get('api/instr_list')
 		.then(function(response){
-			$scope.allCodesInstr = response.data;
-			$scope.searchCodesInstr = response.data;
-			$scope.currentCodesInstr = [];
+			$scope.codeData['instr']['allCodes'] = response.data;
+			$scope.codeData['instr']['searchCodes'] = response.data;
+			$scope.codeData['instr']['currentCodes'] = [];
 		});
 	this.textSelectedTpc = false;	
 	this.textSelectedInstr = false;
-	this.searchForTpc = '';
-	this.searchForInstr = '';
-	this.searchTpc = function(string){
-		console.log($scope.allCodesTpc);
+	this.search = function(string, list){
 		string = string.toUpperCase();
-		$scope.searchCodesTpc = [];
+		$scope.codeData[list]['searchCodes'] = [];
 		if (string == ''){
-			$scope.searchCodesTpc = $scope.allCodesTpc;
+			$scope.codeData[list]['searchCodes'] = $scope.codeData[list]['allCodes'];
 			return;
 		}
-		for(var i in $scope.allCodesTpc){
-			if($scope.allCodesTpc[i].indexOf(string) != -1){
-				$scope.searchCodesTpc.push($scope.allCodesTpc[i]);
+		for(var i in $scope.codeData[list]['allCodes']){
+			if($scope.codeData[list]['allCodes'][i].indexOf(string) != -1){
+				$scope.codeData[list]['searchCodes'].push($scope.codeData[list]['allCodes'][i]);
 			}
 		}
 	}
-	this.searchInstr = function(string){
-		console.log($scope.allCodesInstr);
-		string = string.toUpperCase();
-		$scope.searchCodesInstr = [];
-		if (string == ''){
-			$scope.searchCodesInstr = $scope.allCodesInstr;
-			return;
-		}
-		for(var i in $scope.allCodesInstr){
-			if($scope.allCodesInstr[i].indexOf(string) != -1){
-				$scope.searchCodesInstr.push($scope.allCodesInstr[i]);
-			}
-		}
+	this.addCode = function(code, list){
+		if($scope.codeData[list]['currentCodes'].indexOf(code) == -1)
+			$scope.codeData[list]['currentCodes'].push(code);
 	}
-	this.addCodeTpc = function(code){
-		$scope.currentCodesTpc.push(code);
-		for(var i = $scope.searchCodesTpc.length - 1; i >= 0; i--) {
-			if($scope.searchCodesTpc[i] === code) {
-				$scope.searchCodesTpc.splice(i, 1);
-				break;
-			}
-		}
-		/*for(var i = $scope.allCodes['tpc_list'].length - 1; i >= 0; i--) {
-			if($scope.allCodes['tpc_list'][i] === code) {
-				$scope.allCodes['tpc_list'].splice(i, 1);
-				break;
-			}
-		}*/
-	}
-	this.addCodeInstr = function(code){
-		$scope.currentCodesInstr.push(code);
-		for(var i = $scope.searchCodesInstr.length - 1; i >= 0; i--) {
-			if($scope.searchCodesInstr[i] === code) {
-				$scope.searchCodesInstr.splice(i, 1);
-				break;
-			}
-		}
-		/*for(var i = $scope.allCodes['tpc_list'].length - 1; i >= 0; i--) {
-			if($scope.allCodes['tpc_list'][i] === code) {
-				$scope.allCodes['tpc_list'].splice(i, 1);
-				break;
-			}
-		}*/
-	}
-	this.removeCodeTpc = function(code){
-		$scope.searchCodesTpc.push(code);
-		//$scope.allCodes['tpc_list'].push(code);
-		for(var i = $scope.currentCodesTpc.length - 1; i >= 0; i--) {
-			if($scope.currentCodesTpc[i] === code) {
-				$scope.currentCodesTpc.splice(i, 1);
+	this.removeCode = function(code, list){
+		for(var i = $scope.codeData[list]['currentCodes'].length - 1; i >= 0; i--) {
+			if($scope.codeData[list]['currentCodes'][i] === code) {
+				$scope.codeData[list]['currentCodes'].splice(i, 1);
 				break;
 			}
 		}
 	}
-	this.removeCodeInstr = function(code){
-		$scope.searchCodesInstr.push(code);
-		//$scope.allCodes['tpc_list'].push(code);
-		for(var i = $scope.currentCodesInstr.length - 1; i >= 0; i--) {
-			if($scope.currentCodesInstr[i] === code) {
-				$scope.currentCodesInstr.splice(i, 1);
-				break;
-			}
+	this.setSelected = function(bool, list){
+		if (list == 'instr'){
+			$scope.codeData['instr']['textSelected'] = bool;
+			$scope.codeData['tpc']['textSelected'] = false;
 		}
-	}
-	this.setSelectedTpc = function(bool){
-		this.textSelectedTpc = bool;
-		this.textSelectedInstr = false;
-	}
-	this.setSelectedInstr = function(bool){
-		this.textSelectedInstr = bool;
-		this.textSelectedTpc = false;
+		if (list == 'tpc'){
+			$scope.codeData['tpc']['textSelected'] = bool;
+			$scope.codeData['instr']['textSelected'] = false;
+		}
+		
 	}
 });
 

@@ -26,27 +26,42 @@
 			<pre style="white-space: pre-wrap;">{{contents2}}</pre>
 	</div>
 	<div ng-show="ctr.isTab('gui')">
-		<h1>This is a GUI!!!</h1>
-		<form>
-			Start date:
-			<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="startdate">
-			End date:
-			<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="enddate">
-			<div ng-controller='codeController as codes'>
-				<div click-anywhere-but-here='codes.setSelectedTpc(false)'>
-					<div class='code-area'>
-						<span class='code-tag' ng-repeat='code in currentCodesTpc' ng-click='codes.removeCodeTpc(code)'>{{code}}</span>
-					</div>
-					<input type="text" class='form-control code-width' ng-model='codes.searchForTpc' ng-change="codes.searchTpc(codes.searchForTpc)" ng-focus='codes.setSelectedTpc(true)'>
-					<div ng-show='codes.textSelectedTpc'>
-						<div class='code-option code-width'> 
-							<li ng-repeat='code in searchCodesTpc' ng-click='codes.addCodeTpc(code)'>{{code}}</li>
+		<h1>Search for news articles</h1>
+		<div class="jumbotron">
+
+			<form>
+
+				<h4>Start date:</h4>
+				<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="startdate">
+				<h4>End date:</h4>
+				<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="enddate">
+
+
+				<div ng-controller='codeController as codes'>
+					<div ng-repeat='(name, obj) in codeData'>
+						<h4>{{obj.title}}</h4>
+						<div class='row'>
+							<div class='col-xs-3'>
+								<div click-anywhere-but-here='codes.setSelected(false, name)'>
+									<input type="text" class='form-control' ng-model="obj.searchFor" ng-change="codes.search(obj.searchFor, name)" ng-focus='codes.setSelected(true, name)'>
+									 <span class="caret"></span>
+									<div ng-show='obj.textSelected' style='position:absolute; z-index:999'>
+										<li ng-repeat='code in obj.searchCodes' ng-click='codes.addCode(code, name)' class='list-group-item'>{{code}}</li>
+									</div>
+									<div class='code-area'>
+										<span class='btn btn-success btn-sm code-tag' ng-repeat='code in obj.currentCodes' ng-click='codes.removeCode(code, name)'>{{code}}</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+
+<!-- 
+				<h4>Select instrument codes:</h4>
 				<div click-anywhere-but-here='codes.setSelectedInstr(false)'>
 					<div class='code-area'>
-						<span class='code-tag' ng-repeat='code in currentCodesInstr' ng-click='codes.removeCodeInstr(code)'>{{code}}</span>
+						<span class='btn btn-success btn-sm code-tag' ng-repeat='code in currentCodesInstr' ng-click='codes.removeCodeInstr(code)'>{{code}}</span>
 					</div>
 					<input type="text" class='form-control code-width' ng-model='codes.searchForInstr' ng-change="codes.searchInstr(codes.searchForInstr)" ng-focus='codes.setSelectedInstr(true)'>
 					<div ng-show='codes.textSelectedInstr'>
@@ -55,8 +70,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</form>
+ -->
+				<button class='btn btn-primary btn-lg' type='button'>Search</button>
 
+			</form>
+		</div>
 	</div>
 </div>
