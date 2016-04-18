@@ -141,6 +141,111 @@ router.route('/tpc_list_full')
 		})
 	});
 
+var sample_output = [
+{
+	"body": "",
+    "headline": "S.KOREA SAYS SEPT EXPORTS -8.3 PCT VS YR EARLIER (REUTERS POLL -10.0 PCT)",
+    "date": "2015-10-01T00:00:00.092Z",
+    "tpc_list": [
+      "KR",
+      "EMRG",
+      "ASIA",
+      "MCE",
+      "ECI",
+      "NEWS1",
+      "TRD",
+      "LEN",
+      "RTRS"
+    ],
+    "instr_list": [
+      "KRW=",
+      "0#KRCOMP1=KQ",
+      "KREXGR=ECI",
+      "KRIMGR=ECI",
+      "KRTBAL=ECI"
+    ]
+}]
+router.route('/route_info')
+	.get(function(req, res){
+		var routes = [
+		{
+			name: '/news',
+			request: 'GET',
+			description: 'returns all news articles in the database in reverse chronological order',
+			input: [],
+			output_type: 'application/json',
+			schema: [
+		 		{name: 'date', description: 'Timestamp when the news was posted', type:'Date'},
+		 		{name: 'headline', description: 'The news headline', type:'String'},
+		 		{name: 'body', description: 'Contents of the news', type:'String'},
+		 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
+		 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
+			],
+			output_example: ''
+		},
+		{
+			name: '/tpc_list',
+			request: 'GET',
+			description: 'returns a list of topic codes used in the database',
+			input: [],
+			output_type: 'application/json',
+			schema: [],
+			output_example: '["KR","EMRG","ASIA","MCE","ECI","NEWS1"]'
+		},
+		{
+			name: '/instr_list',
+			request: 'GET',
+			description: 'returns a list of instrument codes used in the database',
+			input: [],
+			output_type: 'application/json',
+			schema: [],
+			output_example: '["KRW=","0#KRCOMP1=KQ","KREXGR=ECI","KRIMGR=ECI","KRTBAL=ECI","TPITWDOND="]'
+		},
+		{ name:'/newest',
+		  request: 'POST',
+		  description: 'receives a post request with input conditions and returns the specified news tuples sorted by reverse chronological order.',
+		  input: 
+		 	[
+		 		{name: 'tpc_list', description: '(Optional) List of topics to search', type:'[String]'},
+		 		{name: 'instr_list', description: '(Optional) List of instruments to search', type:'[String]'}
+		 	],
+		  output_type: 'application/json',
+		  schema:
+		 	[
+		 		{name: 'date', description: 'Timestamp when the news was posted', type:'Date'},
+		 		{name: 'headline', description: 'The news headline', type:'String'},
+		 		{name: 'body', description: 'Contents of the news', type:'String'},
+		 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
+		 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
+			],
+		  output_example: sample_output
+		},
+		{name:'/query',
+		 request: 'POST',
+		 description: 'receives a post request with input conditions and returns the specified news tuples',
+		 input: 
+		 	[
+		 		{name: 'start_date', description: 'Starting date to recieve news from', type:'Date'},
+		 		{name: 'end_date', description: 'Ending date to recieve news from', type:'Date'},
+		 		{name: 'tpc_list', description: '(Optional) List of topics to search', type:'[String]'},
+		 		{name: 'instr_list', description: '(Optional) List of instruments to search', type:'[String]'}
+		 	],
+		 output_type: 'application/json',
+		 schema:
+		 	[
+		 		{name: 'date', description: 'Timestamp when the news was posted', type:'Date'},
+		 		{name: 'headline', description: 'The news headline', type:'String'},
+		 		{name: 'body', description: 'Contents of the news', type:'String'},
+		 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
+		 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
+			],
+		  output_example: sample_output
+		}
+		]
+		return res.json(routes);
+	});
+
+
 //any routes below this can be put inside appNg.js
 router.route('/input')
 	.get(function(req, res){
