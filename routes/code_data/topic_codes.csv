@@ -1,0 +1,765 @@
+Cross-market Codes,,
+,,
+BACT,Business Activites,
+DIARY,Diaries,All financial and general news diaries
+DRV,Derivatives,All market reports that routinely mention derivatives (futures; options/warrants and swaps); all new issues of derivatives; news items concerning forecasts and analyses of the derivatives market; news items concerned with the market structure.
+FUND,Fund Industry News,"All news about investment trusts, mutual funds, investment funds and the funds industry and players; funds' views and forecasts about markets and instruments. "
+HEDGE,Hedge Funds,
+INSI,Technical Analysis,Stories about technical analysis of markets.
+ISU,New Issues,All new government; supranational and corporate issues of debt and corporate issues of equity; all share issues.
+NEWS,Major breaking news,Top stories of major international impact. News that is likely to lead television or radio bulletins or to make the front pages of major international newspapers and Web sites.  For use on Reuters stories only
+PRESS,Press Digests,
+REAM,Real Estate Markets,"All stories that cover property companies or any type of real estate investment, including REITs, private property funds, Islamic finance and the public sector. It should include property returns and forecasts, interviews with prominent players, housing data and land prices, mortgage-backed bond issues, property deals such as building transactions or corporate sales and leasebacks. It should also cover major infrastructure projects, including government initiatives, regulatory issues, and the launch and performance of property investment products or sector indices "
+REG,Disclosure to Regulators (UK),UK regulatory news stories from PIPs (Primary Information Providers) only.
+REGS,Regulatory Issues,"Regulatory stories. Financial markets, securities, tax and utilities regulation and enforcement by regional, central and local government bodies.  "
+RSUM,Reuters summits,News from Reuters industry summits
+TOP,Top News,All top news items. TO BE USED BY REUTERS ONLY
+WIN,Reuters Exclusive News  REUTERS & FACTIVA INTERNAL USE ONLY,All news where Reuters has exclusive material.  TO BE USED BY REUTERS & FACTIVA ONLY
+,,
+Equities Codes,,
+,,
+CFIN,Corporate Finance,
+CONV,Convertible Bonds,
+CORA,Corporate Analysis,Analysis about a company or group of companies.
+DIV,Dividends,"Dividend forecasts, declarations and payments."
+EXCA,Exchange activities,
+HOT,Hot Stocks,News about stocks on the move. REGULATE USE FROM THIRD PARTIES.
+IPO,Initial Public Offerings,First public listing of a company’s stock.
+MNGISS,Management issues/policy,"News content about management issues including stories about executive pay, bonuses and corporate governance. Would also include stories on accounting irregularities and auditor issues."
+MRG,Mergers and Acquisitions (including changes of ownership),All corporate stories about change of ownership; share stakes; mergers; acquisitions; buy-outs; share buybacks; joint ventures; asset transfers; privatisation.
+NEWR,Original Corporate News Releases,Applied to stories which are Corporate News Releases.  These can be in any language from anywhere in the world.
+PVE,Private equity funds,"All news about about private equity funds, including appointments, fund raisings and mergers & acquisition activity. This should also include debt stories covering leveraged buyouts.   "
+RCH,Broker Research and Recommendations,All news about broker research and recommendations.
+RES,Corporate Results,"All corporate financial results; tabular and textual reports; dividends; accounts, annual reports."
+RESF,Corporate Results Forecasts,All forecasting of corporate financial results; tabular and textual reports.
+STX,Stock Markets,"All news about equity markets operations, regulations and structure; additions and deletions from stock indices;  all new listings; delistings; suspensions; stock markets. (This code should not be used for news about individual companies, hot stocks or broker research)."
+,,
+Industrial Sector Codes (NB: MSCI Numerical Code in ( ) next to MSCI Alpha Code),,
+,,MSCI = Morgan Stanley Sector Code
+ADV,Advertising,All stories about corporate advertising and promotional activities; such activities by other organisations; activities of advertising agencies. 
+AER (31),Aerospace,"Engines and parts for aerospace equipment; diversified military products; spacecraft; space systems; control, radio and electronic equipment for aerospace and defence; aircraft manufacture; regulation or regulatory bodies associated with the aerospace and defence industries. MSCI"
+AIR (56),Air Transport,Commercial airlines and their staff; airports and ground services; air freight forwarding; passenger traffic figures; regulation or regulatory bodies associated with the aviation industry; aircraft leasing.  MSCI
+APL (41),Electrical Appliances,"Durable household goods and appliances, including light electric appliances; consumer electronics including personal computers; furniture; sewing machines; ceiling fans.  MSCI"
+AUT (42),Automobiles and Automotive Equipment,"Automobile and van design, manufacture, assembly and sales; regulation or regulatory bodies associated with the automobile manufacturing industry and motor shows.  MSCI"
+BEV (43),Beverages and Tobacco,Soft drinks; mineral waters; alcoholic beverages; breweries; wines and tobacco products.  MSCI
+BIOT,Biotechnology,
+BLD (21),Building Materials,Cement; concrete; gypsum; chalk; sand; bricks; tiles; pipes; clays; glass; fibre products; plywood; doors; windows; glass; plumbing fixtures; central heating equipment; wallpaper and decorating materials.  MSCI
+BNK (61),Banking,"Private banking; medium-term financing; all depository and credit institutions -- e.g. commercial banks, clearing banks, savings and loans, chartered banks, universal banks; futures and options exchanges and regulation or regulatory bodies associated with the banking industry.MSCI "
+BUS (52),"Business, Public Services","Services to business and consumers including office supplies; advertising/marketing; data vendors, software development and data processing; security; transporters, custom agents, package & mail delivery; port-harbour transport & warehousing; airport, port, tunnel, highway management; agencies; water distribution; waste management, cleaning, water filtration. MSCI"
+CHE (22),Chemicals,"Plastics; synthetic rubber and fibres; industrial gases; paints, coatings and resins; fertilizers, pesticides; flavourings; food additives; explosives; printing ink.  MSCI"
+CON (32),Construction and Property,"Building construction including housing starts; prefabricated housing; civil engineering including roads, bridges, tunnels; general infrastructure.  MSCI"
+DPR (33),Data Processing and Reproduction,"Business computers, photocopiers, copiers, fax machines and other office Machinery.  MSCI"
+DRU (45),"Pharmaceuticals, Health, Personal Care","Drugs; pharmaceuticals; diagnostic and surgical products and instruments; optical wear including contact lenses; cosmetics, toiletries; sanitary products; hospitals and clinics as businesses; diseases; AIDS and Cancer research and surveys.  MSCI"
+ELC (34),"Electronic,  Electrical and Telecommunications Equipment",Turbines and heavy electrical machinery; robotics; communication systems; control systems; telecommunications equipment.  MSCI
+ELG (12),Utilities,"Production and distribution of electricity and gas, including gas pipelines, wind power, nuclear power and hydro-electricity.  MSCI"
+ELI,Semiconductors and Active Components,"Semiconductors, chips.  MSCI"
+ENQ (36),Energy Equipment,Providers of equipment and/or services to energy companies; drilling equipment; platform construction and oilfield services.  MSCI
+ENR (11),Energy and Resources,"Oil, petroleum, coal and natural gas exploration, extraction, refining and distribution, including oil/gas pipelines.  MSCI"
+FIN (62),Financial and Business Services,"Agents or brokers of financing and financial services; investment trusts; offshore funds; investment banks; brokers; merchant banks; travel-related money services; personal, consumer and educational credit; lease financing and regulation or regulatory bodies associated with the financial services industry. MSCI"
+FOD (44),Food,"All food products, excluding raw commodities; processed foods; detergents & soaps.   MSCI"
+GDM (81),Gold and Precious Materials,"Precious metals - gold, silver, platinum, palladium, rhodium, bullion, Krugerrands, ingot; diamonds.  MSCI"
+GSFT,Games software,
+HDWR,Computer hardware,
+IND (37),Industrial Components,Vehicle parts; cables and wires; ball bearings.  MSCI
+INS (63),Insurance,Life and health insurance; property and casualty insurance; reinsurance; regulation or regulatory bodies associated with the insurance industry; medicare and medicaid and insurance brokers.  MSCI
+ISLF,Islamic Finance,News relating to Islamic finance and banking. Stories about banks run entirely according to koranic precepts. Stories about the development of islamic bond markets as well as the individual issuance of islamic bonds. Development of islamic banking regulations and other guidelines similarly.
+LEI (53),Tourism and Leisure,"Hotels; restaurants; cafes; cinemas; film production and distribution; travel agents; resorts; casinos; amusement parks; stadia; golf courses, holidays; features about tourist places and destinations; tourist issues; tourism statistics.  MSCI"
+MAC (38),Metal Goods and Engineering,"Manufacturing of any vehicle other than automobiles, including motorcycles, tractors, trucks, locomotives and railcars; shipbuilding; agricultural machinery; earth moving and construction machinery; elevators and escalators; air conditioning; energy-saving equiptment. MSCI"
+MET (24),Non-Ferrous Metals,"Exploration, extraction, refining, trading and pricing of all non-ferrous metals.  Copper, lead, zinc, tin, aluminium, aluminum, nickel, London Metal Exchange (LME), smelters, iron, antimonym arsenic, bismuth,cadmium, chrome, cobalt, gallium, germanium, indium, magnesium, manganese, mercury, molybdinum, ruthenium, selenium, silcon, tantalite, titanium, tungsten, vanadium, wolfram, batteries. MSCI"
+MIS (26),Miscellanous Materials,"Commodities and products not included in other materials categories,  including mineral sand, sugar cane, coconuts, seeds, glass excluding windows and tableware), cellulose, containers, clay, quarries, insulating products, carbon products and diversified producers of materials products. MSCI"
+MUL (71),Multi-Industry,"Diversified companies which are not classifiable in a specific industry, including holding companies unless they are concentrated in a specific industry.  MSCI"
+PUB (51),"Broadcasting, Publishing, Media","Radio and television stations including cable and satellite; publishers of  books, magazines and newspapers; news agencies.  MSCI"
+REA (64),Real Estate,"Estate agents, property developers, selling/leasing of residential and commercial property.  MSCI"
+REC (46),Recreational and Sports Goods,"Cameras, musical instruments, records, tapes, compact discs, sports equipment, toys including video games, recreational vehicles, watches, other consumer goods.  MSCI"
+RET (54),Retail,All retailing including retail sales and consumer prices indices.  MSCI
+RRL (57),Road and Rail,Transportation of goods and passengers via road or rail; government policy regarding infrastructure; infrastructure construction; regulatory bodies and unions asssociated with road and rail transport; road or rail accidents and rolling stock.  MSCI
+SFWR,Computer software,"Stories about companies whose main business is production of software. This is an industry sector code, so most of the time it will be applied where there is a relevant company in the story.  For the tiny fraction of stories about software industy where there is no company mentioned, the code will also be used."
+SHP (58),Shipping,Maritime transporters of goods and passengers.  MSCI
+STL (25),Iron & Steel,Iron and Steel Manufacturing.  MSCI
+TBCS,Television broadcasting,
+TEL (55),Telecommunications Services,Telephones; mobile phones; telecommunications networks and services.  MSCI
+TEX (47),Textiles & Clothing,"Textiles, including `raw materials'; design, manufacture and distribution of fabric and apparel, including, knitwear, hosiery and shoes; fashion houses and clothiers. MSCI"
+TIM (23),Forestry & Timber,Forestry; lumber (including lumber futures); timber; logging; all types of wood; sawmills; pulp; paper making; paper mills; newsprint and tissues.  MSCI
+WHO (59),Wholesale,"Wholesaling and distribution, including wholesale price indices.  MSCI"
+WWW,Internet/World Wide Web,All news stories relating to the internet or the World Wide Web.
+,,
+"Economy, Central Banking & Institution Codes",,
+BBK,Bundesbank,Bundesbank activities and news.
+BOE,Bank of England,Bank of England activities and news.
+BOJ,Bank of Japan,Bank of Japan activities and news.
+CEN,Central Banks,All activities by central banks including intervention in financial markets; Central Bank management appointments; monetary policy.
+ECB,European Central Bank (ECB),European Central Bank activities and news.
+ECI,Economic Indicators,"News, forecasts or analyses of such indicators. eg, average income/weekly earnings; Balance of Payments; bankruptcy figures; bank credits/lending; budget surplus/deficit; building permits; car registrations; car sales; light truck sales; trade figures."
+EMU,European Monetary Union (EMU),All news about the EMU.
+EU,European Union (EU),All news about the EU.
+FED,Federal Reserve Board,FED activities and news.
+G7,Group of Seven (G7),All news about the G7 as a single entity.
+IMF,International Monetary Fund (IMF),All news about the IMF as an organisation; including management appointments and funding; all IMF loan activities with sovereign states.
+INT,Interest Rates,All news on interest rates and interest rate changes and forecasts; analysis of interest rate moves; government policy.
+JOB,"Labour; Employment, Unemployment",All news on labour issues; employment; unemployment; work relations; labour disputes; strikes; legislation; unions; job related issues; government policy.
+MCE,Macro-Economics,All news and analysis on macro-economics
+PLCY,Info from/about fiscal/monetary policy makers,
+PMI,Purchasing Managers Indices,News relating to PMIs.  For future use.
+SNB,Schweizerische Nationalbank,Swiss National Bank activities and news
+STIR,Short-term interest rates,
+TRD,International Trade,"All stories associated with traded goods between countries, government trade talks and negotiations, protectionism, tariffs, trade sanctions, dumping, anti-dumping, all international trade groupings. Merchandise trade figures."
+WASH,Washington/US Government News,"All U.S. Federal government politics, policies and economics."
+,,
+FX and Money Market Codes,,
+EUR,Euro,All news stories covering the euro currency.
+FRX,Forex Markets,All market stories about foreign exchange; forex intervention by central banks; all forex and exchange rate market reports.
+MMT,Money Markets,All money market news; reports about money markets
+,,
+Fixed Income Codes,,
+AAA,Ratings ,All news about credit ratings
+AGN,US Agencies,"All news about debt-issuing agencies such as Fannie Mae, Freddie Mac, Ginnie Mae, and Sallie Mae, as well as news about this debt market sector."
+ABS,Asset-backed debt,
+CDM,Credit Market News,
+CDV,Credit Default Swaps,
+DBT,Debt Markets,All debt market news; including primary issuance and secondary trading of debt instruments; markets forecasts and analysis of debt markets.
+EQB,Equity-Linked bonds,"Equity-linked bonds, warrant bonds or convertible bonds"
+EUB,Eurobonds,"New eurobond issues in Europe; including issues by foreign borrowers in domestic markets where there is no eurobond market – e.g. Swiss francs. Exclude corporate or domestic government bonds, e.g. gilts, Bunds, Samurais & Yankees."
+GVD,Government and Sovereign debt,"All government debt market news, government borrowing and debt, markets in long-, short- and medium-dated government securities; issues of government debt."
+HYD,High-yield debt,
+IGD,Investment grade debt,
+LOA,Loans,All types of loans to corporate entities and sovereign countries; including syndicated credits; export credit; multi-option facilities; medium-term notes; certificates of deposit; commercial paper and floating/variable rate notes.
+MTG,Mortgage Backed Debt,"Asset-backed securities, mortgage-backed debt and changes in mortgage rates."
+MUNI,US Municipal Issues,All muni news 
+TNC,Terms and Conditions - Bond Issues,News about bond terms and conditions
+USC,US Corporate Bonds,"All news about U.S. corporate bonds, including issues, forecasts and analysis."
+,,
+Commodities Codes,,
+COC,Cocoa,Cocoa; chocolate; cacao; ICCO; all cocoa commodity market reports; organisations associated with cocoa.
+COF,Coffee,Coffee - arabica; robusta; roastings; milds; conillon; ICO; IACO; organisations associated with coffee.
+COR,Corn,
+COT,Cotton and Silk,All cotton/silk commodity market reports; organisations associated with cotton and silk.
+GMO,Genetically Modified Organisms,"Corporate, industry or market stories relating to GMOs (Genetically Modified Organisms),  defined as plant, animal or micro-organisms whose genetic code has been altered to give them characteristics they do not have naturally."
+GOL,Gold and Precious Metals,Precious metals - gold; silver; platinum; palladium; rhodium; bullion; krugerrands; ingots; all gold/precious metals market reports; organisations associated with gold and other precious metals.
+GRA,Grains,Grains - wheat; barley; oats; corn; maize; sorghum; cereal; rice; IWC; HGCA; FAO; EEP; COGECA; COCERAL; fertilizers; all grains commodity market reports; organisations associated with grains.
+LIV,Livestock,Livestock - Meat; beef; pork bellies; hogs; cattle; poultry; eggs; all livestock commodity market reports; organisations associated with livestock.
+MEAL,Meals and Feeds,Feed grains; expeller; soya meal; soy meal; rape-meal; fishmeal; sun meal; sunflower meal; tapioca; manioc; citrus pulp; pulses; lentils; corn gluten; all meals and feeds commodity market reports; organisations associated with meals and feeds.
+OILS,Oilseeds and Edible Oils,Oils and oilseeds - oilseed; soya bean; soybean; soy oil; rape seed; rape oil; colza; canola; palm oil; palm kernel; coconut; coconut oil; corn gluten; sunflower; sunoil; groundnut; peanut; linseed; linoil; olein; stearin; castor; tung; castor oil; tungoi
+ORJ,Orange Juice,Orange juice - frozen concentrate; FCOJ; OJ; citrus; all orange juice commodity market reports; organisations associated with orange juice.
+PLAS,Plastics,"Plastics trade, plastics industry and plastics company news"
+RUB,Rubber,Rubber - rubber; RSS; latex; INRO; INRA; tyres; tires; all rubber commodity market reports; organisations associated with rubber.
+SOY,Soybeans,(Kanji only)
+SUG,Sugar,Sugar - raw sugar; white sugar; sugarbeet; beet; sugarcane; molasses; ISO; sweeteners; high fructose corn syrup; HFCS; GEPLACEA; COGECA; organisations associated with sugar.
+TEA,Tea,Tea; CTC; pekoe; fannings; all tea commodity market reports.
+USDA,USDA,U.S. Department of Agriculture-sourced statistics; comment; forecasts and news.
+WOO,Wool,"Wool, sheep, merino, mohair, cardings; all wool commodity market reports."
+,,
+Energy Codes,,
+BIOF,Biofuels,"All news about biofuels, including ethanol (derived from sugar cane), biodiesel (from animal or vegetable oils) and other fuels derived from living organisms."
+BUN,Bunkers,All stories about bunkers
+COA,Coal,
+CO2,Emissions,"News about global warming, greenhouse gas emissions or emissions allowances trade"
+CRU,Crude Oil,"All stories about the exploration and extraction of crude oil; crudes; eg, Brent; oil fields, rigs and wells, pipelines; tankers; VLCC; ULCC; oil statistics; Api; IPE; other organisations associated with oil. "
+HOIL,Heating Oil,All stories relating to heating oil.
+JET,Jet Fuel,All information and news relating to jet fuel.
+LNG,Liquefied Natural Gas,"All stories about new LNG production and import projects, project expansions, long-term and spot sales of cargoes. Government policy affecting LNG output and imports; strikes or fires. Not used for stories about projects where the gas is transported by pipeline to consumer countries. LNG is gas which is cooled into liquid form and shipped by tanker to utilities to replace falling local production. Traditionally gas has been transported by pipeline but LNG is increasingly used to exploit reserves in remote locations. LNG is becoming an internationally traded energy commodity as cargoes move around the globe between markets. Major producers include Nigeria, Indonesia and Trinidad."
+LPG,Liquefied Petroleum Gas,"All stories about liquefied petroleum gas, including propane and butane. "
+MOG,Gasoline,All stories relating to leaded and unleaded motor gasoline
+NAP,Naptha,All stories relating to naptha.
+NGS,Natural Gas,All stories about the exploration and extraction of natural gas; natgas; LNG; methane; gas pipelines; organisations associated with natural gas; government policy; regulatory news; relevant North Sea Shipping news.
+NSEA,North Sea Oil,All stories about North Sea Oil developments (North Sea; Forties; Brent; Ekofisk; Piper; Sullom Voe; Frigg; Ninian; Statfjord); North Sea shipping new; government policy.
+NUC,Nuclear Power,All stories about nuclear fuel and nuclear power generation
+OPEC,OPEC,"All stories about OPEC as an organisation, or OPEC policy."
+PETC,Petrochemicals,All stories about petrochemicals.
+POLY,Polymers,All stories about polymers.
+PROD,Products from Crude Oil,All stories about oil products - gas oil; fuel oil; naphtha; gasoline; petroleum; jet fuel; refineries; petrochemicals; heating oil; cracker; hydrocracker; Rhine barge freight; government policy.
+RFO,Residual fuel oil,All stories about residual fuel oil
+RNW,Renewable energy,"All stories about renewable energy including wind, wave, solar, tidal."
+,,
+General News Codes,,
+AID,Private/Government Aid,"All stories about government aid, including humanitarian aid, development aid, military aid, emergency aid, foreign and economic aid; soft loans; aid agencies eg Save the Children."
+BOMB,Bombings,
+BKRT,Bankrupcty Proceedings,
+CRIM,"Crime, Law Enforcement",Civil and criminal law; law; crime; corporate crime; fraud; murder; criminals; mafia; police; judiciary; prisons; law and order issues;drug related crime; organisations associated with law and order; government policy.
+DEF,Defence,
+DIP,"Diplomacy, International Relations",Political relations between more than one country; management of  external relations and foreign policy by governments.
+DIS,"Disasters, Accidents, Natural Catastrophes",Natural disasters; drought; earthquakes; famine; fire; floods; plague; volcanoes; tidal waves; hurricanes; tornadoes; volcanoes; man-made disasters; airplanes; motorway crashes; boats sinking; major industrial accidents; pollution disasters.
+EDU,Education,Issues relating to education; legislation; performance; curricula; teachers; pay
+ENT,"Arts, Culture, Entertainment",Performing and non-performing arts; music; theatre; tv; radio; festivals; exhibitions; dance; literature; libraries; museums; painting; sculpture; government policy.
+ENV,"Environment, Natural World, Conservation",Pollution; conservation; green issues; recycling; energy saving; alternative energy; natural world; environmental disasters; oil spills; environmental politics; natural resources; waste; government policy.
+FES,"Editorial special, analysis and future stories",
+FILM,Film/movies,
+HEA,"Health, Medicines",Health; disease; medical research; preventative medicine; hospitals; government policy.
+IMM,Immigration/asylum,
+JUDIC,Judicial processes/court cases/court decisions,
+LAW,Legislation,"Federal, state, local government (including city, town, council votes and meetings); legislation affecting budgets, securities laws, bonds, capital budgets, construction plans and legislation, ballot issues, elections, highway and transport issues, lawsuits and court rulings."
+LIF,Lifestyle,All news about lifestyles; lifestyles of people in the public eye. 
+MUSIC,Music/musical artists,
+ODD,Human Interest,"Unusual, offbeat and curious stories."
+POL,Domestic Politics,All stories about national politics; including political parties; parliament; congress; constitutional issues; human rights; local government and authorities; refugees.
+PRO,"Biographies,  Personalities, People",People in the news; biographies; profiles; politicians; famous people.
+REL,Religion,All matters relating to religion; individual religions; cults and sects; issues of faith; religious institutions; government policy.
+SCI,"Science, Technology",All aspects of science; research and new technology; applied sciences; human sciences; natural sciences; philosophical sciences; scientific exploration; space programmes and exploration; NASA; government policy.
+SECUR,National and international security,
+TAX,Tax,"Stories about governmental and local taxation issues, to include tax rate changes, taxation policy, direct and indirect taxation, tax harmonisation, marginal tax rates, socio-economic impact, progressive and regressive taxes, thresholds and allowances."
+TRN,Translated News,News which has been translated from another language
+VIO,Civil unrest,"Stories about riots, demonstrations and other internal disturbances."
+VOTE,Elections,"National; regional; local elections; manifestos, polling.  Relates only to government."
+WAR,"War, civil war and insurgencies","Stories about armed conflict involving nations, national factions, insurgencies."
+WEA,Weather,"All weather issues and reports; forecasts; statistics; warnings; meteorological phenomena, weather organisations; e.g. El Nino, NWS, WSC."
+WTC,Aftermath of the attack on U.S,Aftermath of the Attack on the US
+,,
+Region Codes,,
+AFE,Africa,All English news stories covering events relating to this region
+AFF,Africa,All French news stories covering events relating to this region
+BAK,Balkan states,All news stories covering events relating to these countries
+EMRG,Emerging Countries,"All stories about countries where economies are deemed to be emerging or about topics that would be of interest to clients working in the emerging market sector. There is no set list of countries which would automatically carry the EMRG code but our Senior Emerging Markets correspondent advises that these would be likely to carry the code where appropriate:  Afghanistan, Albania, Algeria, Angola, Antigua & Barbuda, Argentina, Armenia, Azerbaijan, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia, Bosnia and Herzegovina, Botswana, Brazil, Bulgaria, Burkina Faso, Burundi, Cambodia, Cameroon, Cape Verde, Central African Republic, Chad, Colombia, Comoros, Democratic Republic of Congo, Republic of Congo, Costa Rica, Cote d'Ivoire, Chile, China, Croatia, Czech republic, Djibouti, Dominica, Dominican Republic, Eastern Caribbean states, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Ethiopia, Fiji, Gabon, The Gambia, Georgia, Ghana, Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Hungary, India, Indonesia, Iraq, Iran, Israel, Jamaica, Jordan, Kazakhstan, Kenya, Kiribati, Korea, Kosovo, Kyrgyz Republic, Lao PDR, Latvia, Lebanon, Lesotho, Liberia, Lithuania, FYR Macedonia, Madagascar, Malawi, Malaysia, Maldives, Mali, Marshall Islands, Mauritania, Mauritius, Mexico, FS Micronesia, Moldova, Mongolia, Morocco, Mozambique, Myanmar, Namibia, Nepal, Nicaragua, Niger, Nigeria, Oman, Pakistan, Palau, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland, Romania, Russia, Rwanda, Samoa, Sao Tome & Principe, Senegal, South Africa, Sri Lanka, St Kitts and Nevis, Serbia and Montenegro, Seychelles, Sierra Leone, Slovak republic, Slovenia, Solomon Islands, Somalia, St Lucia, St Vincent & Grenadines, Sudan, Suriname, Swaziland, Syria, Tajikistan, Tanzania, Thailand, East Timor, Togo, Tonga, Trinidad & Tobago, Tunisia, Turkey, Turkmenistan, Uganda, Ukraine, UAE, Uruguay, Uzbekistan, Vanuatu, Venezuela, Vietnam, West Bank and Gaza, Yemen, Zambia, Zimbabwe."
+EUROPE,Europe,All news stories covering events relating to this region.
+EEU,Eastern Europe - NB: Bold Countries are listed on Reuters Editorial Systems in ASIA as well as EEU,"All news stories covering events relating to the following countries: Albania, Armenia, Belarus, Azerbaijan, Croatia, Estonia, Hungary, Kyrghstan, Lithuania, Latvia, Turkmenistan, Tajikistan, Slovenia, Slovakia, Russian Federation, Romania, Poland, Montenegro, Moldova, Yugoslavia, Uzbekistan, Ukraine, Macedonia, Kazakhstan, Czech Republic, Bulgaria, Bosnia & Herzegovia"
+ASIA,Asia - NB: Bold Countries are listed on Reuters Editorial Systems in EEU as well as ASIA,"All news stories covering events relating to the following countries:  Afghanistan, American Samoa, Armenia, Australia, Azerbaijan, Bangladesh, Bhutan, Brunei, Cambodia, China, East Timor, Fiji, French Polynesia, Georgia, Guam, Hong Kong, India, Indonesia, Iran, Japan, Kazakhstan, Kiribati, North Korea, South Korea, Kyrgyzstan, Laos, Macao, Malaysia, Maldives, Marianna Islands, Marshall Islands, Miconesia, Mongolia, Myanmar, Nauru, Nepal, New Caledonia, New Zealand, Norfolk Islands, Pakistan, Papua New Guinea, Philippinnes, Pitcairn Islands, Russia, Singapore,  Solomon Islands, Sri Lanka, Taiwan, Tajikistan, Thailand, Tonga, Turkey, Turkmenistan, Tuvalu, Uzbekistan, Vanuatu, Vietnam, Wallis and Fortuna Islands, Western Samoa."
+LATAM,South and Central America,
+MEAST,Middle East,"Stories from or about Middle East countries and is also added to stories from other centres which are about pan-Middle East issues or countries in that region. Goes on stories from Syria, Iraq, Iran, Turkey, Lebanon, Israel, Palestinian Territories, Saudi Arabia, Kuwait, UAE, Egypt, Algeria, Tunisia, Libya, Morocco, Jordan, Oman, Yemen, Libya."
+WEU,Western Europe ,"All news stories covering events relating to the following countries:  Andorra, Austria, Belgium, Denmark, Finaland, France, Germany, Greece, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Spain ,Sweden, Switzerland, UK."
+NORD,Nordic,"All stories from or about the Nordic region which includes Denmark, Norway, Sweden, Finland, Estonia, Latvia and Lithuania"
+,,
+Country Codes,,
+AF,Afghanistan,All news stories covering events relating to this country     
+AL,Albania,All news stories covering events relating to this country     
+DZ,Algeria,All news stories covering events relating to this country     
+AS,American Samoa,All news stories covering events relating to this country
+AD,Andorra,All news stories covering events relating to this country  
+AO,Angola,All news stories covering events relating to this country     
+AI,Anguilla,All news stories covering events relating to this country
+AQ,Antarctica,All news stories covering events relating to this country
+AG,Antigua and Barbuda,All news stories covering events relating to this country     
+AR,Argentina,All news stories covering events relating to this country     
+AM,Armenia,All news stories covering events relating to this country     
+AW,Aruba,All news stories covering events relating to this country
+AU,Australia,All news stories covering events relating to this country
+AT,Austria,All news stories covering events relating to this country
+AZ,Azerbaijan,All news stories covering events relating to this country     
+BS,Bahamas,All news stories covering events relating to this country     
+BH,Bahrain,All news stories covering events relating to this country     
+BD,Bangladesh,All news stories covering events relating to this country     
+BB,Barbados,All news stories covering events relating to this country     
+BY,Belarus,All news stories covering events relating to this country    
+BE,Belgium,All news stories covering events relating to this country
+BZ,Belize,All news stories covering events relating to this country    
+BJ,Benin,All news stories covering events relating to this country     
+BM,Bermuda,All news stories covering events relating to this country
+BT,Bhutan,All news stories covering events relating to this country
+BO,Bolivia,All news stories covering events relating to this country     
+BA,Bosnia and Herzegovina,All news stories covering events relating to this country     
+BW,Botswana,All news stories covering events relating to this country    
+BV,Bouvet Island,All news stories covering events relating to this country
+BR,Brazil,All news stories covering events relating to this country     
+IO,British Indian Ocean Territory,All news stories covering events relating to this country
+VG,British Virgin Islands,All news stories covering events relating to this country
+BN,Brunei ,All news stories covering events relating to this country     
+BG,Bulgaria,All news stories covering events relating to this country     
+BF,Burkina Faso,All news stories covering events relating to this country     
+BI,Burundi,All news stories covering events relating to this country     
+KH,Cambodia,All news stories covering events relating to this country    
+CM,Cameroon,All news stories covering events relating to this country    
+CA,Canada,All news stories covering events relating to this country
+CV,Cape Verde,All news stories covering events relating to this country    
+KY,Cayman Islands,All news stories covering events relating to this country    
+CF,Central African Republic,All news stories covering events relating to this country    
+TD,Chad,All news stories covering events relating to this country    
+CL,Chile,All news stories covering events relating to this country    
+CN,China,All news stories covering events relating to this country    
+CX,Christmas Islands,All news stories covering events relating to this country
+CC,Cocos Islands,All news stories covering events relating to this country
+CO,Colombia,All news stories covering events relating to this country    
+KM,Comoros,All news stories covering events relating to this country    
+CG,Congo,All news stories covering events relating to this country    
+CK,Cook Islands,All news stories covering events relating to this country    
+CR,Costa Rica,All news stories covering events relating to this country    
+HR,Croatia,All news stories covering events relating to this country    
+CU,Cuba,All news stories covering events relating to this country    
+CY,Cyprus,All news stories covering events relating to this country    
+CZ,Czech Republic,All news stories covering events relating to this country    
+CD,Democratic Rep of Congo,All news stories covering events relating to this country    
+DK,Denmark,All news stories covering events relating to this country
+DJ,Djibouti,All news stories covering events relating to this country    
+DM,Dominica,All news stories covering events relating to this country    
+DO,Dominican Republic,All news stories covering events relating to this country    
+TP,East Timor,All news stories covering events relating to this country    
+EC,Ecuador,All news stories covering events relating to this country    
+EG,Egypt,All news stories covering events relating to this country    
+SV,El Salvador,All news stories covering events relating to this country    
+GBE,England,All news stories covering events relating to this country    
+GQ,Equatorial Guinea,All news stories covering events relating to this country    
+ER,Eritrea,All news stories covering events relating to this country    
+EE,Estonia,All news stories covering events relating to this country    
+ET,Ethiopia,All news stories covering events relating to this country    
+FO,Faeroe Islands,All news stories covering events relating to this country
+FK,Falkland Islands (Malvinas),All news stories covering events relating to this country
+FJ,Fiji,All news stories covering events relating to this country    
+FI,Finland,All news stories covering events relating to this country
+FR,France,All news stories covering events relating to this country
+GF,French Guiana,All news stories covering events relating to this country
+PF,French Polynesia,All news stories covering events relating to this country
+TF,French Southern Territories,All news stories covering events relating to this country
+GA,Gabon,All news stories covering events relating to this country    
+GM,Gambia,All news stories covering events relating to this country    
+GG,Georgia ,All news stories covering events relating to this country    
+DE,Germany,All news stories covering events relating to this country
+GH,Ghana,All news stories covering events relating to this country    
+GI,Gibraltar,All news stories covering events relating to this country
+GR,Greece,All news stories covering events relating to this country    
+GL,Greenland,All news stories covering events relating to this country
+GD,Grenada,All news stories covering events relating to this country    
+GP,Guadeloupe,All news stories covering events relating to this country
+GU,Guam,All news stories covering events relating to this country
+GT,Guatemala,All news stories covering events relating to this country    
+GN,Guinea,All news stories covering events relating to this country    
+GW,Guinea-Bissau,All news stories covering events relating to this country    
+GY,Guyana,All news stories covering events relating to this country    
+HT,Haiti,All news stories covering events relating to this country    
+HM,Heard McDonald Islands,All news stories covering events relating to this country
+HN,Honduras,All news stories covering events relating to this country    
+HK,Hong Kong,All news stories covering events relating to this country    
+HU,Hungary,All news stories covering events relating to this country    
+IS,Iceland,All news stories covering events relating to this country
+IN,India,All news stories covering events relating to this country    
+ID,Indonesia,All news stories covering events relating to this country    
+IR,Iran (Islamic Republic of),All news stories covering events relating to this country    
+IQ,Iraq,All news stories covering events relating to this country    
+IE,Ireland,All news stories covering events relating to this country
+IL,Israel,All news stories covering events relating to this country    
+IT,Italy,All news stories covering events relating to this country
+CI,Ivory Coast,All news stories covering events relating to this country    
+JM,Jamaica,All news stories covering events relating to this country    
+JP,Japan,All news stories covering events relating to this country
+JO,Jordan,All news stories covering events relating to this country    
+KZ,Kazakhstan,All news stories covering events relating to this country    
+KE,Kenya,All news stories covering events relating to this country    
+KI,Kiribati,All news stories covering events relating to this country    
+KP,Korean Democratic Republic (North),All news stories covering events relating to this country    
+KR,Korean Republic (South),All news stories covering events relating to this country    
+KW,Kuwait,All news stories covering events relating to this country    
+KG,Kyrgyzstan,All news stories covering events relating to this country    
+LA,Laos,All news stories covering events relating to this country    
+LV,Latvia,All news stories covering events relating to this country    
+LB,Lebanon,All news stories covering events relating to this country    
+LS,Lesotho,All news stories covering events relating to this country    
+LR,Liberia,All news stories covering events relating to this country    
+LY,Libya,All news stories covering events relating to this country    
+LI,Liechtenstein,All news stories covering events relating to this country
+LT,Lithuania,All news stories covering events relating to this country    
+LU,Luxembourg,All news stories covering events relating to this country
+MO,Macau,All news stories covering events relating to this country    
+MK,"Macedonia, The former Yugoslav Republic Of",All news stories covering events relating to this country    
+MG,Madagascar,All news stories covering events relating to this country    
+MW,Malawi,All news stories covering events relating to this country    
+MY,Malaysia,All news stories covering events relating to this country    
+MV,Maldives,All news stories covering events relating to this country    
+ML,Mali,All news stories covering events relating to this country    
+MT,Malta,All news stories covering events relating to this country    
+MH,Marshall Islands,All news stories covering events relating to this country
+MQ,Martinique,All news stories covering events relating to this country
+MR,Mauritania,All news stories covering events relating to this country    
+MU,Mauritius,All news stories covering events relating to this country    
+MX,Mexico,All news stories covering events relating to this country    
+FM,Micronesia (Federated States of),All news stories covering events relating to this country    
+MJ,Moldova,All news stories covering events relating to this country    
+MC,Monaco,All news stories covering events relating to this country
+MN,Mongolia,All news stories covering events relating to this country    
+MS,Montserrat,All news stories covering events relating to this country
+MA,Morocco,All news stories covering events relating to this country    
+MZ,Mozambique,All news stories covering events relating to this country    
+MM,Myanmar,All news stories covering events relating to this country    
+NA,Namibia,All news stories covering events relating to this country    
+NR,Nauru,All news stories covering events relating to this country    
+NP,Nepal,All news stories covering events relating to this country    
+NL,Netherlands,All news stories covering events relating to this country
+AN,Netherlands Antilles,All news stories covering events relating to this country     
+NC,New Caledonia,All news stories covering events relating to this country    
+NZ,New Zealand,All news stories covering events relating to this country
+NI,Nicaragua,All news stories covering events relating to this country    
+NE,Niger,All news stories covering events relating to this country    
+NG,Nigeria,All news stories covering events relating to this country    
+NU,Niue,All news stories covering events relating to this country
+NF,Norfolk Island,All news stories covering events relating to this country
+GBNI,Northern Ireland,All news stories covering events relating to this country
+NO,Norway,All news stories covering events relating to this country
+OM,Oman,All news stories covering events relating to this country    
+PK,Pakistan,All news stories covering events relating to this country
+PW,Palau,All news stories covering events relating to this country
+PS,Palestine,All news stories covering events relating to this country    
+PA,Panama,All news stories covering events relating to this country    
+PG,Papua New Guinea,All news stories covering events relating to this country    
+PY,Paraguay,All news stories covering events relating to this country    
+PE,Peru,All news stories covering events relating to this country    
+PH,Philippines,All news stories covering events relating to this country    
+PN,Pitcairn,All news stories covering events relating to this country
+PL,Poland,All news stories covering events relating to this country    
+PT,Portugal,All news stories covering events relating to this country    
+PR,Puerto Rico,All news stories covering events relating to this country    
+QA,Qatar,All news stories covering events relating to this country    
+RE,Reunion,All news stories covering events relating to this country
+RO,Romania,All news stories covering events relating to this country    
+RU,Russian Federation,All news stories covering events relating to this country    
+RW,Rwanda,All news stories covering events relating to this country    
+KN,Saint Kitts-Nevis,All news stories covering events relating to this country    
+LC,Saint Lucia,All news stories covering events relating to this country    
+VC,Saint Vincent and the Grenadines,All news stories covering events relating to this country    
+WS,Samoa,All news stories covering events relating to this country
+SM,San Marino,All news stories covering events relating to this country    
+ST,Sao Tome et Principe,All news stories covering events relating to this country    
+SA,Saudi Arabia,All news stories covering events relating to this country    
+GBS,Scotland,All news stories covering events relating to this country    
+SN,Senegal,All news stories covering events relating to this country    
+CS,Serbia and Montenegro,All news stories covering events relating to this country
+SC,Seychelles,All news stories covering events relating to this country    
+SL,Sierra Leone,All news stories covering events relating to this country    
+SG,Singapore,All news stories covering events relating to this country    
+SK,Slovakia,All news stories covering events relating to this country    
+SQ,Slovenia,All news stories covering events relating to this country    
+SB,Solomon Islands,All news stories covering events relating to this country    
+SO,Somalia,All news stories covering events relating to this country    
+ZA,South Africa,All news stories covering events relating to this country    
+GS,South Georgia/Sandwich Islands,All news stories covering events relating to this country 
+ES,Spain,All news stories covering events relating to this country
+LK,Sri Lanka,All news stories covering events relating to this country    
+SH,St Helena,All news stories covering events relating to this country
+PM,St Pierre and Miquelon,All news stories covering events relating to this country
+SD,Sudan,All news stories covering events relating to this country    
+SR,Suriname,All news stories covering events relating to this country    
+SJ,Svalbard and Jan Mayen,All news stories covering events relating to this country
+SZ,Swaziland,All news stories covering events relating to this country    
+SE,Sweden,All news stories covering events relating to this country 
+CH,Switzerland,All news stories covering events relating to this country
+SY,Syria ,All news stories covering events relating to this country    
+TW,Taiwan,All news stories covering events relating to this country    
+TJ,Tajikistan,All news stories covering events relating to this country    
+TZ,"Tanzania, United Republic Of",All news stories covering events relating to this country    
+TH,Thailand,All news stories covering events relating to this country    
+TG,Togo,All news stories covering events relating to this country    
+TK,Tokelau,All news stories covering events relating to this country
+TO,Tonga,All news stories covering events relating to this country    
+TT,Trinidad and Tobago,All news stories covering events relating to this country    
+TN,Tunisia,All news stories covering events relating to this country    
+TR,Turkey,All news stories covering events relating to this country    
+TM,Turkmenistan,All news stories covering events relating to this country    
+TC,Turks and Caicos Islands,All news stories covering events relating to this country
+TV,Tuvalu,All news stories covering events relating to this country    
+UG,Uganda,All news stories covering events relating to this country    
+UA,Ukraine,All news stories covering events relating to this country    
+AE,United Arab Emirates,All news stories covering events relating to this country
+GB ,United Kingdom,All news stories covering events relating to this country
+US,United States of America,All news stories covering events relating to this country
+UY,Uruguay,All news stories covering events relating to this country    
+UM,US Minor Outlying Islands,All news stories covering events relating to this country
+UZ,Uzbekistan,All news stories covering events relating to this country    
+VU,Vanuatu,All news stories covering events relating to this country    
+VA,Vatican City State,All news stories covering events relating to this country
+VE,Venezuela,All news stories covering events relating to this country    
+VN,Vietnam,All news stories covering events relating to this country    
+VI,Virgin Islands (US),All news stories covering events relating to this country
+GBW,Wales,All news stories covering events relating to this country    
+WF,Wallis and Fortuna Islands,All news stories covering events relating to this country
+EH,Western Sahara,All news stories covering events relating to this country
+YE,Yemen,All news stories covering events relating to this country    
+ZM,Zambia,All news stories covering events relating to this country    
+ZW,Zimbabwe,All news stories covering events relating to this country    
+,,
+Sports Codes,,
+ALPS,Alpine Skiing,All news stories covering events relating to this sport.
+AMER,American Football,All news stories covering events relating to this sport.
+ARCH,Archery,All news stories covering events relating to this sport.
+ATHL,Athletics,All news stories covering events relating to this sport.
+AUSR,Australian Rules Football,All news stories covering events relating to this sport.
+BADM,Badminton,All news stories covering events relating to this sport.
+BASE,Baseball,All news stories covering events relating to this sport.
+BASK,Basketball,All news stories covering events relating to this sport.
+BIAT,Biathlon,All news stories covering events relating to this sport.
+BILL,Billiards,All news stories covering events relating to this sport.
+BOAR,Boardsailing,All news stories covering events relating to this sport.
+BOBS,Bobsleigh,All news stories covering events relating to this sport.
+BOWL,Bowls,All news stories covering events relating to this sport.
+BOXI,Boxing,All news stories covering events relating to this sport.
+CANO,Canoeing,All news stories covering events relating to this sport.
+SOCCL,Champions League Soccer,All news stories covering events relating to this sport.
+CHESS,Chess,All news stories covering events relating to this sport.
+CRIC,Cricket,All news stories covering events relating to this sport.
+CURL,Curling,All news stories covering events relating to this sport.
+CYCL,Cycling,All news stories covering events relating to this sport.
+DIVE,Diving,All news stories covering events relating to this sport.
+DOP,Doping Stories,All news stories covering events relating to this topic.
+ESOC,European Soccer Championships,All news stories covering events relating to this topic.
+EQUE,Equestrian,All news stories covering events relating to this sport.
+FENC,Fencing,All news stories covering events relating to this sport.
+HOCK,Field Hockey,All news stories covering events relating to this sport.
+FIGS,Figure Skating,All news stories covering events relating to this sport.
+FREE,Freestyle Skiing,All news stories covering events relating to this sport.
+GOLF,Golf,All news stories covering events relating to this sport.
+GYMN,Gymnastics,All news stories covering events relating to this sport.
+HAND,Handball,All news stories covering events relating to this sport.
+HORS,Horse Racing,All news stories covering events relating to this sport.
+ICEH,Ice Hockey,All news stories covering events relating to this sport.
+JUDO,Judo,All news stories covering events relating to this sport.
+KARA,Karate,All news stories covering events relating to this sport.
+LUGE,Luge,All news stories covering events relating to this sport.
+MODE,Modern Pentathlon,All news stories covering events relating to this sport.
+MOCR,Motocross,All news stories covering events relating to this sport.
+MORA,Motor Racing,All news stories covering events relating to this sport.
+MOCY,Motorcycling,All news stories covering events relating to this sport.
+NBA,NBA Basketball,All news stories covering events relating to this sport.
+NETB,Netball,All news stories covering events relating to this sport.
+NFL,NFL American Football,All news stories covering events relating to this sport.
+NHL,NHL Ice Hockey,All news stories covering events relating to this sport.
+SPOR,Non-English Language Sport,All non-English news stories relating to sport.
+NORS,Nordic Skiing,All news stories covering events relating to this sport.
+OLY,Olympics – Umbrella Code,All news stories covering events relating to this event.
+ORIE,Orienteering,All news stories covering events relating to this sport.
+RALL,Rallying,All news stories covering events relating to this sport.
+RSLT,Sports Results,All news stories relating to sports results.
+ROWI,Rowing,All news stories covering events relating to this sport.
+RUGL,Rugby League,All news stories covering events relating to this sport.
+RUGU,Rugby Union,All news stories covering events relating to this sport.
+SHOO,Shooting,All news stories covering events relating to this sport.
+SKIJ,Ski Jumping,All news stories covering events relating to this sport.
+SNOO,Snooker,All news stories covering events relating to this sport.
+SNO,Snowboarding,All news stories covering events relating to this sport.
+SOCC,Soccer,All news stories covering events relating to this sport.
+SOFT,Softball,All news stories covering events relating to this sport.
+SKAT,Speed Skating,All news stories covering events relating to this sport.
+SKEL,Skeleton,All news stories covering events relating to this sport.
+SPEE,Speedway,All news stories covering events relating to this sport.
+SQUA,Squash,All news stories covering events relating to this sport.
+STSK,Short Track Skating,All news stories covering events relating to this sport.
+SUMO,Sumo Wrestling,All news stories covering events relating to this sport.
+SWIM,Swimming,All news stories covering events relating to this sport.
+TABT,Table Tennis,All news stories covering events relating to this sport.
+TAEK,Tae Kwondo,All news stories covering events relating to this sport.
+TENN,Tennis,All news stories covering events relating to this sport.
+TENP,Tenpin Bowling,All news stories covering events relating to this sport.
+TRIA,Triathlon,All news stories covering events relating to this sport.
+VOLL,Volleyball,All news stories covering events relating to this sport.
+WATP,Water Polo,All news stories covering events relating to this sport.
+WATS,Water Skiing,All news stories covering events relating to this sport.
+WCUP,International Championships,To be use in conjunction with appropriate sports code.
+WEIG,Weightlifting,All news stories covering events relating to this sport.
+WRES,Wrestling,All news stories covering events relating to this sport.
+XCTY,Cross-Country Skiing,All news stories covering events relating to this sport.
+YACH,Yachting,All news stories covering events relating to this sport.
+,,
+Language Codes,,
+NB: On input the 'L' is not included.  The 'L' is added automatically by the Reuters News Processing System,,
+LBG,Bulgarian Language Code,All news stories written in Bulgarian
+LCA,Catalan Language Code (Global Press Watch Use Only),All news stories written in Catalan (Global Press Watch Use Only)
+LCS,Czech Language Code,All news stories written in Czech
+LDA,Danish Language Code,All news stories written in Danish
+LDE,German Language Code,All news stories written in German
+LEN,English Language Code,All news stories written in English
+LEL,Greek Language Code,All news stories written in Greek
+LES,Spanish Language Code,All news stories written in Spanish
+LFI,Finnish Language Code,All news stories written in Finnish
+LFR,French Language Code,All news stories written in French
+LIT,Italian Language Code,All news stories written in Italian
+LJA,Japanese Language Code,All news stories written in Japanese
+LKO,Korean Language Code,All news stories written in Korean
+LNL,Dutch Language Code,All news stories written in Dutch
+LNO,Norwegian Language Code,All news stories written in Norwegian
+LPL,Polish Language Code,All news stories written in Polish
+LPT,Portuguese Language Code,All news stories written in Portuguese
+LRU,Russian Language Code,All news stories written in Russian
+LSK,Slovak Language Code (Global Press Watch Use Only),All news stories written in Slovak (Global Press Watch Use Only)
+LSV ,Swedish Language Code,All news stories written in Swedish
+LTH,Thai Language Code,All news stories written in Thai
+LTR,Turkish Language Code,All news stories written in Turkish
+LZH,Chinese Language Code,All news stories written in Chinese
+,,
+Muni State Codes,,
+AL1,Alabama - municipal bond market news,
+AK1,Alaska - municipal bond market news,
+AZ1,Arizona - municipal bond market news,
+AR1,Arkansas - municipal bond market news,
+CA1,California - municipal bond market news,
+CO1,Colorado - municipal bond market news,
+CT1,Connecticut - municipal bond market news,
+DE1,Delaware - municipal bond market news,
+DC1,District of Columbia - municipal bond market news,
+FL1,Florida - municipal bond market news,
+GA1,Georgia - municipal bond market news,
+GU1,Guam - municipal bond market news,
+HI1,Hawaii - municipal bond market news,
+ID1,Idaho - municipal bond market news,
+IL1,Illinois - municipal bond market news,
+IN1,Indiana - municipal bond market news,
+IA1,Iowa - municipal bond market news,
+KS1,Kansas - municipal bond market news,
+KY1,Kentucky - municipal bond market news,
+LA1,Louisiana - municipal bond market news,
+ME1,Maine - municipal bond market news,
+MD1,Maryland - municipal bond market news,
+MA1,Massachusetts - municipal bond market news,
+MI1,Michigan - municipal bond market news,
+MN1,Minnesota - municipal bond market news,
+MS1,Mississippi - municipal bond market news,
+MO1,Missouri - municipal bond market news,
+MT1,Montana - municipal bond market news,
+NC1,North Carolina - municipal bond market news,
+ND1,North Dakota - municipal bond market news,
+NE1,Nebraska - municipal bond market news,
+NV1,Nevada - municipal bond market news,
+NH1,New Hampshire - municipal bond market news,
+NJ1,New Jersey - municipal bond market news,
+NM1,New Mexico - municipal bond market news,
+NY1,New York - municipal bond market news,
+OH1,Ohio - municipal bond market news,
+OK1,Oklahoma - municipal bond market news,
+OR1,Oregon - municipal bond market news,
+PA1,Pennsylvania - municipal bond market news,
+PR1,Puerto Rico - municipal bond market news,
+RI1,Rhode Island – municipal bond market news,
+SC1,South Carolina - municipal bond market news,
+SD1,South Dakota - municipal bond market news,
+TN1,Tennessee – municipal bond market news,
+TX1,Texas - municipal bond market news,
+UT1,Utah - municipal bond market news,
+VT1,Vermont – municipal bond market news,
+VA1,Virginia – municipal bond market news,
+VI1,Virgin Islands - municipal bond market news,
+WA1,Washington – municipal bond market news,
+WV1,West Virginia – municipal bond market news,
+WI1,Wisconsin – municipal bond market news,
+WY1,Wyoming – municipal bond market news,
+,,
+Special Muni Codes,,
+BINS,Credit Enhancement (US Muni service only),"News about credit enhancement, such as bond insurance and letters of credit and the companies that provide these products."
+BL1,Bond Inventory Balances (US Muni service only),News about bond inventory balances and unsold balances and account-closed and free-to-trade announcements.
+BQ1,Bank-Qualified – Municipal Bond Market News (US Muni service only),"News about bank-qualified bonds, which allow banks to deduct interest paid to carry those bonds.  Bank-qualified bonds are typically issued for a public purpose in small amounts. "
+CM1,Competitive Bond Sales (US Muni service only),"News about competitive bond sales, including presale stories."
+GOS,General Obligation Debt (US Muni service only),News about general obligation debt by state and local government issuers; GO notes and taxable GO debt; general obligation certificates of participation; state appropriation debt; and news about new GO financings and new capital programs.
+NG1,Negotiated Sale  (US Muni service only),"News about negotiated sales -- a transaction conducted by an issuer via a hired syndicate. The issuer hires a banker to structure and price a deal. The banker picks a sales date, pre-markets the bonds to potential investors and prices the deal."
+NT1,Note Sales (US Muni service only),"News about note sales (short-term debt), including presale stories."
+PS1,Presale Announcements (US Muni service only),News about presale announcements.
+REVS,"State, Local Authority, Agency Debt (US Muni service only)","News about debt sold by state and local authorities and agencies, such as toll road authorities, port authorities, airport authorities; industrial development and industrial revenue bonds; lease-back obligations and certificates of participation."
+SL1,Bond Sales (US Muni service only),"News about all bond sales, including presale stories."
+TA1,Taxables – Municipal Bond Market News (US Muni service only),"News about taxable bonds, which are issued for purposes the federal government deems does not provide a significant benefit to the public."
+,,
+Personal Finance Codes,,
+These codes should be applied only by specialist personal finance journalists,,
+(For Reuters Internal Use Only),,
+INV,Investing,"All news about the process of investing on the part of individuals.  News about investment tools, techniques and regulations for the individual investor and market trends that are related to individual investors; news about how investors interact with markets, detailing patterns of behaviour of the investors and their aggregate impact on the macro-economy. This could include stories interviewing fund managers about their own process of investigating or about individual investment flows into and out of the markets. It includes information with advice from the experts about how to invest and helping in the process of making selections between various financial instruments."
+RTM,Retirement,"All news about retirement and related issues, including financial regulation and financial industry trends that affect retirement."
+,,
+Codes for other News Organisations,,
+ALU,Aluminium,
+BSD,"Commods vol, open interest, buyer/seller data (Genex)",
+CAP,Capital Reconstructions,
+CDTY,Commodities News (3rd Party),
+COS,Silk/Dried Cocoon (3rd Party) - Kanji,
+CPC,Hong Kong SE Compliance - Chinese,
+CPN,Hong Kong SE Compliance - English,
+ECON,Economic News (3rd Party),
+EQTY,Equities News (3rd Party),
+EXC,Hong Kong SE - Chinese,
+EXN,Hong Kong SE - English,
+FERR,Ferro Alloys,
+GLC,Hong Kong SE Growth Market - Chinese,
+GLN,Hong Kong SE Growth Market - English,
+INDU,Industry News (3rd Party),
+JIJ+,Jiji Top News,
+JIK,Jikogyoku (Primary Order) (3rd Party) - Kanji,
+LEAD,Lead,
+LMET,Light Metals,
+LTC,Hong Kong SE Listings - Chinese,
+LTN,Hong Kong SE Listings - English,
+MAN,Company Management Issues,
+MIN,Mining,
+MMS,MMS (Japanese),
+MNEY,Money News (3rd Party),
+MSTA,Platt's - Metal Statistics,
+OLEF,Platt's Olefins,
+RACK,Racks,
+RBN,Red Beans (3rd Party) - Kanji,
+PLTN,Platt’s - Top News of the day,
+POTC,PRN - OTC Company News,
+SOLV,Platt's - Solvents,
+TEG,Genex - Teguchi (number of positions held by brokers),
+TIN,Platt's - Tin,
+TPO,Investor 3rd Party Asian News Feeds,
+,,
+Japanese (Kanji) Sector Codes,,
+(For Reuters Internal Use Only),,
+T01,Fishery and forestry (Kanji),
+T02,Mining (Kanji),
+T03,Construction (Kanji),
+T04,Foods (Kanji),
+T05,Textiles(Kanji),
+T06,Pulp and paper (Kanji),
+T07,Chemicals (Kanji),
+T08,Pharmaceuticals (Kanji),
+T09,Oil and coal (Kanji),
+T10,Rubber (Kanji),
+T11,Glass and ceramics (Kanji),
+T12,Steel (Kanji),
+T13,Non-ferrous metals (Kanji),
+T14,Metal products (Kanji),
+T15,Machinery (Kanji),
+T16,Electronic machinery (Kanji),
+T17,Transportation equipment (Kanji),
+T18,Precision machinery (Kanji),
+T19,Miscellaneous products,
+T20,Wholesale (Kanji),
+T21,Retail (Kanji),
+T22,Banking (Kanji),
+T23,Other financial (Kanji),
+T24,Securities (Kanji),
+T25,Insurance (Kanji),
+T26,Real estate (Kanji),
+T27,Land transportation (Kanji),
+T28,Sea transportation (Kanji),
+T29,Air transportation (Kanji),
+T30,Warehousing (Kanji),
+T31,Communication (Kanji),
+T32,Utilities (Kanji),
+T33,Services (Kanji),
+,,
+National Service Codes - English and foreign language,,
+(For Reuters Use Only),,
+,,
+CDEPTH,Chinese in-depth analyses/features,
+CFACT,Chinese factboxes,
+CINSTA,Chinese instant views,
+CINTER,Chinese interviews,
+CNEWS,Chinese breaking news,
+CPOLL,Chinese polls,
+COPINI,Chinese opinion stories,
+FEA,Multi Language - Features News ,
+FOR,Japanes Language - Foreign Company News,
+GEE,German Language - Equities,
+GEG,German Language - General,
+GEM,German Language - Money,
+HOY ,Spanish Language General News,
+INGE,French Language General News,
+JDOM,Japanese Language - Assorted News,
+JFOR,Japanese Language - Assorted News,
+JLN,Japanese Language - Assorted News,
+JOUR,French Language European Markets News,
+OTC,Japanese Language Over-the-Counter Market,
+MOF,Japanese Language - Ministry of France,
+MORG,Nordic Language Morning News,
+NOTE,French Language Global Outlook,
+NOW,Japanese Language - Major Events ,
+RJRJ,Japanese joint translation news,
+SWT1,Swedish code to route news to a wallsign,
+,,
+Other Codes,,
+(For Reuters Internal Use Only),,
+ERR,Error (Internal Use Only),
+IDN,Integrated Data Network (Internal Use Only),
+HELP,For access to a story containing CRMC contact info,
+INFO,Subscriber Information,
+TIV,To identify Tiverton-produced content,
+XREF,Chaining Code (Internal Use Only),Excludes cross-reference tables from media feeds
+XRNP,Used by Editorial to exclude story from RNP,
+XPCO,Used by Editorial to exclude story from PCO,
+XPTD,Used by Editorial to exclude story from PTD,
+XPSP,Used by Editorial to exclude story from PSP,
+XPGE,Used by Editorial to exclude story from PGE,
+XDNP,Used by Editorial to exclude story from DNP,
+XPCU,Used by Editorial to exclude story from PCU,
+XPCM,Used by Editorial to exclude story from PCM,
+XPEN,Used by Editorial to exclude story from PEN,
+XPMF,Used by Editorial to exclude story from PMF,
+XPSC,Used by Editorial to exclude story from PSC,
+Final,,
