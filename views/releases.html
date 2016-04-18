@@ -15,6 +15,7 @@
 				<div class="page-header">
 						<h1>Version {{release.version}}  <small>{{release.date}}</small></h1>
 				</div>
+				<h3>New Routes:</h3>
 				<div ng-repeat='route in release.new_routes'>
 
 					<div class="panel panel-warning">
@@ -34,20 +35,30 @@
 					    	<ul><input-table></input-table></ul>
 						</div>
 						<p><b>Output Type:</b> {{route.output_type}}</p>
-							<p>
-								<div ng-show='route.schema.length'>
+							<div ng-show='route.schema.length'>
+								<p>
 									<b>Output Schema:</b>
 									<ul><schema-table></schema-table></ul>
-								</div>
-							</p>
+								</p>
+							</div>
+						<div ng-show="route.output_example != ''">
+							<b>Example Output</b>
+							<pre>{{route.output_example}}</pre>
+						</div>
 					  </div>
 
 					</div>
 				</div>
 				<div class="well">
-					<b>Release Notes:</b>
+					<b ng-show='release.implemented.length'>Release Notes:</b>
 					<ul>
 						<div ng-repeat='comment in release.implemented'>
+							<li>{{comment}}</li>
+						</div>
+					</ul>
+					<b ng-show='release.differences.length'>Improvements:</b>
+					<ul>
+						<div ng-repeat='comment in release.differences'>
 							<li>{{comment}}</li>
 						</div>
 					</ul>

@@ -19,7 +19,7 @@ app.config(function($routeProvider){
 app.controller('releasesController', function(){
 	this.releases = info;
 	
-	this.cVersion = '1.1';
+	this.cVersion = '1.2';
 	this.selectRelease = function(version){
 		this.cVersion = version;
 	};
@@ -49,15 +49,78 @@ app.directive('inputTable', function(){
 	};
 });
 
+var sample_output = [
+{
+	"body": "",
+    "headline": "S.KOREA SAYS SEPT EXPORTS -8.3 PCT VS YR EARLIER (REUTERS POLL -10.0 PCT)",
+    "date": "2015-10-01T00:00:00.092Z",
+    "tpc_list": [
+      "KR",
+      "EMRG",
+      "ASIA",
+      "MCE",
+      "ECI",
+      "NEWS1",
+      "TRD",
+      "LEN",
+      "RTRS"
+    ],
+    "instr_list": [
+      "KRW=",
+      "0#KRCOMP1=KQ",
+      "KREXGR=ECI",
+      "KRIMGR=ECI",
+      "KRTBAL=ECI"
+    ]
+}]
+
 var info = [
 	/*{
-		version: '1.2',
+		version: '2.0',
 		date: '',
 		new_routes: [
+
             ],
 		implemented: ['unreleased'],
 		differences: []
 	},*/
+	{
+		version: '1.2',
+		date: '18/04/2016',
+		new_routes: [
+				{
+					name: '/news',
+					request: 'GET',
+					description: 'returns all news articles in the database in reverse chronological order',
+					input: [],
+					output_type: 'application/json',
+					schema: [],
+					output_example: ''
+				},
+				{
+					name: '/tpc_list',
+					request: 'GET',
+					description: 'returns a list of topic codes used in the database',
+					input: [],
+					output_type: 'application/json',
+					schema: [],
+					output_example: '["KR","EMRG","ASIA","MCE","ECI","NEWS1"]'
+				},
+				{
+					name: '/instr_list',
+					request: 'GET',
+					description: 'returns a list of instrument codes used in the database',
+					input: [],
+					output_type: 'application/json',
+					schema: [],
+					output_example: '["KRW=","0#KRCOMP1=KQ","KREXGR=ECI","KRIMGR=ECI","KRTBAL=ECI","TPITWDOND="]'
+				}
+            ],
+		implemented: ['New data routes added for convenience'],
+		differences: [
+		 				'/api/query now searches for one or more codes in the given list'
+		 			 ]
+	},
 	{
 		version: '1.1',
 		date: '11/04/2016',
@@ -78,7 +141,8 @@ var info = [
 				 		{name: 'body', description: 'Contents of the news', type:'String'},
 				 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
 				 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
-					]
+					],
+				  output_example: JSON.stringify(sample_output,  null, "  ")
 				}
             ],
 		implemented: ['Query for newest news'],
@@ -107,7 +171,8 @@ var info = [
 				 		{name: 'body', description: 'Contents of the news', type:'String'},
 				 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
 				 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
-					]
+					],
+				  output_example: JSON.stringify(sample_output,  null, "  ")
 				}
 			],
 		implemented: ['Database construction from news text file', 
@@ -222,8 +287,6 @@ app.controller('codeController', function($scope, $http){
 			$scope.codeData['instr']['searchCodes'] = response.data;
 			$scope.codeData['instr']['currentCodes'] = [];
 		});
-	this.textSelectedTpc = false;	
-	this.textSelectedInstr = false;
 	this.search = function(string, list){
 		string = string.toUpperCase();
 		$scope.codeData[list]['searchCodes'] = [];
