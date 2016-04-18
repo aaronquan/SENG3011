@@ -94,7 +94,13 @@ var info = [
 					description: 'returns all news articles in the database in reverse chronological order',
 					input: [],
 					output_type: 'application/json',
-					schema: [],
+					schema: [
+				 		{name: 'date', description: 'Timestamp when the news was posted', type:'Date'},
+				 		{name: 'headline', description: 'The news headline', type:'String'},
+				 		{name: 'body', description: 'Contents of the news', type:'String'},
+				 		{name: 'tpc_list', description: 'Topic codes associated with the news', type:'[String]'},
+				 		{name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
+					],
 					output_example: ''
 				},
 				{
@@ -251,7 +257,6 @@ app.controller('clientController', function ($scope, $http) {
 		.then(function(response){
 			$scope.inputFormat = JSON.stringify(response.data, null, "  ");
 		});
-	this.curr_display_time = new Date().toISOString().slice(0,-1);
 	});
 
 app.controller('codeController', function($scope, $http){
@@ -275,6 +280,29 @@ app.controller('codeController', function($scope, $http){
 			searchFor: ''
 		}
 	}
+	//this.curr_display_time = new Date().toISOString().slice(0,-1);
+	$scope.start_date = new Date().toISOString().slice(0,-1);
+	$scope.end_date = new Date().toISOString().slice(0,-1);
+	this.postQueryGUI = function(){
+		console.log('clicked');
+		var url = 'api/query';
+		var data = {
+			start_date: $scope.start_date,
+			end_date: $scope.end_date,
+			tpc_list: $scope.codeData['tpc']['currentCodes'],
+			instr_list: $scope.codeData['instr']['currentCodes']
+		};
+		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
+			.then(function (response) {
+				$scope.contentsFromGUI = JSON.stringify(response.data, null, "  ");
+				console.log(response.data);
+				$scope.error = null;
+			},
+			function(err) {
+				$scope.contentsFromGUI = null;
+    			$scope.error = ('ERR', err.data);
+    		});
+	};
 	$http.get('api/tpc_list')
 		.then(function(response){
 			$scope.codeData['tpc']['allCodes'] = response.data;
@@ -320,8 +348,7 @@ app.controller('codeController', function($scope, $http){
 		if (list == 'tpc'){
 			$scope.codeData['tpc']['textSelected'] = bool;
 			$scope.codeData['instr']['textSelected'] = false;
-		}
-		
+		}	
 	}
 });
 
