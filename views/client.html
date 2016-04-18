@@ -37,33 +37,24 @@
 				<input type="datetime-local" step="0.001" value="{{ctr.curr_display_time}}" name="enddate">
 
 
-				<h4>Select topic codes:</h4>
 				<div ng-controller='codeController as codes'>
-					<div click-anywhere-but-here='codes.setSelectedTpc(false)'>
-
-
-							<div class='row'>
-
-								<div class='col-xs-3'>
-									<input type="text" class='form-control' ng-model='codes.searchForTpc' ng-change="codes.searchTpc(codes.searchForTpc)" ng-focus='codes.setSelectedTpc(true)'>
+					<div ng-repeat='(name, obj) in codeData'>
+						<h4>{{obj.title}}</h4>
+						<div class='row'>
+							<div class='col-xs-3'>
+								<div click-anywhere-but-here='codes.setSelected(false, name)'>
+									<input type="text" class='form-control' ng-model="obj.searchFor" ng-change="codes.search(obj.searchFor, name)" ng-focus='codes.setSelected(true, name)'>
 									 <span class="caret"></span>
-									<div ng-show='codes.textSelectedTpc'>
-										<div >
-											<li ng-repeat='code in searchCodesTpc' ng-click='codes.addCodeTpc(code)' class='list-group-item'>{{code}}</li>
-										</div>
+									<div ng-show='obj.textSelected' style='position:absolute; z-index:999'>
+										<li ng-repeat='code in obj.searchCodes' ng-click='codes.addCode(code, name)' class='list-group-item'>{{code}}</li>
 									</div>
-								</div>
-
-								<div class='col-xs-9'>
 									<div class='code-area'>
-										<span class='btn btn-success btn-sm code-tag' ng-repeat='code in currentCodesTpc' ng-click='codes.removeCodeTpc(code)'>{{code}}</span>
+										<span class='btn btn-success btn-sm code-tag' ng-repeat='code in obj.currentCodes' ng-click='codes.removeCode(code, name)'>{{code}}</span>
 									</div>
 								</div>
-
 							</div>
-
+						</div>
 					</div>
-
 				</div>
 
 <!-- 
