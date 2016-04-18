@@ -284,18 +284,24 @@ app.controller('codeController', function($scope, $http){
 	$scope.start_date = new Date().toISOString().slice(0,-1);
 	$scope.end_date = new Date().toISOString().slice(0,-1);
 	this.postQueryGUI = function(){
-		console.log('clicked');
 		var url = 'api/query';
+		var tpc_list = $scope.codeData['tpc']['currentCodes'];
+		var instr_list = $scope.codeData['instr']['currentCodes'];
+		for(var i in tpc_list){
+			tpc_list[i] = tpc_list[i].replace('\r', '');
+		}
+		for(var i in instr_list){
+			instr_list[i] = instr_list[i].replace('\r', '');
+		}
 		var data = {
-			start_date: $scope.start_date,
-			end_date: $scope.end_date,
-			tpc_list: $scope.codeData['tpc']['currentCodes'],
-			instr_list: $scope.codeData['instr']['currentCodes']
+			"start_date": $scope.start_date,
+			"end_date": $scope.end_date,
+			"instr_list": instr_list,
+			"tpc_list": tpc_list
 		};
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
 				$scope.contentsFromGUI = JSON.stringify(response.data, null, "  ");
-				console.log(response.data);
 				$scope.error = null;
 			},
 			function(err) {
