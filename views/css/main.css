@@ -74,6 +74,7 @@
   background-color: #c12e2a;
   background-position: 0 -15px;
   border-color: #b92c28;
+  color: white;
 }
 .code-tag:active,
 .code-tag.active {
