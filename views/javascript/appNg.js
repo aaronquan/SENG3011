@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'ngMaterial']);
 
 app.config(function($routeProvider){
 	$routeProvider
@@ -280,9 +280,8 @@ app.controller('codeController', function($scope, $http){
 			searchFor: ''
 		}
 	}
-	//this.curr_display_time = new Date().toISOString().slice(0,-1);
-	$scope.start_date = new Date().toISOString().slice(0,-1);
-	$scope.end_date = new Date().toISOString().slice(0,-1);
+	$scope.start_date = new Date();
+	$scope.end_date = new Date();
 	this.postQueryGUI = function(){
 		console.log('clicked');
 		var url = 'api/query';
