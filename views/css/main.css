@@ -55,7 +55,7 @@
 }*/
 
 .drop-down{
-  height: 300px;
+  max-height: 300px;
   overflow-y: scroll;
   position:absolute;
   z-index:999; 
@@ -64,6 +64,7 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
   width: 80%;
+
 }
 .code-tag{
   text-align: center;
