@@ -19,7 +19,7 @@ app.config(function($routeProvider){
 app.controller('releasesController', function(){
 	this.releases = info;
 	
-	this.cVersion = '1.2';
+	this.cVersion = '2.0';
 	this.selectRelease = function(version){
 		this.cVersion = version;
 	};
@@ -73,17 +73,49 @@ var sample_output = [
       "KRTBAL=ECI"
     ]
 }]
+var code_sample = [
+{
+    "section": "Cross-market Codes",
+    "codes": [
+          {
+                "code": "BACT",
+                "name": "Business Activites",
+                "description": ""
+          },
+          {
+                "code": "DIARY",
+                "name": "Diaries",
+                "description": "All financial and general news diaries"
+          }]
+}]
 
 var info = [
-	/*{
+	{
 		version: '2.0',
-		date: '',
+		date: '21/04/2016',
 		new_routes: [
-
-            ],
-		implemented: ['unreleased'],
-		differences: []
-	},*/
+				{
+				name: '/tpc_list_full',
+					request: 'GET',
+					description: 'returns a full list of topics in reuter news with extra information',
+					input: [],
+					output_type: 'application/json',
+					schema: [
+				 		{name: 'section', description: '', type:'String'},
+				 		{name: 'codes', description: 'A list of code objects (code, name, description)', type:'[Object]'},
+				 		{name: 'code', description: 'The code identifier', type:'String'},
+				 		{name: 'name', description: 'The full name of the topic code', type:'String'},
+				 		{name: 'description', description: 'A description of the topic code', type:'String'}
+					],
+					output_example: JSON.stringify(code_sample,  null, "  ")
+				}
+           		],
+		implemented: ['Better topic list api point with a more intuitive purpose',
+					  'Extremely basic styling of news inside API interface',
+					  'Full overview of API endpoints inside API documentation'],
+		differences: ['New and improved news interface with date picker, topic lists and instrument lists',
+		              'Can search through topic and instrument codes and add to a list for searching']
+	},
 	{
 		version: '1.2',
 		date: '18/04/2016',

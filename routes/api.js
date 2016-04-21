@@ -141,6 +141,10 @@ router.route('/tpc_list_full')
 		})
 	});
 
+//////////////////////////////////
+//below this obtains to information regarding API releases and API documentation
+/////////////////////////////////
+
 var sample_output = [
 {
 	"body": "",
@@ -165,9 +169,39 @@ var sample_output = [
       "KRTBAL=ECI"
     ]
 }]
+var code_sample = [
+{
+    "section": "Cross-market Codes",
+    "codes": [
+          {
+                "code": "BACT",
+                "name": "Business Activites",
+                "description": ""
+          },
+          {
+                "code": "DIARY",
+                "name": "Diaries",
+                "description": "All financial and general news diaries"
+          }]
+}]
 router.route('/route_info')
 	.get(function(req, res){
 		var routes = [
+		{
+			name: '/tpc_list_full',
+				request: 'GET',
+				description: 'returns a full list of topics in reuter news with extra information',
+				input: [],
+				output_type: 'application/json',
+				schema: [
+			 		{name: 'section', description: '', type:'String'},
+			 		{name: 'codes', description: 'A list of code objects (code, name, description)', type:'[Object]'},
+			 		{name: 'code', description: 'The code identifier', type:'String'},
+			 		{name: 'name', description: 'The full name of the topic code', type:'String'},
+			 		{name: 'description', description: 'A description of the topic code', type:'String'}
+				],
+				output_example: JSON.stringify(code_sample,  null, "  ")
+			}
 		{
 			name: '/news',
 			request: 'GET',
@@ -244,7 +278,6 @@ router.route('/route_info')
 		]
 		return res.json(routes);
 	});
-
 
 //any routes below this can be put inside appNg.js
 router.route('/input')
