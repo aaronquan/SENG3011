@@ -310,7 +310,7 @@ app.controller('codeController', function($scope, $http){
 			searchFor: ''
 		}
 	}
-	$scope.start_date = new Date();
+	$scope.start_date = new Date("October 1, 2015 00:00:00");
 	$scope.end_date = new Date();
 	$scope.times = {
 		start:
