@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'ngMaterial']);
 
 app.config(function($routeProvider){
 	$routeProvider
@@ -214,7 +214,6 @@ app.controller('clientController', function ($scope, $http) {
     };
     this.postContent = function(data){
     	var url = 'api/query';
-    	//var url = 'http://localhost:3000/api/query'; //for local usage revert back to the above url when commiting
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
 				$scope.contents = JSON.stringify(response.data, null, "  ");
@@ -228,7 +227,6 @@ app.controller('clientController', function ($scope, $http) {
     this.postContent2 = function(data){
     	var url = 'api/query';
     	$scope.contents2 = null;
-    	//var url = 'http://localhost:3000/api/query'; //for local usage revert back to the above url when commiting
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
 				$scope.contents2 = JSON.stringify(response.data, null, "  ");
@@ -280,9 +278,8 @@ app.controller('codeController', function($scope, $http){
 			searchFor: ''
 		}
 	}
-	//this.curr_display_time = new Date().toISOString().slice(0,-1);
-	$scope.start_date = new Date().toISOString().slice(0,-1);
-	$scope.end_date = new Date().toISOString().slice(0,-1);
+	$scope.start_date = new Date();
+	$scope.end_date = new Date();
 	this.postQueryGUI = function(){
 		var url = 'api/query';
 		var tpc_list = $scope.codeData['tpc']['currentCodes'];
@@ -355,6 +352,14 @@ app.controller('codeController', function($scope, $http){
 			$scope.codeData['tpc']['textSelected'] = bool;
 			$scope.codeData['instr']['textSelected'] = false;
 		}	
+	}
+	this.hasCode = function(code, list){
+		if($scope.codeData[list]['currentCodes'].indexOf(code) != -1){
+			return true
+		}
+		else{
+			return false
+		}
 	}
 });
 

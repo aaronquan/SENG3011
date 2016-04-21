@@ -3,7 +3,7 @@
 	<ul class="nav nav-tabs">
 		<li ng-class="{active:ctr.isTab('upload')}"><a href ng-click="ctr.changeTab('upload')">Upload File</a></li>
 		<li ng-class="{active:ctr.isTab('input')}"><a href ng-click="ctr.changeTab('input')">Input Text</a></li>
-		<li ng-class="{active:ctr.isTab('gui')}"><a href ng-click="ctr.changeTab('gui')">GUI Test</a></li>
+		<li ng-class="{active:ctr.isTab('gui')}"><a href ng-click="ctr.changeTab('gui')">API User Interface</a></li>
   	</ul>
   	<div ng-show="ctr.isTab('upload')">
 		<h1>Select text file</h1>
@@ -34,19 +34,25 @@
 				<input type="datetime-local" step="0.001" value="{{codes.curr_display_time}}" ng-model="start_date">
 				<h4>End date:</h4>
 				<input type="datetime-local" step="0.001" value="{{codes.curr_display_time}}" ng-model="end_date">
+
+				<md-slider flex min="0" max="255" ng-model="color.red" aria-label="red">
+      			</md-slider>
+
 				<div ng-repeat='(name, obj) in codeData'>
 					<h4>{{obj.title}}</h4>
+					<div class='code-area'>
+						<md-chip ng-repeat="code in obj.currentCodes" readonly="true">
+						<md-button class='btn1' click-anywhere-but-here='codes.setSelected(false, name)' ng-click='codes.removeCode(code,name)'>{{code}}</md-button>
+						</md-chip>
+					</div>
 					<div class='row'>
-						<div class='col-xs-3'>
-							<div click-anywhere-but-here='codes.setSelected(false, name)'>
+						<div class='col-xs-3' click-anywhere-but-here='codes.setSelected(false, name)'>
+							<div class='form-group has-feedback'>
 								<input type="text" class='form-control' ng-model="obj.searchFor" ng-change="codes.search(obj.searchFor, name)" ng-focus='codes.setSelected(true, name)'>
-								 <span class="caret"></span>
-								<div ng-show='obj.textSelected' style='position:absolute; z-index:999'>
-									<li ng-repeat='code in obj.searchCodes' ng-click='codes.addCode(code, name)' class='list-group-item'>{{code}}</li>
-								</div>
-								<div class='code-area'>
-									<span class='btn btn-success btn-sm code-tag' ng-repeat='code in obj.currentCodes' ng-click='codes.removeCode(code, name)'>{{code}}</span>{{obj.currentCodes}}
-								</div>
+								 <span class="glyphicon glyphicon-triangle-bottom form-control-feedback"></span>
+							</div>
+							<div ng-show='obj.textSelected' class='drop-down'>
+								<li ng-repeat='code in obj.searchCodes' ng-click='codes.addCode(code, name)' class='list-item code-tag' ng-class='{active: codes.hasCode(code, name)}'>{{code}}</li>
 							</div>
 						</div>
 					</div>

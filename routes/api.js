@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var fs = require('fs');
 var xml = require('xml');
+var csv = require('csv-streamify');
 
 var parser = require('./api_helper/newsParser');
 var outputFunction = require('./api_helper/output');
@@ -109,6 +110,35 @@ router.route('/tpc_list')
 		var array = fs.readFileSync('routes/code_data/tpc_codes.txt').toString().split("\n");
 		array.pop();
 		res.send(array);
+	});
+
+router.route('/tpc_list_full')
+	.get(function(req,res){
+		var csvToJson = csv({objectMode: true}); //CSV to JSON parser
+		var sections = []; //array of section objects
+		var section_name;
+		var codes = []
+		var readable = fs.createReadStream('routes/code_data/topic_codes.csv').pipe(csvToJson);
+		// loops through adding codes (as objects) to a list
+		// when it hits a new section it saves the existing list of codes with their section
+		// and adds that object to the sections array
+		readable.on('data', function(data) {
+ 			if (/[A-Z0-9+ ]+$/.test(data[0])) {
+				data[2] = data[2].replace(/ *\r/, '');
+				codes.push({code:data[0],name:data[1],description:data[2]});
+			} else if (/[A-Z]/.test(data[0])) {
+				if (section_name) { //if section_name is not null
+					sections.push({section:section_name,codes:codes});
+				}
+				section_name = data[0];
+				codes = [];
+			}
+		});
+		readable.on('end', function() {
+			//save the final set of codes for the last section
+			sections.push({section:section_name,codes:codes});
+			res.send(sections);
+		})
 	});
 
 var sample_output = [
