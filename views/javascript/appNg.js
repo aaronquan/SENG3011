@@ -298,10 +298,12 @@ app.controller('codeController', function($scope, $http){
 		};
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
+				$scope.contentsAsJSON = response.data
 				$scope.contentsFromGUI = JSON.stringify(response.data, null, "  ");
 				$scope.error = null;
 			},
 			function(err) {
+				$scope.contentsAsJSON = {}
 				$scope.contentsFromGUI = null;
     			$scope.error = ('ERR', err.data);
     		});
@@ -361,6 +363,14 @@ app.controller('codeController', function($scope, $http){
 			return false
 		}
 	}
+	this.test = ['thi','klfd','djfskl']
+	this.cTab = 'style';
+	this.changeTab = function(tab){
+    	this.cTab = tab;
+    };
+    this.isTab = function(tab){
+    	return this.cTab === tab;
+    };
 });
 
 app.directive('onReadFile', function ($parse) {
