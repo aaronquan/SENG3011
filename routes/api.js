@@ -201,7 +201,7 @@ router.route('/route_info')
 			 		{name: 'description', description: 'A description of the topic code', type:'String'}
 				],
 				output_example: JSON.stringify(code_sample,  null, "  ")
-			}
+		},
 		{
 			name: '/news',
 			request: 'GET',
