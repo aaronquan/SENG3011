@@ -101,7 +101,7 @@ var info = [
 					input: [],
 					output_type: 'application/json',
 					schema: [
-				 		{name: 'section', description: '', type:'String'},
+				 		{name: 'section', description: 'A broad catagory', type:'String'},
 				 		{name: 'codes', description: 'A list of code objects (code, name, description)', type:'[Object]'},
 				 		{name: 'code', description: 'The code identifier', type:'String'},
 				 		{name: 'name', description: 'The full name of the topic code', type:'String'},
