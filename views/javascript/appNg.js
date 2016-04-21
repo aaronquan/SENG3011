@@ -280,6 +280,42 @@ app.controller('codeController', function($scope, $http){
 	}
 	$scope.start_date = new Date();
 	$scope.end_date = new Date();
+	$scope.times = {
+		start:
+			{
+				sec: 0,
+				str: '00:00:00'
+			},
+		end:
+			{
+				sec: 0,
+				str: '00:00:00'
+			}
+	}
+	//this.start_time = 0;
+	//this.end_time = 0;
+	//this.start_string = '00:00:00';
+	this.toHHMMSS = function (str) {
+	    //var sec_num = parseInt(seconds, 10); // don't forget the second param
+	    var hours   = Math.floor($scope.times[str]['sec'] / 3600);
+	    var minutes = Math.floor(($scope.times[str]['sec'] - (hours * 3600)) / 60);
+	    var seconds = $scope.times[str]['sec'] - (hours * 3600) - (minutes * 60);
+	    if (hours   < 10) {hours   = "0"+hours;}
+	    if (minutes < 10) {minutes = "0"+minutes;}
+	    if (seconds < 10) {seconds = "0"+seconds;}
+	    var time    = hours+':'+minutes+':'+seconds;
+	    $scope.times[str]['str'] = time;
+	}
+	this.toSeconds = function (str) {
+		var rem = $scope.times[str]['str'].replace(/[a-z]/ig, '');
+	    var p = $scope.times[str]['str'].split(':'),
+	        s = 0, m = 1;
+	    while (p.length > 0) {
+	        s += m * parseInt(p.pop(), 10);
+	        m *= 60;
+	    }
+	    $scope.times[str]['sec'] = s | 0;
+	}
 	this.postQueryGUI = function(){
 		var url = 'api/query';
 		var tpc_list = $scope.codeData['tpc']['currentCodes'];
@@ -290,9 +326,11 @@ app.controller('codeController', function($scope, $http){
 		for(var i in instr_list){
 			instr_list[i] = instr_list[i].replace('\r', '');
 		}
+		var start = new Date($scope.start_date.getTime() + 1000*$scope.times['start']['sec'])
+		var end = new Date($scope.end_date.getTime() + 1000*$scope.times['end']['sec'])
 		var data = {
-			"start_date": $scope.start_date,
-			"end_date": $scope.end_date,
+			"start_date": start,
+			"end_date": end,
 			"instr_list": instr_list,
 			"tpc_list": tpc_list
 		};
@@ -363,7 +401,6 @@ app.controller('codeController', function($scope, $http){
 			return false
 		}
 	}
-	this.test = ['thi','klfd','djfskl']
 	this.cTab = 'style';
 	this.changeTab = function(tab){
     	this.cTab = tab;

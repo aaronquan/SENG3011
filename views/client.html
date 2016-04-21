@@ -28,16 +28,17 @@
 	<div ng-show="ctr.isTab('gui')" ng-controller='codeController as codes'>
 		<h1>Search for news articles</h1>
 		<div class="jumbotron" style="padding-bottom: 74px">
-
 			<form>
 				<h4>Start date:</h4>
-				<input type="datetime-local" step="0.001" value="{{codes.curr_display_time}}" ng-model="start_date">
-				<h4>End date:</h4>
-				<input type="datetime-local" step="0.001" value="{{codes.curr_display_time}}" ng-model="end_date">
-
-				<md-slider flex min="0" max="255" ng-model="color.red" aria-label="red">
+				<md-datepicker md-placeholder='Required' ng-model="start_date"></md-datepicker>
+				<md-slider flex min="0" max="86399" ng-model="times.start.sec" aria-label="time" ng-change="codes.toHHMMSS('start')">
       			</md-slider>
+      			<input type='text' class='form-control' ng-model='times.start.str' ng-change="codes.toSeconds('start')">
+				<h4>End date:</h4>
+				<md-datepicker md-placeholder='Required' ng-model="end_date"></md-datepicker>
 
+				<md-slider flex min="0" max="86399" ng-model="times.end.sec" aria-label="time">
+      			</md-slider>
 				<div ng-repeat='(name, obj) in codeData'>
 					<h4>{{obj.title}}</h4>
 					<div class='code-area'>
@@ -69,7 +70,7 @@
 		</div>
 		<div ng-show="codes.isTab('style')">
 			<div ng-repeat='news in contentsAsJSON'>
-				<h4>{{news.headline}}</h4> <small>{{news.date | date}}</small>
+				<h4>{{news.headline}}</h4> <small>{{news.date}}</small>
 				<p>{{news.body}}</p>
 				{{news.tpc_list}}
 				{{news.instr_list}}
