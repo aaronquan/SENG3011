@@ -326,8 +326,10 @@ app.controller('codeController', function($scope, $http){
 		for(var i in instr_list){
 			instr_list[i] = instr_list[i].replace('\r', '');
 		}
-		var start = new Date($scope.start_date.getTime() + 1000*$scope.times['start']['sec'])
-		var end = new Date($scope.end_date.getTime() + 1000*$scope.times['end']['sec'])
+		var start = new Date($scope.start_date.getTime() + 1000*$scope.times['start']['sec'] + 1000*60*60*10).toGMTString()
+		console.log(start);
+		var end = new Date($scope.end_date.getTime() + 1000*$scope.times['end']['sec'] + 1000*60*60*10).toGMTString()
+		console.log(end);
 		var data = {
 			"start_date": start,
 			"end_date": end,
