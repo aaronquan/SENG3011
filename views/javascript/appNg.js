@@ -349,6 +349,8 @@ app.controller('codeController', function($scope, $http){
 	    $scope.times[str]['sec'] = s | 0;
 	}
 	this.postQueryGUI = function(){
+		$scope.contentsAsJSON = [{body:'searching...'}];
+		$scope.contentsFromGUI = 'searching...';
 		var url = 'api/query';
 		var tpc_list = $scope.codeData['tpc']['currentCodes'];
 		var instr_list = $scope.codeData['instr']['currentCodes'];
@@ -370,12 +372,16 @@ app.controller('codeController', function($scope, $http){
 		};
 		$http.post(url, data, {headers: {'Content-Type': 'application/json'} })
 			.then(function (response) {
-				$scope.contentsAsJSON = response.data
+				if (response.data.length == 0){
+					$scope.contentsAsJSON = [{body:'No results found'}]
+				}else{
+					$scope.contentsAsJSON = response.data
+				}
 				$scope.contentsFromGUI = JSON.stringify(response.data, null, "  ");
 				$scope.error = null;
 			},
 			function(err) {
-				$scope.contentsAsJSON = {}
+				$scope.contentsAsJSON = [{body:'No results found'}];
 				$scope.contentsFromGUI = null;
     			$scope.error = ('ERR', err.data);
     		});
