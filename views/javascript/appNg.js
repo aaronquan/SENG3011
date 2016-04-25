@@ -386,11 +386,28 @@ app.controller('codeController', function($scope, $http){
     			$scope.error = ('ERR', err.data);
     		});
 	};
+	$scope.alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+	for (var j in $scope.alphabet){
+		$scope.codeData['tpc'][$scope.alphabet[j]] = [];
+		$scope.codeData['instr'][$scope.alphabet[j]] = [];
+	}
 	$http.get('api/tpc_list')
 		.then(function(response){
 			$scope.codeData['tpc']['allCodes'] = response.data;
 			$scope.codeData['tpc']['searchCodes'] = response.data;
 			$scope.codeData['tpc']['currentCodes'] = [];
+			for (var i in $scope.codeData['tpc']['allCodes']){
+				for(var j in $scope.alphabet){
+					console.log($scope.codeData['tpc']['allCodes'][i])
+					if($scope.codeData['tpc']['allCodes'][i].indexOf($scope.alphabet[j]) != -1){
+						$scope.codeData['tpc'][$scope.alphabet[j]].push($scope.codeData['tpc']['allCodes'][i]);
+					}
+					continue;
+				}
+
+			}
+			console.log($scope.codeData['tpc']['a'])
+
 		});
 	$http.get('api/instr_list')
 		.then(function(response){
@@ -405,9 +422,14 @@ app.controller('codeController', function($scope, $http){
 			$scope.codeData[list]['searchCodes'] = $scope.codeData[list]['allCodes'];
 			return;
 		}
-		for(var i in $scope.codeData[list]['allCodes']){
-			if($scope.codeData[list]['allCodes'][i].indexOf(string) != -1){
-				$scope.codeData[list]['searchCodes'].push($scope.codeData[list]['allCodes'][i]);
+		if (string.length == 1){
+			$scope.codeData[list]['searchCodes'] = $scope.codeData[list][string];
+		}
+		else{
+			for(var i in $scope.codeData[list]['allCodes']){
+				if($scope.codeData[list]['allCodes'][i].indexOf(string) != -1){
+					$scope.codeData[list]['searchCodes'].push($scope.codeData[list]['allCodes'][i]);
+				}
 			}
 		}
 	}
