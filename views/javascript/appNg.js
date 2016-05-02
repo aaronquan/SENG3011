@@ -398,7 +398,6 @@ app.controller('codeController', function($scope, $http){
 			$scope.codeData['tpc']['currentCodes'] = [];
 			for (var i in $scope.codeData['tpc']['allCodes']){
 				for(var j in $scope.alphabet){
-					console.log($scope.codeData['tpc']['allCodes'][i])
 					if($scope.codeData['tpc']['allCodes'][i].indexOf($scope.alphabet[j]) != -1){
 						$scope.codeData['tpc'][$scope.alphabet[j]].push($scope.codeData['tpc']['allCodes'][i]);
 					}
@@ -412,6 +411,7 @@ app.controller('codeController', function($scope, $http){
 	$http.get('api/instr_list')
 		.then(function(response){
 			$scope.codeData['instr']['allCodes'] = response.data;
+			console.log(response.data)
 			$scope.codeData['instr']['searchCodes'] = response.data;
 			$scope.codeData['instr']['currentCodes'] = [];
 		});
