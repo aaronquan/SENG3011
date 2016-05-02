@@ -52,6 +52,9 @@ var testQueries = [
 
 var tester = function(callback){
 	var log = [];
+	randomQuery(function(query){
+		console.log(query);
+	});
 	request(allNews, function(err, res, fullNews){
 		fullNews = JSON.parse(fullNews);
 		async.forEachOfSeries(testQueries, 
@@ -59,7 +62,6 @@ var tester = function(callback){
 				apiOptions['json'] = query;
 				request(apiOptions, function(err, res, body){
 					testQuery(query, body, fullNews, function(isDatePassed, test){
-						//log.push(test);
 						if (isDatePassed){
 							log.push('passed test ' + index);
 						}else{
@@ -130,7 +132,7 @@ function testQuery(query, body, allNews, callback){
     );
 }
 
-/**function getDateRange(cb){
+function getDateRange(cb){
 	News.find({}).sort('-date').exec(function(err, data){
 		var dateR = {};
 		dateR['min_date'] = data[0]['date'];
@@ -139,10 +141,28 @@ function testQuery(query, body, allNews, callback){
 	});
 }
 
-function randomQuery(n){
-	getDateRange(function(range){
+function randomQuery(cb){
+	async.parallel([
+		function(callback){
+			getDateRange(function(range){
 
+				callback(null, {'start_date':range['min_date'], 
+					'end_date':range['max_date']});
+			})
+		},
+		function(callback){
+			request({uri:'http://pacificpygmyowl.herokuapp.com/api/tpc_list', method:'GET'}, 
+			function(err, res, body){
+				callback(null, JSON.parse(res.body));
+			})
+		}
+	], 
+	function(err, result){
+		var query = result[0];
+		query['tpc_list'] = result[1];
+		query['instr_list'] = [];
+		cb(query)
 	});
-}**/
+}
 
 module.exports = tester;
