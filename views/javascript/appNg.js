@@ -406,7 +406,7 @@ app.controller('codeController', function($scope, $http){
 				}
 
 			}
-			console.log($scope.codeData['tpc']['a'])
+			//console.log($scope.codeData['tpc']['a'])
 
 		});
 	$http.get('api/instr_list')
