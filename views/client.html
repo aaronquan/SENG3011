@@ -68,7 +68,7 @@
 		<div ng-show="codes.isTab('raw')"> 
 			<pre>{{contentsFromGUI}}</pre>
 		</div>
-		<div ng-show="codes.isTab('style')">
+		<div ng-show="codes.isTab('style')" style='word-wrap: break-word'>
 			<div ng-repeat='news in contentsAsJSON'>
 				<h4>{{news.headline}}</h4> <small>{{news.date}}</small>
 				<p>{{news.body}}</p>
