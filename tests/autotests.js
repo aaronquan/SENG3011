@@ -2,14 +2,9 @@ var mongoose = require('mongoose');
 var request = require('request');
 var async = require('async');
 
-//for the 
-//mongoose.connect("mongodb://aaronq:newsapi@ds015508.mlab.com:15508/seng3011-news");
-
 var News = mongoose.model('News');
 var Query = mongoose.model('News');
 
-var outputFunction = require('./../routes/api_helper/output');
-//var newsParser = require('./../routes/api_helper/newsParser');
 
 var apiOptions = {
 	uri: 'http://pacificpygmyowl.herokuapp.com/api/query',
