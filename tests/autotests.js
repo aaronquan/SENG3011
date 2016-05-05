@@ -81,6 +81,24 @@ var testQueries = [
         "instr_list": [],
         "tpc_list": ["GENO"]	
     },
+    {
+        "start_date": "2015-10-01T00:02:00.092Z",
+        "end_date": "2015-10-01T00:04:00.000Z",
+        "instr_list": ["MYMY"],
+        "tpc_list": []
+    },
+    {
+        "start_date": "",
+        "end_date": "2015-10-01T00:04:00.000Z",
+        "instr_list": [],
+        "tpc_list": []	
+    },
+    {
+        "start_date": "2015-10-01T00:02:00.092Zhellobye",
+        "end_date": "2015-10-01T00:04:00.000Z",
+        "instr_list": [],
+        "tpc_list": []	
+    }
 ];
 
 var tester = function(callback){
@@ -157,7 +175,9 @@ function testQuery(query, body, allNews, callback){
 			cb();
 		},
 		function(err){
-			if(body.length == newsTester.length){
+            if (JSON.stringify(body) == JSON.stringify({"Error": "start_date or end_date undefined"}) && newsTester.length == 0) {
+                callback(true, newsTester);
+            }else if(body.length == newsTester.length){
 				callback(true, newsTester);
 			}else{
 				callback(false, newsTester);
