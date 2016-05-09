@@ -105,6 +105,15 @@ router.route('/instr_list')
 		array.pop();
 		res.send(array);
 	});
+
+router.route('/instr_list_full')
+	.get(function(req,res){
+		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
+		array.pop();
+		var obj = {section: 'General', codes: array}
+		res.send(obj);
+	});
+
 router.route('/tpc_list')
 	.get(function(req,res){
 		var array = fs.readFileSync('routes/code_data/tpc_codes.txt').toString().split("\n");
