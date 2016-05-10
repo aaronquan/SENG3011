@@ -108,14 +108,27 @@ router.route('/instr_list')
 
 router.route('/instr_list_full')
 	.get(function(req,res){
+		var all_array = [];
 		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
 		array.pop();
 		var codes_obj = [];
 		for (var i = 0; i < array.length; i++) {
 			codes_obj.push({code:array[i],name:'',description:''});
 		}
-		var all_array = [{section: 'General', codes: codes_obj}];
-		res.send(all_array);
+		all_array.push({section: 'General', codes: codes_obj});
+
+		//Extract all ASX Company Codes from the CSV file
+		var csvToJson = csv({objectMode: true}); //CSV to JSON parser
+		var asx_codes = []
+		var readable = fs.createReadStream('routes/code_data/ASXListedCompanies.csv').pipe(csvToJson);
+		readable.on('data', function(data) {
+			data[1] = data[1].replace(/ *\r/, '');
+			asx_codes.push({code:data[1]+".AX",name:data[0],description:''});
+		});
+		readable.on('end', function() {
+			all_array.push({section: 'ASX Company Codes', codes: asx_codes});
+			res.send(all_array);
+		});
 	});
 
 router.route('/tpc_list')
