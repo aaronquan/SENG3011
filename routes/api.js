@@ -16,6 +16,9 @@ var News = mongoose.model('News');
 
 var sourceFile = 'news_files/News_data_extract.txt';
 
+//for database holder only - files to large for repository
+var sourceDir = '../reuters-data/data';
+
 router.route('')
 	.get(function(req, res){
 		res.send('The api path for news');
@@ -55,13 +58,23 @@ router.route('/source')
 
 router.route('/reset')
 	.get(function(req, res){
-		fs.readFile(sourceFile, function(err, data){
-			if (err) return res.send(err);
-			News.remove({}, function(err){
-				if(err) return console.log(err);
+		fs.readdir(sourceDir, function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile(sourceDir+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
 			});
-			parser['parser'].write(data.toString());
-			return res.send("Successfully reset database");
+		});
+	});
+router.route('/deletedb')
+	.get(function(req, res){
+		News.remove({}, function(err){
+			if(err) console.log(err);
+			res.send('Deleted database');
 		});
 	});
 
