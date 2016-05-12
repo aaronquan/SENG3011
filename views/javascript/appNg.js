@@ -14,6 +14,12 @@ app.config(function($routeProvider){
 		.when('/guide',{
 			templateUrl: 'guide.html'
 		})
+		.when('/status',{
+			templateUrl: 'status.html'
+		})
+		.when('/contact',{
+			templateUrl: 'contact.html'
+		})
 });
 
 app.controller('releasesController', function(){
