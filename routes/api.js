@@ -14,10 +14,14 @@ var autoTester = require('./../tests/autotests.js');
 var Query = mongoose.model('Query')
 var News = mongoose.model('News');
 
+var tpc_list_source = 'code_data/tpc_codes.txt';
+var instr_list_source = 'code_data/instr_codes.txt';
+
 var sourceFile = 'news_files/News_data_extract.txt';
 
 //for database holder only - files to large for repository
 var sourceDir = '../reuters-data/data';
+var sourceDir2 = '../reuters-data/data2';
 
 router.route('')
 	.get(function(req, res){
@@ -56,7 +60,20 @@ router.route('/source')
 		});
 	});
 
-router.route('/reset')
+router.route('/original')
+	.get(function(req, res){
+		fs.readFile(sourceFile, function(err, data){
+			if (err) return res.send(err);
+			News.remove({}, function(err){
+				if(err) return console.log(err);
+			});
+			parser['parser'].write(data.toString());
+			return res.send("Successfully reset database");
+		});
+	});
+
+
+router.route('/data1')
 	.get(function(req, res){
 		fs.readdir(sourceDir, function(err, files){
 			files.forEach( function(file, index) {
@@ -70,8 +87,25 @@ router.route('/reset')
 			});
 		});
 	});
-router.route('/deletedb')
+router.route('/data2')
 	.get(function(req, res){
+		fs.readdir(sourceDir2, function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile(sourceDir2+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+
+router.route('/delete')
+	.get(function(req, res){
+		fs.writeFile(tpc_list_source, '', function(){console.log('tpc_list deleted')})
+		fs.writeFile(instr_list_source, '', function(){console.log('instr_list deleted')})
 		News.remove({}, function(err){
 			if(err) console.log(err);
 			res.send('Deleted database');
