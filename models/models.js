@@ -6,7 +6,9 @@ var requestSchema = mongoose.Schema({
 	start_date: Date,
 	end_date: Date,
 	instr_list: [String],
-	tpc_list: [String]
+	tpc_list: [String],
+    range_start: Number,
+    range_end: Number
 });
 
 //news format in the database, subject to change

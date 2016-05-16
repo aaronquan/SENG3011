@@ -11,11 +11,12 @@ var getNewest = require('./api_helper/getNewest');
 var searchDb = require('./api_helper/searchAlgos');
 var autoTester = require('./../tests/autotests.js');
 
-var Query = mongoose.model('Query')
+var Query = mongoose.model('Query');
 var News = mongoose.model('News');
 
 var sourceFile = 'news_files/News_data_extract.txt';
 
+var defaultLimit = 100;
 router.route('')
 	.get(function(req, res){
 		res.send('The api path for news');
@@ -30,6 +31,11 @@ router.route('/query')
 		query.end_date = req.body.end_date;
 		query.instr_list = req.body.instr_list;
 		query.tpc_list = req.body.tpc_list;
+        query.range_start = req.body.range_start;
+        query.range_end = req.body.range_end;
+        if (query.range_end == undefined) {
+            query.range_end = defaultLimit;
+        }
 		//sends json date in the format of a news query in the spec
 		outputFunction(query, function(info){
 			res.json(info);
@@ -40,6 +46,8 @@ router.route('/newest')
 		var query = new Query();
 		query.instr_list = req.body.instr_list;
 		query.tpc_list = req.body.tpc_list;
+        query.range_start = req.range_start;
+        query.range_end = req.range_end;
 		getNewest(query, function(info){
 			res.json(info);
 		});
