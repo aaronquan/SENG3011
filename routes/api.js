@@ -155,6 +155,7 @@ router.route('/instr_list')
 
 router.route('/instr_list_full')
 	.get(function(req,res){
+		/*
 		var all_array = [];
 		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
 		array.pop();
@@ -163,7 +164,7 @@ router.route('/instr_list_full')
 			codes_obj.push({code:array[i],name:'',description:''});
 		}
 		all_array.push({section: 'General', codes: codes_obj});
-
+		*/
 		//Extract all ASX Company Codes from the CSV file
 		var csvToJson = csv({objectMode: true}); //CSV to JSON parser
 		var asx_codes = []
