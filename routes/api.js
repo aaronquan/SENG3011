@@ -155,8 +155,9 @@ router.route('/instr_list')
 
 router.route('/instr_list_full')
 	.get(function(req,res){
-		/*
+
 		var all_array = [];
+		/*
 		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
 		array.pop();
 		var codes_obj = [];
