@@ -8,7 +8,7 @@ var requestSchema = mongoose.Schema({
 	instr_list: [String],
 	tpc_list: [String],
     range_start: Number,
-    range_end: Number
+    range_length: Number
 });
 
 //news format in the database, subject to change

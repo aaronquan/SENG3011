@@ -39,9 +39,9 @@ router.route('/query')
 		query.instr_list = req.body.instr_list;
 		query.tpc_list = req.body.tpc_list;
         query.range_start = req.body.range_start;
-        query.range_end = req.body.range_end;
-        if (query.range_end == undefined) {
-            query.range_end = defaultLimit;
+        query.range_length = req.body.range_length;
+        if (query.range_length == undefined) {
+            query.range_length = defaultLimit;
         }
 		//sends json date in the format of a news query in the spec
 		outputFunction(query, function(info){
@@ -54,7 +54,7 @@ router.route('/newest')
 		query.instr_list = req.body.instr_list;
 		query.tpc_list = req.body.tpc_list;
         query.range_start = req.range_start;
-        query.range_end = req.range_end;
+        query.range_length = req.range_length;
 		getNewest(query, function(info){
 			res.json(info);
 		});
