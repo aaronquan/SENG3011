@@ -14,9 +14,16 @@ var autoTester = require('./../tests/autotests.js');
 var Query = mongoose.model('Query');
 var News = mongoose.model('News');
 
+var tpc_list_source = 'code_data/tpc_codes.txt';
+var instr_list_source = 'code_data/instr_codes.txt';
+
 var sourceFile = 'news_files/News_data_extract.txt';
+//for database holder only - files to large for repository
+var sourceDir = '../reuters-data/data';
+var sourceDir2 = '../reuters-data/data2';
 
 var defaultLimit = 100;
+
 router.route('')
 	.get(function(req, res){
 		res.send('The api path for news');
@@ -61,7 +68,7 @@ router.route('/source')
 		});
 	});
 
-router.route('/reset')
+router.route('/original')
 	.get(function(req, res){
 		fs.readFile(sourceFile, function(err, data){
 			if (err) return res.send(err);
@@ -70,6 +77,46 @@ router.route('/reset')
 			});
 			parser['parser'].write(data.toString());
 			return res.send("Successfully reset database");
+		});
+	});
+
+
+router.route('/data1')
+	.get(function(req, res){
+		fs.readdir(sourceDir, function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile(sourceDir+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+router.route('/data2')
+	.get(function(req, res){
+		fs.readdir(sourceDir2, function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile(sourceDir2+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+
+router.route('/delete')
+	.get(function(req, res){
+		fs.writeFile(tpc_list_source, '', function(){console.log('tpc_list deleted')})
+		fs.writeFile(instr_list_source, '', function(){console.log('instr_list deleted')})
+		News.remove({}, function(err){
+			if(err) console.log(err);
+			res.send('Deleted database');
 		});
 	});
 
@@ -113,6 +160,34 @@ router.route('/instr_list')
 		array.pop();
 		res.send(array);
 	});
+
+router.route('/instr_list_full')
+	.get(function(req,res){
+
+		var all_array = [];
+		/*
+		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
+		array.pop();
+		var codes_obj = [];
+		for (var i = 0; i < array.length; i++) {
+			codes_obj.push({code:array[i],name:'',description:''});
+		}
+		all_array.push({section: 'General', codes: codes_obj});
+		*/
+		//Extract all ASX Company Codes from the CSV file
+		var csvToJson = csv({objectMode: true}); //CSV to JSON parser
+		var asx_codes = []
+		var readable = fs.createReadStream('routes/code_data/ASXListedCompanies.csv').pipe(csvToJson);
+		readable.on('data', function(data) {
+			data[1] = data[1].replace(/ *\r/, '');
+			asx_codes.push({code:data[1]+".AX",name:data[0],description:''});
+		});
+		readable.on('end', function() {
+			all_array.push({section: 'ASX Company Codes', codes: asx_codes});
+			res.send(all_array);
+		});
+	});
+
 router.route('/tpc_list')
 	.get(function(req,res){
 		var array = fs.readFileSync('routes/code_data/tpc_codes.txt').toString().split("\n");
