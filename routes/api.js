@@ -11,10 +11,18 @@ var getNewest = require('./api_helper/getNewest');
 var searchDb = require('./api_helper/searchAlgos');
 var autoTester = require('./../tests/autotests.js');
 
-var Query = mongoose.model('Query')
+var Query = mongoose.model('Query');
 var News = mongoose.model('News');
 
+var tpc_list_source = 'code_data/tpc_codes.txt';
+var instr_list_source = 'code_data/instr_codes.txt';
+
 var sourceFile = 'news_files/News_data_extract.txt';
+//for database holder only - files to large for repository
+var sourceDir = '../reuters-data/data';
+var sourceDir2 = '../reuters-data/data2';
+
+var defaultLimit = 100;
 
 router.route('')
 	.get(function(req, res){
@@ -30,6 +38,11 @@ router.route('/query')
 		query.end_date = req.body.end_date;
 		query.instr_list = req.body.instr_list;
 		query.tpc_list = req.body.tpc_list;
+        query.range_start = req.body.range_start;
+        query.range_length = req.body.range_length;
+        if (query.range_length == undefined) {
+            query.range_length = defaultLimit;
+        }
 		//sends json date in the format of a news query in the spec
 		outputFunction(query, function(info){
 			res.json(info);
@@ -40,6 +53,8 @@ router.route('/newest')
 		var query = new Query();
 		query.instr_list = req.body.instr_list;
 		query.tpc_list = req.body.tpc_list;
+        query.range_start = req.range_start;
+        query.range_length = req.range_length;
 		getNewest(query, function(info){
 			res.json(info);
 		});
@@ -53,7 +68,7 @@ router.route('/source')
 		});
 	});
 
-router.route('/reset')
+router.route('/original')
 	.get(function(req, res){
 		fs.readFile(sourceFile, function(err, data){
 			if (err) return res.send(err);
@@ -62,6 +77,46 @@ router.route('/reset')
 			});
 			parser['parser'].write(data.toString());
 			return res.send("Successfully reset database");
+		});
+	});
+
+
+router.route('/data1')
+	.get(function(req, res){
+		fs.readdir(sourceDir, function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile(sourceDir+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+router.route('/data2')
+	.get(function(req, res){
+		fs.readdir(sourceDir2, function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile(sourceDir2+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+
+router.route('/delete')
+	.get(function(req, res){
+		fs.writeFile(tpc_list_source, '', function(){console.log('tpc_list deleted')})
+		fs.writeFile(instr_list_source, '', function(){console.log('instr_list deleted')})
+		News.remove({}, function(err){
+			if(err) console.log(err);
+			res.send('Deleted database');
 		});
 	});
 
@@ -108,7 +163,9 @@ router.route('/instr_list')
 
 router.route('/instr_list_full')
 	.get(function(req,res){
+
 		var all_array = [];
+		/*
 		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
 		array.pop();
 		var codes_obj = [];
@@ -116,7 +173,7 @@ router.route('/instr_list_full')
 			codes_obj.push({code:array[i],name:'',description:''});
 		}
 		all_array.push({section: 'General', codes: codes_obj});
-
+		*/
 		//Extract all ASX Company Codes from the CSV file
 		var csvToJson = csv({objectMode: true}); //CSV to JSON parser
 		var asx_codes = []
