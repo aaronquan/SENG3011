@@ -107,10 +107,10 @@ var info = [
                       [
                       {name: 'start_date', description: 'Starting date to recieve news from', type:'Date'},
                       {name: 'end_date', description: 'Ending date to recieve news from', type:'Date'},
-                      {name: 'tpc_list', description: '(Optional) List of topics to search', type:'[String]'},
-                      {name: 'instr_list', description: '(Optional) List of instruments to search', type:'[String]'},
-                      {name: 'range_start', description: '(Optional) Specifies the offset to begin returning results. Default: 0.', type:'Number'},
-                      {name: 'range_length', description: '(Optional) Specifies the total number of results to return. Default: 100.', type:'Number'}
+                      {name: 'tpc_list', description: 'List of topics to search. Empty list for no topics.', type:'[String]'},
+                      {name: 'instr_list', description: 'List of instruments to search. Empty list for no instruments.', type:'[String]'},
+                      {name: 'range_start', description: 'NEW (Optional) Specifies the offset to begin returning results. Default: 0.', type:'Number'},
+                      {name: 'range_length', description: 'NEW (Optional) Specifies the total number of results to return. Default: 100.', type:'Number'}
                   ],
                       output_type: 'application/json',
                       schema:
@@ -122,10 +122,26 @@ var info = [
                           {name: 'instr_list', description: 'Instrument codes associated with the news', type:'[String]'}
                   ],
                 output_example: JSON.stringify(sample_output,  null, "  ")
-            }
+            },
+            {
+            name: '/instr_list_full',
+            request: 'GET',
+            description: 'returns a full list of instruments in reuter news with extra information',
+            input: [],
+            output_type: 'application/json',
+            schema: [
+                {name: 'section', description: 'A broad catagory', type:'String'},
+                {name: 'codes', description: 'A list of code objects (code, name, description)', type:'[Object]'},
+                {name: 'code', description: 'The code identifier', type:'String'},
+                {name: 'name', description: 'The full name of the topic code', type:'String'},
+                {name: 'description', description: 'A description of the topic code', type:'String'}
+            ],
+            output_example: ''
+        }
         ],
         implemented: ['Extended /api/query/ to return a subset of the results.'],
-        differences: []
+        differences: ['Database extended to one month worth of data (10/15) with 10000 documents. More data to come.',
+                      'GET tpc_list and GET instr_list API endpoints are no longer supported and may include duplicates']
     },
     {
         version: '2.0',
