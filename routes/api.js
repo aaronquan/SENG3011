@@ -80,7 +80,7 @@ router.route('/original')
 		});
 	});
 
-
+/*
 router.route('/data1')
 	.get(function(req, res){
 		fs.readdir(sourceDir, function(err, files){
@@ -109,7 +109,64 @@ router.route('/data2')
 			});
 		});
 	});
-
+router.route('/data3')
+	.get(function(req, res){
+		fs.readdir('../reuters-data/data3', function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile('../reuters-data/data3'+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+router.route('/data4')
+	.get(function(req, res){
+		fs.readdir('../reuters-data/data4', function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile('../reuters-data/data4'+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+router.route('/data5')
+	.get(function(req, res){
+		fs.readdir('../reuters-data/data5', function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile('../reuters-data/data5'+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+router.route('/data6')
+	.get(function(req, res){
+		fs.readdir('../reuters-data/data6', function(err, files){
+			files.forEach( function(file, index) {
+				fs.readFile('../reuters-data/data6'+'/'+file, function(err, data){
+					if (err) return res.send(err);
+					parser['parser'].write(data.toString());
+					if (index == 0){
+						res.send("Reset database");
+					}
+				});
+			});
+		});
+	});
+*/
+/*
 router.route('/delete')
 	.get(function(req, res){
 		fs.writeFile(tpc_list_source, '', function(){console.log('tpc_list deleted')})
@@ -119,7 +176,7 @@ router.route('/delete')
 			res.send('Deleted database');
 		});
 	});
-
+*/
 router.route('/autotest')
 	.get(function(req, res){
 		autoTester(function(log){

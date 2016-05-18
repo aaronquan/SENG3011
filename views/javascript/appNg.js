@@ -96,6 +96,13 @@ var code_sample = [
 }]
 
 var info = [
+    {
+        version: '3.1',
+        date: '18/05/2016',
+        new_routes: [],
+        implemented: [],
+        differences: ['Database extended to a timespan of a quarter with around 30,000 documents. Dates for news span from 10/15 to 12/15']
+    },
 	{
 		version: '3.0',
 		date: '17/05/2016',
