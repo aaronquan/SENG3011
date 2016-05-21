@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var News = mongoose.model('News');
-//var ObjectId = require('mongodb').ObjectId;
 
 var callbackG;
 
