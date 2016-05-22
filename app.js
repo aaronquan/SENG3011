@@ -12,7 +12,7 @@ require('./models/models.js');
 //routes
 var api = require('./routes/api');
 var index = require('./routes/index');
-
+//
 var app = express();
 var cors = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
