@@ -16,6 +16,7 @@ var News = mongoose.model('News');
 
 var tpc_list_source = 'code_data/tpc_codes.txt';
 var instr_list_source = 'code_data/instr_codes.txt';
+var keyFile = 'keys.txt';
 
 var sourceFile = 'news_files/News_data_extract.txt';
 //for database holder only - files to large for repository
@@ -211,6 +212,27 @@ router.route('/news/:id')
 		});
 	});
     **/
+router.route('/add_key')
+	.post(function(req,res){
+		var n = req.body.name;
+		var k = req.body.key;
+		fs.appendFile('routes/'+keyFile, n+','+k+'\n', function(err){
+		});
+		res.send(n+','+k);
+	});
+
+router.route('/keys')
+	.get(function(req,res){
+		var ret = [];
+		var array = fs.readFileSync('routes/'+keyFile).toString().split("\n");
+		array.pop();
+		for (var i = 0; i < array.length; i++) {
+			var line = array[i].split(',');
+			ret.push({name:line[0], key:line[1]})
+		}
+		res.send(ret);
+	});
+
 router.route('/instr_list')
 	.get(function(req,res){
 		var array = fs.readFileSync('routes/code_data/instr_codes.txt').toString().split("\n");
