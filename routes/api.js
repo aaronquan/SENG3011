@@ -193,6 +193,7 @@ router.route('/news')
 			res.json(data);
 		})
 	});
+	//
 /**
 router.route('/news/:id')
 	//gets a specific news article with id
